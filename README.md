@@ -23,6 +23,7 @@ results/
   repeat-runs/
     go/             20 runs of each Go trigger, default and GOMAXPROCS=1
     c-cpp/          20 runs of each C/C++ trigger, all CPUs and one CPU
+  predicate-validation/  all 64 valid inputs for the four reported predicates
   klee-symcc/       why KLEE and SymCC are not in Table II
 ```
 
@@ -84,6 +85,13 @@ Neither the race detectors nor SymQEMU report a gate. Sources:
 - Zorya from triggers: `results/zorya/triggers/summary.tsv`, and
   `summary-900s.tsv` for the 900 s Gotenberg run.
 - Zorya on C/C++: `results/zorya/c-cpp/README.md`.
+
+## Predicate validation
+
+For the four races with a Zorya precondition, one race-detector run on each of
+the 64 valid Boolean/digit input combinations matched the predicate exactly:
+25 reports inside and 39 non-reports outside. See
+`results/predicate-validation/`.
 
 ## Shapes (repeat runs)
 

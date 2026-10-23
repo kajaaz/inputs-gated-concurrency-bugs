@@ -1,0 +1,44 @@
+==================
+WARNING: DATA RACE
+Read at 0x00c0003daa20 by goroutine 15:
+  runtime.mapaccess2_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:161 +0x0
+  github.com/free5gc/bsf/internal/context.(*BSFContext).GetSubscription()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/internal/context/context.go:730 +0xe4
+  github.com/free5gc/bsf/internal/sbi/processor.ReplaceIndividualSubcription()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/internal/sbi/processor/subscriptions.go:81 +0x255
+  github.com/gin-gonic/gin.(*Context).Next()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 +0xe4c
+  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633 +0x785
+  github.com/gin-gonic/gin.(*Engine).ServeHTTP()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 +0x3e6
+  main.main.func1()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/cmd/bombharness/main.go:67 +0x427
+  main.main.gowrap1()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/cmd/bombharness/main.go:69 +0x38
+
+Previous write at 0x00c0003daa20 by goroutine 43:
+  runtime.mapassign_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:263 +0x0
+  github.com/free5gc/bsf/internal/sbi/processor.ReplaceIndividualSubcription()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/internal/sbi/processor/subscriptions.go:114 +0xbac
+  github.com/gin-gonic/gin.(*Context).Next()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/gin-gonic/gin@v1.10.0/context.go:185 +0xe4c
+  github.com/gin-gonic/gin.(*Engine).handleHTTPRequest()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/gin-gonic/gin@v1.10.0/gin.go:633 +0x785
+  github.com/gin-gonic/gin.(*Engine).ServeHTTP()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 +0x3e6
+  main.main.func1()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/cmd/bombharness/main.go:67 +0x427
+  main.main.gowrap1()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/cmd/bombharness/main.go:69 +0x38
+
+Goroutine 15 (running) created at:
+  main.main()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/cmd/bombharness/main.go:62 +0x69d
+
+Goroutine 43 (finished) created at:
+  main.main()
+      ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1/cmd/bombharness/main.go:62 +0x69d
+==================

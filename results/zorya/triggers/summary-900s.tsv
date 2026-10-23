@@ -1,0 +1,2 @@
+case	trigger_args	limit_s	exit	status	gate	log
+gotenberg-downloadfrom-2026	1 2	900	0	race_found	argv[1][0] == '1' && argv[2][0] in '2'..'9'	logs/gotenberg-downloadfrom-2026_trigger_900s.log

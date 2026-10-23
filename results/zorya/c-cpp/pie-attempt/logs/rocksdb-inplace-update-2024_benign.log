@@ -1,0 +1,129 @@
+# command: timeout 900s zorya ~/logic_bombs_go/evaluation/2026-10-23-zorya-c/bin/rocksdb-inplace-update-plain --analysis data-race --arg 0 1
+[ANALYSIS] Detected language: c++
+[ANALYSIS] data-race: plugins volos, thread scheduling all-threads, negated branches explored, panic analysis off, up to 4 input round(s)
+
+[36m[1mZORYA - Next Generation Concolic Analysis[0m
+tee: /dev/tty: No such device or address
+    Finished `release` profile [optimized] target(s) in 0.31s
+     Running `target/release/zorya --write-args '0 1'`
+[THREAD-CONFIG] Enabled multi-thread scheduling (cooperative at function calls)
+[THREAD-CONFIG] Set thread switch depth to 100
+[THREAD-CONFIG] Set time slice to 50 instructions
+
+************************************************
+Initializing Zorya with the CPU and memory dumps
+************************************************
+Initializing State...
+
+Initializing mock CPU state...
+
+Uploading dumps to CPU registers...
+
+Updated register RAX at offset 0x0 with value 0x0
+Updated register RBX at offset 0x18 with value 0x0
+Updated register RCX at offset 0x8 with value 0x0
+Updated register RDX at offset 0x10 with value 0x0
+Updated register RSI at offset 0x30 with value 0x0
+Updated register RDI at offset 0x38 with value 0x0
+Updated register RBP at offset 0x28 with value 0x0
+Updated register RSP at offset 0x20 with value 0x7fffffffc680
+Updated register R8 at offset 0x80 with value 0x0
+Updated register R9 at offset 0x88 with value 0x0
+Updated register R10 at offset 0x90 with value 0x0
+Updated register R11 at offset 0x98 with value 0x0
+Updated register R12 at offset 0xa0 with value 0x0
+Updated register R13 at offset 0xa8 with value 0x0
+Updated register R14 at offset 0xb0 with value 0x0
+Updated register R15 at offset 0xb8 with value 0x0
+Updated register RIP at offset 0x288 with value 0x7ffff7fe4540
+Updated register CS at offset 0x102 with value 0x33
+Updated register SS at offset 0x104 with value 0x2b
+Updated register DS at offset 0x106 with value 0x0
+Updated register ES at offset 0x100 with value 0x0
+Updated register FS at offset 0x108 with value 0x0
+Updated register GS at offset 0x10a with value 0x0
+Updated register MXCSR at offset 0x1094 with value 0x1f80
+Updated register FS_OFFSET at offset 0x110 with value 0x0
+Updated register GS_OFFSET at offset 0x118 with value 0x0
+Updated flag CF at offset 0x200 with value 0
+Updated flag PF at offset 0x202 with value 0
+Updated flag ZF at offset 0x206 with value 0
+Updated flag SF at offset 0x207 with value 0
+Updated flag TF at offset 0x208 with value 0
+Updated flag IF at offset 0x209 with value 1
+Updated flag DF at offset 0x20a with value 0
+Updated flag OF at offset 0x20b with value 0
+Updated flag NT at offset 0x20d with value 0
+Updated flag RF at offset 0x20f with value 0
+Updated flag AC at offset 0x211 with value 0
+Updated flag ID at offset 0x214 with value 0
+Initializing virtual file system...
+
+Initializing memory...
+
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x555555b33000-0x555555b4e000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc1000-0x7ffff7fc3000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffffffdc000-0x7ffffffff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fbd000-0x7ffff7fc1000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xffffffffff600000-0xffffffffff601000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x555555a31000-0x555555b33000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x555555554000-0x5555555a1000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc3000-0x7ffff7fc5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x555555b4e000-0x555555b73000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x5555555a1000-0x555555a31000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ff1000-0x7ffff7ffb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc5000-0x7ffff7fc6000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffb000-0x7ffff7fff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc6000-0x7ffff7ff1000.bin"
+Initialized CPUID memory variables at address 0x300000
+Initializing the State...
+
+[SCHEDULER] Detected c++ binary, thread scheduling available
+[SCHEDULER] Enabled round-robin thread scheduling
+[SCHEDULER] Set max switch depth to 100
+[SCHEDULER] Set time slice to 50 instructions
+[THREAD] Loaded TID=789125 from dump (fs_base=0x0, gs_base=0x0)
+Successfully loaded multi-thread state
+
+Creating the P-Code for the executable sections of libc.so and ld-linux-x86-64.so if they exist...
+libc ELF or its base address not found, skipping...
+P-Code generation started for: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+Validated ELF file exists: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running `target/debug/pcode_generator /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 --low-pcode --base-addr 0x7ffff7fc5000`
+
+[PCODE GENERATOR] Generating low pcode...
+[PCODE GENERATOR] Output file will be created at: "~/Documents/zorya/external/pcode-generator/results/ld-linux-x86-64.so.2_low_pcode.txt"
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7fc5000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+[PCODE GENERATOR] Low pcode generation completed.
+P-Code generation completed successfully for /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+Appended P-code from '~/Documents/zorya/external/pcode-generator/results/ld-linux-x86-64.so.2_low_pcode.txt' into '~/Documents/zorya/external/pcode-generator/results/rocksdb-inplace-update-plain_low_pcode.txt'
+Initializing jump tables...
+
+[ANALYSIS] Selected analyses: data-race
+[ANALYSIS] The panic prepass and the AST panic exploration are disabled (add --analysis panic to enable them)
+Building the P-Code for the VDSO section (this may take a moment)...
+Merged 1070 VDSO instruction blocks into execution map
+
+Skipping the panic cross-reference prepass.
+**************************************************************************
+Initializing symbolic variables for the program arguments (argv)...
+**************************************************************************
+THE CONCOLIC EXECUTION OF THE BINARY HAS STARTED!
+Find the logs in results/execution_log.txt and results/execution_trace.txt
+**************************************************************************
+[SUMMARY] Function summary table loaded (127 entries)
+[PLUGINS] 1 plugin(s) active (--plugin "volos")
+
+[SIGNAL] Graceful shutdown.
+[VOLOS] No data races found (0 reads, 0 writes, 0 map operations, 0 lock ops observed; 0 conflicting pair(s): 0 ordered by happens-before, 0 lock-protected, 0 inside the Go runtime)
+
+[RACE] status: no_concurrency (no goroutine was created on the explored path and no negated branch leads to one)
+[RACE] seed: []
+[RACE] schedule: t789125
+[RACE] summary written to results/race_summary.json
+
+[ANALYSIS] data-race: nothing found
+[ANALYSIS] seed: []
+[ANALYSIS] summary written to results/analysis_summary.json

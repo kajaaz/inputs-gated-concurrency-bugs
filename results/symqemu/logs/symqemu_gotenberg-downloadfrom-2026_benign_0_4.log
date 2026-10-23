@@ -1,0 +1,42 @@
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/gotenberg-downloadfrom-2026_benign_0_4/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=0 time=0.3s new_inputs=12
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   OK
+#   new: (b'4',) (b'0\xdf4',) (b'0',) (b'1', b'4') (b'0', b':') (b'0', b'0') (b'0', b'\x90') (b'0', b'!') (b'0', b'P') (b'0', b'\x80') (b'0', b'\x8a') (b'0', b'<')
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/gotenberg-downloadfrom-2026_benign_0_4/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=0.3s new_inputs=3
+#   This is SymCC running with the QSYM backend
+#   Usage: ./gotenberg-downloadfrom <enabled> <entries>
+#   new: (b'\xdf', b'4') (b'\xdf4',) ()
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/gotenberg-downloadfrom-2026_benign_0_4/e00002 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-symqemu < input
+# exec 2 depth 1: exit=0 time=0.3s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./gotenberg-downloadfrom <enabled> <entries>
+#   new: (b'(\xdf4',) (b'0\xdf',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/gotenberg-downloadfrom-2026_benign_0_4/e00003 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-symqemu < input
+# exec 3 depth 1: exit=0 time=0.3s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./gotenberg-downloadfrom <enabled> <entries>
+#   new: (b'\xa0',) (b'0', b'\xdf')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/gotenberg-downloadfrom-2026_benign_0_4/e00004 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-symqemu < input
+# exec 4 depth 1: exit=2 time=0.4s new_inputs=9
+#   internal/runtime/maps.fatal({0x4edea0?, 0x31daa9c02008?})
+#   	~/Programs/go1.26.5/go/src/runtime/panic.go:1181 +0x18
+#   main.main.func1(0x1)
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:61 +0x275
+#   created by main.main in goroutine 1
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:55 +0x54b
+#   new: (b'1\xdf4',) (b'1',) (b'\x90', b'4') (b'1', b'\xb0') (b'1', b'<') (b'1', b'0') (b'\xce', b'4') (b'1', b'1') (b'1', b'8')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/gotenberg-downloadfrom-2026-race-stdin < input  # replay exit=0
+# exploration stopped (racy-input-found): 5 executions, 1s in SymQEMU, 2s wall, 24 inputs unexplored
+# result: {"case": "gotenberg-downloadfrom-2026", "row": "benign", "seed": "0 4", "stop": "racy-input-found", "max_depth": 1, "executions": 5, "crashes": 1, "timeouts": 0, "symqemu_s": 1, "wall_s": 2, "unique_inputs": 28, "seed_racy": false, "racy_generated": 1, "racy_examples": ["1 4"], "exit_codes": ["0", "2"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_gotenberg-downloadfrom-2026_benign_0_4.log"}

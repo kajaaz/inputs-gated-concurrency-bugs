@@ -1,0 +1,54 @@
+==================
+WARNING: DATA RACE
+Write at 0x00c00015bd90 by goroutine 31:
+  bytes.(*Buffer).Write()
+      /usr/local/go/src/bytes/buffer.go:194 +0x3a
+  github.com/go-resty/resty/v2.handleRequestBody()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/middleware.go:524 +0x5c9
+  github.com/go-resty/resty/v2.parseRequestBody()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/middleware.go:193 +0x279
+  github.com/go-resty/resty/v2.(*Client).execute()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/client.go:1164 +0x562
+  github.com/go-resty/resty/v2.(*Request).Execute.func2()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/request.go:947 +0x165
+  github.com/go-resty/resty/v2.Backoff()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/retry.go:115 +0x1e7
+  github.com/go-resty/resty/v2.(*Request).Execute()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/request.go:941 +0xcf5
+  github.com/go-resty/resty/v2.(*Request).Post()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/request.go:862 +0x5fb
+  main.main.func3()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/main.go:72 +0x4fb
+  main.main.gowrap2()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/main.go:73 +0x38
+
+Previous write at 0x00c00015bd90 by goroutine 29:
+  bytes.(*Buffer).Write()
+      /usr/local/go/src/bytes/buffer.go:194 +0x3a
+  github.com/go-resty/resty/v2.handleRequestBody()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/middleware.go:524 +0x5c9
+  github.com/go-resty/resty/v2.parseRequestBody()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/middleware.go:193 +0x279
+  github.com/go-resty/resty/v2.(*Client).execute()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/client.go:1164 +0x562
+  github.com/go-resty/resty/v2.(*Request).Execute.func2()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/request.go:947 +0x165
+  github.com/go-resty/resty/v2.Backoff()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/retry.go:115 +0x1e7
+  github.com/go-resty/resty/v2.(*Request).Execute()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/request.go:941 +0xcf5
+  github.com/go-resty/resty/v2.(*Request).Post()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/request.go:862 +0x5fb
+  main.main.func3()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/main.go:72 +0x4fb
+  main.main.gowrap2()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/main.go:73 +0x38
+
+Goroutine 31 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/main.go:70 +0x7f0
+
+Goroutine 29 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/main.go:70 +0x7f0
+==================

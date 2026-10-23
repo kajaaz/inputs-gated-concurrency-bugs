@@ -1,0 +1,2 @@
+$ cd ~/logic_bombs_go/evaluation/2026-10-20/work/free5gc-bsf-v1.0.1
+$ go build -race -o ~/logic_bombs_go/evaluation/2026-10-20/bin/free5gc-bsf-put-2026-race ./cmd/bombharness

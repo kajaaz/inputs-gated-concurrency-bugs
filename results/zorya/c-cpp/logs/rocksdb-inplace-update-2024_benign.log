@@ -1,0 +1,6 @@
+# command: timeout 900s zorya ~/logic_bombs_go/evaluation/2026-10-23-zorya-c/bin/rocksdb-inplace-update-nopie --analysis data-race --arg 0 1
+[ANALYSIS] Detected language: c++
+[ANALYSIS] data-race: plugins volos, thread scheduling all-threads, negated branches explored, panic analysis off, up to 4 input round(s)
+
+[36m[1mZORYA - Next Generation Concolic Analysis[0m
+tee: /dev/tty: No such device or address

@@ -1,0 +1,255 @@
+# command: cmake -S ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3 -B ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/xz-v5.8.3-build-plain -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang -DCMAKE_C_FLAGS_RELEASE='-g -O1' -DBUILD_SHARED_LIBS=OFF -DXZ_NLS=OFF && cmake --build ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/xz-v5.8.3-build-plain -j3 --target liblzma
+-- The C compiler identification is Clang 18.1.3
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for __i386__
+-- Looking for __i386__ - not found
+-- Performing Test TUKLIB_LARGE_FILE_SUPPORT_BY_DEFAULT
+-- Performing Test TUKLIB_LARGE_FILE_SUPPORT_BY_DEFAULT - Success
+-- Performing Test HAVE___BUILTIN_BSWAPXX
+-- Performing Test HAVE___BUILTIN_BSWAPXX - Success
+-- Check if unaligned memory access should be used
+-- Check if unaligned memory access should be used - yes
+-- Performing Test HAVE___BUILTIN_ASSUME_ALIGNED
+-- Performing Test HAVE___BUILTIN_ASSUME_ALIGNED - Success
+-- Looking for clock_gettime
+-- Looking for clock_gettime - found
+-- Looking for CLOCK_MONOTONIC
+-- Looking for CLOCK_MONOTONIC - found
+-- Found Intl: built in to C library  
+-- Found Gettext: /usr/bin/msgmerge (found version "0.21") 
+-- Performing Test HAVE_COMPILER_OPTION_-Wall
+-- Performing Test HAVE_COMPILER_OPTION_-Wall - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wvla
+-- Performing Test HAVE_COMPILER_OPTION_-Wvla - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wformat_2
+-- Performing Test HAVE_COMPILER_OPTION_-Wformat_2 - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Winit-self
+-- Performing Test HAVE_COMPILER_OPTION_-Winit-self - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-include-dirs
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-include-dirs - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-overflow_2
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-overflow_2 - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-overflow_3
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-overflow_3 - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Walloc-zero
+-- Performing Test HAVE_COMPILER_OPTION_-Walloc-zero - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicated-cond
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicated-cond - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-equal
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-equal - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wundef
+-- Performing Test HAVE_COMPILER_OPTION_-Wundef - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wshadow
+-- Performing Test HAVE_COMPILER_OPTION_-Wshadow - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wpointer-arith
+-- Performing Test HAVE_COMPILER_OPTION_-Wpointer-arith - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wbad-function-cast
+-- Performing Test HAVE_COMPILER_OPTION_-Wbad-function-cast - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wwrite-strings
+-- Performing Test HAVE_COMPILER_OPTION_-Wwrite-strings - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wdate-time
+-- Performing Test HAVE_COMPILER_OPTION_-Wdate-time - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wsign-conversion
+-- Performing Test HAVE_COMPILER_OPTION_-Wsign-conversion - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-conversion
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-conversion - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wlogical-op
+-- Performing Test HAVE_COMPILER_OPTION_-Wlogical-op - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Waggregate-return
+-- Performing Test HAVE_COMPILER_OPTION_-Waggregate-return - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-prototypes
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-prototypes - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wold-style-definition
+-- Performing Test HAVE_COMPILER_OPTION_-Wold-style-definition - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-prototypes
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-prototypes - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-declarations
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-declarations - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wredundant-decls
+-- Performing Test HAVE_COMPILER_OPTION_-Wredundant-decls - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough_5
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough_5 - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wc99-compat
+-- Performing Test HAVE_COMPILER_OPTION_-Wc99-compat - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wc11-extensions
+-- Performing Test HAVE_COMPILER_OPTION_-Wc11-extensions - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-compat
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-compat - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-extensions
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-extensions - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Warray-bounds-pointer-arithmetic
+-- Performing Test HAVE_COMPILER_OPTION_-Warray-bounds-pointer-arithmetic - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wassign-enum
+-- Performing Test HAVE_COMPILER_OPTION_-Wassign-enum - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wconditional-uninitialized
+-- Performing Test HAVE_COMPILER_OPTION_-Wconditional-uninitialized - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wdocumentation
+-- Performing Test HAVE_COMPILER_OPTION_-Wdocumentation - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicate-enum
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicate-enum - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wempty-translation-unit
+-- Performing Test HAVE_COMPILER_OPTION_-Wempty-translation-unit - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra-semi-stmt
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra-semi-stmt - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wflexible-array-extensions
+-- Performing Test HAVE_COMPILER_OPTION_-Wflexible-array-extensions - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-variable-declarations
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-variable-declarations - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wnewline-eof
+-- Performing Test HAVE_COMPILER_OPTION_-Wnewline-eof - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-sign-overflow
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-sign-overflow - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wstring-conversion
+-- Performing Test HAVE_COMPILER_OPTION_-Wstring-conversion - Success
+-- Performing Test IS_LINUX_WITH_GLIBC
+-- Performing Test IS_LINUX_WITH_GLIBC - Success
+-- Performing Test HAVE_LINKER_FLAG_UNDEFINED_VERSION
+-- Performing Test HAVE_LINKER_FLAG_UNDEFINED_VERSION - Success
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Looking for pthread_condattr_setclock
+-- Looking for pthread_condattr_setclock - found
+-- Checking how to detect the number of available CPU cores
+-- Performing Test TUKLIB_CPUCORES_SCHED_GETAFFINITY
+-- Performing Test TUKLIB_CPUCORES_SCHED_GETAFFINITY - Success
+-- Checking how to detect the amount of physical memory
+-- Performing Test TUKLIB_PHYSMEM_SPECIAL
+-- Performing Test TUKLIB_PHYSMEM_SPECIAL - Failed
+-- Performing Test TUKLIB_PHYSMEM_AIX
+-- Performing Test TUKLIB_PHYSMEM_AIX - Failed
+-- Performing Test TUKLIB_PHYSMEM_SYSCONF
+-- Performing Test TUKLIB_PHYSMEM_SYSCONF - Success
+-- Performing Test HAVE_FUNC_ATTRIBUTE_CONSTRUCTOR
+-- Performing Test HAVE_FUNC_ATTRIBUTE_CONSTRUCTOR - Success
+-- Looking for cpuid.h
+-- Looking for cpuid.h - found
+-- Looking for immintrin.h
+-- Looking for immintrin.h - found
+-- Performing Test HAVE__MM_MOVEMASK_EPI8
+-- Performing Test HAVE__MM_MOVEMASK_EPI8 - Success
+-- Performing Test HAVE_USABLE_CLMUL
+-- Performing Test HAVE_USABLE_CLMUL - Success
+-- Performing Test HAVE_ARM64_CRC32
+-- Performing Test HAVE_ARM64_CRC32 - Failed
+-- Performing Test HAVE_LOONGARCH_CRC32
+-- Performing Test HAVE_LOONGARCH_CRC32 - Failed
+-- Looking for getopt_long
+-- Looking for getopt_long - found
+-- Looking for cap_rights_limit
+-- Looking for cap_rights_limit - not found
+-- Looking for pledge
+-- Looking for pledge - not found
+-- Performing Test HAVE_LINUX_LANDLOCK
+-- Performing Test HAVE_LINUX_LANDLOCK - Success
+-- Looking for program_invocation_name
+-- Looking for program_invocation_name - found
+-- Looking for mbrtowc
+-- Looking for mbrtowc - found
+-- Looking for wcwidth
+-- Looking for wcwidth - found
+-- Looking for vasprintf
+-- Looking for vasprintf - found
+-- Looking for optreset
+-- Looking for optreset - not found
+-- Looking for getrlimit
+-- Looking for getrlimit - found
+-- Looking for posix_fadvise
+-- Looking for posix_fadvise - found
+-- Performing Test HAVE_STRUCT_STAT_ST_ATIM_TV_NSEC
+-- Performing Test HAVE_STRUCT_STAT_ST_ATIM_TV_NSEC - Success
+-- Looking for futimens
+-- Looking for futimens - found
+-- Configuring done (16.2s)
+-- Generating done (0.2s)
+-- Build files have been written to: ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/xz-v5.8.3-build-plain
+[  1%] Building C object CMakeFiles/liblzma.dir/src/common/tuklib_physmem.c.o
+[  1%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/check.c.o
+[  3%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_util.c.o
+[  5%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/common.c.o
+[  5%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/easy_preset.c.o
+[  7%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_common.c.o
+[  9%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/hardware_physmem.c.o
+[  9%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/index.c.o
+[ 10%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_flags_common.c.o
+[ 12%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/string_conversion.c.o
+[ 12%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/vli_size.c.o
+[ 14%] Building C object CMakeFiles/liblzma.dir/src/common/tuklib_cpucores.c.o
+[ 16%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/hardware_cputhreads.c.o
+[ 16%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/outqueue.c.o
+[ 18%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/crc32_fast.c.o
+[ 20%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/crc64_fast.c.o
+[ 21%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/sha256.c.o
+[ 21%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/alone_encoder.c.o
+[ 23%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_buffer_encoder.c.o
+[ 25%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_encoder.c.o
+[ 25%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_header_encoder.c.o
+[ 27%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/easy_encoder.c.o
+[ 29%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/easy_buffer_encoder.c.o
+[ 29%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/easy_encoder_memusage.c.o
+[ 30%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_buffer_encoder.c.o
+[ 32%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_encoder.c.o
+[ 32%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_flags_encoder.c.o
+[ 34%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/index_encoder.c.o
+[ 36%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_buffer_encoder.c.o
+[ 36%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_encoder.c.o
+[ 38%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_flags_encoder.c.o
+[ 38%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_encoder_mt.c.o
+[ 40%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/vli_encoder.c.o
+[ 41%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/simple_encoder.c.o
+[ 43%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma_encoder.c.o
+[ 45%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma_encoder_optimum_fast.c.o
+[ 45%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma_encoder_optimum_normal.c.o
+[ 47%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lz/lz_encoder.c.o
+[ 49%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lz/lz_encoder_mf.c.o
+[ 49%] Building C object CMakeFiles/liblzma.dir/src/liblzma/rangecoder/price_table.c.o
+[ 50%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/fastpos_table.c.o
+[ 52%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma2_encoder.c.o
+[ 52%] Building C object CMakeFiles/liblzma.dir/src/liblzma/delta/delta_encoder.c.o
+[ 54%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/alone_decoder.c.o
+[ 56%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/auto_decoder.c.o
+[ 56%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_buffer_decoder.c.o
+[ 58%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_header_decoder.c.o
+[ 60%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_decoder.c.o
+[ 60%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/easy_decoder_memusage.c.o
+[ 61%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/file_info.c.o
+[ 63%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_buffer_decoder.c.o
+[ 63%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_decoder.c.o
+[ 65%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_flags_decoder.c.o
+[ 67%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/index_decoder.c.o
+[ 69%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/index_hash.c.o
+[ 69%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_buffer_decoder.c.o
+[ 70%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_decoder.c.o
+[ 70%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/vli_decoder.c.o
+[ 72%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_flags_decoder.c.o
+[ 74%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_decoder_mt.c.o
+[ 76%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/simple_decoder.c.o
+[ 76%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma_decoder.c.o
+[ 78%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lz/lz_decoder.c.o
+[ 80%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma2_decoder.c.o
+[ 80%] Building C object CMakeFiles/liblzma.dir/src/liblzma/delta/delta_decoder.c.o
+[ 81%] Building C object CMakeFiles/liblzma.dir/src/liblzma/lzma/lzma_encoder_presets.c.o
+[ 83%] Building C object CMakeFiles/liblzma.dir/src/liblzma/delta/delta_common.c.o
+[ 83%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/simple_coder.c.o
+[ 85%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/x86.c.o
+[ 87%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/arm.c.o
+[ 89%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/armthumb.c.o
+[ 89%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/arm64.c.o
+[ 90%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/powerpc.c.o
+[ 92%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/ia64.c.o
+[ 92%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/sparc.c.o
+[ 94%] Building C object CMakeFiles/liblzma.dir/src/liblzma/simple/riscv.c.o
+[ 96%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/microlzma_encoder.c.o
+[ 96%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/microlzma_decoder.c.o
+[ 98%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/lzip_decoder.c.o
+[100%] Linking C static library liblzma.a
+[100%] Built target liblzma
+# exit: 0

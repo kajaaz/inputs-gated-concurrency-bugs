@@ -1,0 +1,47 @@
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/resty-pool-retry-2023_trigger_1_503/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=-11 time=6.0s new_inputs=34
+#   Line: 213
+#   UNEXPECTED CODE WAS REACHED.
+#   4.8.12.0
+#   Please file an issue with this message and more detail about how you encountered it at https://github.com/Z3Prover/z3/issues/new
+#   qemu-x86_64: QEMU internal SIGSEGV {code=MAPERR, addr=0x5bebec452ff7}
+#   qemu-x86_64: QEMU internal SIGSEGV {code=MAPERR, addr=0x5bee000019b2}
+#   new: (b'503',) (b'1\xdf503',) (b'1', b'03') (b'1', b'`03') (b'1', b'5', b'3') (b'1', b'50') (b'\x90', b'503') (b'1', b'50\x8c') (b'1', b'50K') (b'1', b'50\xf1') (b'1', b'50\xb8') (b'1', b'505') (b'1', b'50:') (b'1', b'50Q') (b'0', b'503') (b'P', b'503') (b'\x8a', b'503') (b'\x80', b'503') (b'@', b'503') (b'1', b'50q') (b'1', b'500') (b'1', b'00\xf0') (b'1', b'00\xb0') (b'1', b'000') (b'1', b'50\x00') (b'1', b'50\x10') (b'1', b'1\xf20') (b'1', b'50\x90') (b'1', b'50O') (b'<', b'503') (b'1', b'01\\') (b'1', b'04h') (b'1', b'\x9ab\xc8') (b'1', b'\xd8<(')
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/resty-pool-retry-2023_trigger_1_503/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=0.6s new_inputs=5
+#   This is SymCC running with the QSYM backend
+#   Usage: ./resty-pool-retry <retries> <status>
+#   new: (b'\xdf', b'503') (b'\xdf503',) (b'03',) (b'5', b'3') (b'50',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/resty-pool-retry-2023_trigger_1_503/e00002 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-symqemu < input
+# exec 2 depth 1: exit=0 time=0.5s new_inputs=4
+#   This is SymCC running with the QSYM backend
+#   Usage: ./resty-pool-retry <retries> <status>
+#   new: (b'1\xdf', b'03') (b'1\xdf\x8c03',) (b'1\xdf5', b'3') (b'1\xdf50',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/resty-pool-retry-2023_trigger_1_503/e00003 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-symqemu < input
+# exec 3 depth 1: exit=0 time=0.5s new_inputs=3
+#   This is SymCC running with the QSYM backend
+#   Usage: ./resty-pool-retry <retries> <status>
+#   new: (b'1', b'\xdf03') (b'1', b'3') (b'1', b'0')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=66
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/resty-pool-retry-2023_trigger_1_503/e00004 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-symqemu < input
+# exec 4 depth 1: exit=0 time=1.0s new_inputs=27
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   [INFO] syncConstraints: Incorrect constraints are inserted
+#   Usage: ./resty-pool-retry <retries> <status>
+#   new: (b'`03',) (b'\xa0', b'`03') (b'1\xdf`03',) (b'1', b'`', b'3') (b'1', b'`0') (b':', b'`03') (b'1', b'`0\x90') (b'1', b'`0:') (b'1', b'`0\x19') (b'1', b'`0\xb8') (b'1', b'`0K') (b'1', b'`05') (b'1', b'`0Q') (b'1', b'`0t') (b'1', b'`0\xf1') (b'1', b'P\x80G') (b'1', b'\xb0\x08\x80') (b'1', b'0P0') (b'1', b'`0\xb0') (b'1', b'`0\x10') (b'1', b'0P2') (b'1', b'`0O') (b'<', b'`03') (b'1', b'098') (b'1', b'04F') (b'1', b'1a0') (b'1', b'46\xac')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/resty-pool-retry-2023-race-stdin < input  # replay exit=0
+# exploration stopped (racy-input-found): 5 executions, 9s in SymQEMU, 9s wall, 69 inputs unexplored
+# result: {"case": "resty-pool-retry-2023", "row": "trigger", "seed": "1 503", "stop": "racy-input-found", "max_depth": 1, "executions": 5, "crashes": 1, "timeouts": 0, "symqemu_s": 9, "wall_s": 9, "unique_inputs": 73, "seed_racy": true, "racy_generated": 2, "racy_examples": ["1 50\ufffd", "1 50K"], "exit_codes": ["-11", "0"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_resty-pool-retry-2023_trigger_1_503.log"}

@@ -1,0 +1,4 @@
+case	command_class	result	exit	log
+go-concurrency-cases	go-source	not-applicable-symcc-compiles-c-cpp-not-go	NA	logs/symcc-version-local.log
+xz-mt-decoder-2026	build-upstream	FAIL	2	logs/symcc_xz-mt-decoder-2026_build.log
+rocksdb-inplace-update-2024	cpp-build	not-run-heavy-requires-sympp-rocksdb-rebuild	NA	logic_bombs_go/cpp/real-world/rocksdb-inplace-update-2024/README.md

@@ -1,0 +1,10 @@
+case	trigger_args	exit	status	gate	log
+gotenberg-downloadfrom-2026	1 2	124	gate_reached_schedule_not_explored		logs/gotenberg-downloadfrom-2026_trigger.log
+gorest-2fa-secret-2026	1 2	0	race_found	argv[1][0] == '1' && argv[2][0] in '2'..'9'	logs/gorest-2fa-secret-2026_trigger.log
+mailpit-proxy-assets-2026	1 1	0	race_found	argv[1][0] == '1' && argv[2][0] == '1'	logs/mailpit-proxy-assets-2026_trigger.log
+olivetin-oauth-state-2026	1 2	0	race_found	argv[1][0] == '1' && argv[2][0] in '2'..'9'	logs/olivetin-oauth-state-2026_trigger.log
+hoverfly-diff-mode-2026	1 1	124	none		logs/hoverfly-diff-mode-2026_trigger.log
+http2-hpack-tablesize-2026	1	124	no_concurrency		logs/http2-hpack-tablesize-2026_trigger.log
+resty-pool-retry-2023	1 503	124	no_concurrency		logs/resty-pool-retry-2023_trigger.log
+nethttp-expect-continue-2020	1 1	124	no_concurrency		logs/nethttp-expect-continue-2020_trigger.log
+free5gc-bsf-put-2026	0	124	no_concurrency		logs/free5gc-bsf-put-2026_trigger.log

@@ -1,0 +1,572 @@
+# cwd: ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness
+# binary: ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-zorya
+# built for zorya with: go build -gcflags="all=-N -l" -o myprog-zorya .
+# command: timeout 900s zorya ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/resty-pool-retry-2023/harness/myprog-zorya --analysis data-race --arg 0 100
+
+[ANALYSIS] Detected language: go (compiler gc)
+[ANALYSIS] data-race: plugins volos, thread scheduling all-threads, negated branches explored, panic analysis off, up to 4 input round(s)
+
+[36m[1mZORYA - Next Generation Concolic Analysis[0m
+tee: /dev/tty: No such device or address
+    Finished `release` profile [optimized] target(s) in 0.17s
+     Running `target/release/zorya --write-args '0 100'`
+[THREAD-CONFIG] Enabled multi-thread scheduling (cooperative at function calls)
+[THREAD-CONFIG] Set thread switch depth to 100
+[THREAD-CONFIG] Set time slice to 10000 instructions
+
+************************************************
+Initializing Zorya with the CPU and memory dumps
+************************************************
+Initializing State...
+
+Initializing mock CPU state...
+
+Uploading dumps to CPU registers...
+
+Updated register RAX at offset 0x0 with value 0x859980
+Updated register RBX at offset 0x18 with value 0x0
+Updated register RCX at offset 0x8 with value 0x3b16027c1e0
+Updated register RDX at offset 0x10 with value 0xa3d440
+Updated register RSI at offset 0x30 with value 0xc927a0
+Updated register RDI at offset 0x38 with value 0x11
+Updated register RBP at offset 0x28 with value 0x3b160421fd0
+Updated register RSP at offset 0x20 with value 0x3b160421f68
+Updated register R8 at offset 0x80 with value 0x9caca0
+Updated register R9 at offset 0x88 with value 0x4
+Updated register R10 at offset 0x90 with value 0x40
+Updated register R11 at offset 0x98 with value 0xffffffffffffffff
+Updated register R12 at offset 0xa0 with value 0x3b160421ea8
+Updated register R13 at offset 0xa8 with value 0x30
+Updated register R14 at offset 0xb0 with value 0x3b16027c1e0
+Updated register R15 at offset 0xb8 with value 0x3b160421aa0
+Updated register RIP at offset 0x288 with value 0x859980
+Updated register CS at offset 0x102 with value 0x33
+Updated register SS at offset 0x104 with value 0x2b
+Updated register DS at offset 0x106 with value 0x0
+Updated register ES at offset 0x100 with value 0x0
+Updated register FS at offset 0x108 with value 0x0
+Updated register GS at offset 0x10a with value 0x0
+Updated register MXCSR at offset 0x1094 with value 0x1fa0
+Updated register FS_OFFSET at offset 0x110 with value 0x7ffff7fa2740
+Updated register GS_OFFSET at offset 0x118 with value 0x0
+Updated flag CF at offset 0x200 with value 0
+Updated flag PF at offset 0x202 with value 1
+Updated flag ZF at offset 0x206 with value 1
+Updated flag SF at offset 0x207 with value 0
+Updated flag TF at offset 0x208 with value 0
+Updated flag IF at offset 0x209 with value 1
+Updated flag DF at offset 0x20a with value 0
+Updated flag OF at offset 0x20b with value 0
+Updated flag NT at offset 0x20d with value 0
+Updated flag RF at offset 0x20f with value 0
+Updated flag AC at offset 0x211 with value 0
+Updated flag ID at offset 0x214 with value 0
+Initializing virtual file system...
+
+Initializing memory...
+
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x2d31000-0x2d52000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffac021000-0x7fffb0000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e42000-0x7ffff7ec5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7db1000-0x7ffff7e00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff54ec000-0x7ffff54ed000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffab7ff000-0x7fffab800000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff98000000-0x7fff98021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb015f000-0x7fffb095f000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa4000000-0x7fffa4021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe3b62000-0x7fffe3b63000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1300000-0x7fffb3400000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa4021000-0x7fffa8000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc1000-0x7ffff7fc3000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaafff000-0x7fffab7ff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7c00000-0x7ffff7c28000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffffffdc000-0x7ffffffff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb0960000-0x7fffb1160000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaa7fe000-0x7fffaaffe000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e04000-0x7ffff7e06000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fbd000-0x7ffff7fc1000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xffffffffff600000-0xffffffffff601000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff9c021000-0x7fffa0000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x3b160000000-0x3b160800000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e22000-0x7ffff7e42000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc3b63000-0x7fffe3b62000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffac000000-0x7fffac021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff54ed000-0x7ffff781d000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe3b63000-0x7ffff54ec000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb011e000-0x7fffb015e000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb095f000-0x7fffb0960000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff781d000-0x7ffff781e000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaaffe000-0x7fffaafff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc3000-0x7ffff7fc5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff9c000000-0x7fff9c021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x3b160800000-0x3b164000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ec6000-0x7ffff7f42000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x956000-0xc92000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x400000-0x956000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa0000000-0x7fffa0021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb015e000-0x7fffb015f000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f42000-0x7ffff7fa5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaa7fd000-0x7fffaa7fe000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e06000-0x7ffff7e13000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7c28000-0x7ffff7db1000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff98021000-0x7fff9c000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fa9000-0x7ffff7fbd000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ec5000-0x7ffff7ec6000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ff1000-0x7ffff7ffb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffb000-0x7ffff7ffd000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa0021000-0x7fffa4000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc3b62000-0x7fffc3b63000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffab800000-0x7fffac000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffd000-0x7ffff7fff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e00000-0x7ffff7e04000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb3400000-0x7fffc3b62000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xc92000-0xced000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff781e000-0x7ffff7c00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc5000-0x7ffff7fc6000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc6000-0x7ffff7ff1000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xced000-0x2d31000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1160000-0x7fffb1300000.bin"
+Initialized CPUID memory variables at address 0x300000
+Initializing the State...
+
+[SCHEDULER] Detected Go GC binary, thread scheduling available
+[SCHEDULER] Enabled round-robin thread scheduling
+[SCHEDULER] Set max switch depth to 100
+[SCHEDULER] Set time slice to 10000 instructions
+[THREAD] Loaded TID=701022 from dump (fs_base=0x7ffff7fa2740, gs_base=0x0)
+[THREAD] Loaded TID=701025 from dump (fs_base=0x7fffb115f6c0, gs_base=0x0)
+[THREAD] Loaded TID=701026 from dump (fs_base=0x7fffb095e6c0, gs_base=0x0)
+[THREAD] Loaded TID=701027 from dump (fs_base=0x7fffabfff6c0, gs_base=0x0)
+[THREAD] Loaded TID=701028 from dump (fs_base=0x7fffab7fe6c0, gs_base=0x0)
+[THREAD] Loaded TID=701029 from dump (fs_base=0x7fffaaffd6c0, gs_base=0x0)
+Successfully loaded multi-thread state
+
+Creating the P-Code for the executable sections of libc.so and ld-linux-x86-64.so if they exist...
+P-Code generation started for: /usr/lib/x86_64-linux-gnu/libc.so.6
+Validated ELF file exists: /usr/lib/x86_64-linux-gnu/libc.so.6
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running `target/debug/pcode_generator /usr/lib/x86_64-linux-gnu/libc.so.6 --low-pcode --base-addr 0x7ffff7c00000`
+
+[PCODE GENERATOR] Generating low pcode...
+[PCODE GENERATOR] Output file will be created at: "~/Documents/zorya/external/pcode-generator/results/libc.so.6_low_pcode.txt"
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7c00000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+LowlevelError at address 0xc7c85: r0x7ffff7cc7c85: Unable to resolve constructor
+LowlevelError at address 0xc7e0c: r0x7ffff7cc7e0c: Unable to resolve constructor
+LowlevelError at address 0xc7e0d: r0x7ffff7cc7e0d: Unable to resolve constructor
+LowlevelError at address 0xc7e98: r0x7ffff7cc7e98: Unable to resolve constructor
+LowlevelError at address 0xc7eac: r0x7ffff7cc7eac: Unable to resolve constructor
+LowlevelError at address 0xc7ec3: r0x7ffff7cc7ec3: Unable to resolve constructor
+LowlevelError at address 0x1988f5: r0x7ffff7d988f5: Unable to resolve constructor
+LowlevelError at address 0x1988f6: r0x7ffff7d988f6: Unable to resolve constructor
+LowlevelError at address 0x198962: r0x7ffff7d98962: Unable to resolve constructor
+LowlevelError at address 0x198966: r0x7ffff7d98966: Unable to resolve constructor
+LowlevelError at address 0x198967: r0x7ffff7d98967: Unable to resolve constructor
+LowlevelError at address 0x1989b0: r0x7ffff7d989b0: Unable to resolve constructor
+LowlevelError at address 0x1989b6: r0x7ffff7d989b6: Unable to resolve constructor
+LowlevelError at address 0x1989b7: r0x7ffff7d989b7: Unable to resolve constructor
+LowlevelError at address 0x1989b8: r0x7ffff7d989b8: Unable to resolve constructor
+LowlevelError at address 0x19b225: r0x7ffff7d9b225: Unable to resolve constructor
+LowlevelError at address 0x19b226: r0x7ffff7d9b226: Unable to resolve constructor
+LowlevelError at address 0x19b229: r0x7ffff7d9b229: Unable to resolve constructor
+LowlevelError at address 0x19b291: r0x7ffff7d9b291: Unable to resolve constructor
+LowlevelError at address 0x19b2a0: r0x7ffff7d9b2a0: Unable to resolve constructor
+LowlevelError at address 0x19b408: r0x7ffff7d9b408: Unable to resolve constructor
+LowlevelError at address 0x19b409: r0x7ffff7d9b409: Unable to resolve constructor
+LowlevelError at address 0x19b40c: r0x7ffff7d9b40c: Unable to resolve constructor
+LowlevelError at address 0x1a14b5: r0x7ffff7da14b5: Unable to resolve constructor
+LowlevelError at address 0x1a20c5: r0x7ffff7da20c5: Unable to resolve constructor
+LowlevelError at address 0x1a2166: r0x7ffff7da2166: Unable to resolve constructor
+LowlevelError at address 0x1a21b1: r0x7ffff7da21b1: Unable to resolve constructor
+LowlevelError at address 0x1a21e3: r0x7ffff7da21e3: Unable to resolve constructor
+LowlevelError at address 0x1a2205: r0x7ffff7da2205: Unable to resolve constructor
+LowlevelError at address 0x1a2227: r0x7ffff7da2227: Unable to resolve constructor
+LowlevelError at address 0x1a2249: r0x7ffff7da2249: Unable to resolve constructor
+LowlevelError at address 0x1a225e: r0x7ffff7da225e: Unable to resolve constructor
+LowlevelError at address 0x1a225f: r0x7ffff7da225f: Unable to resolve constructor
+LowlevelError at address 0x1a2275: r0x7ffff7da2275: Unable to resolve constructor
+LowlevelError at address 0x1a2287: r0x7ffff7da2287: Unable to resolve constructor
+LowlevelError at address 0x1a2288: r0x7ffff7da2288: Unable to resolve constructor
+LowlevelError at address 0x1a2295: r0x7ffff7da2295: Unable to resolve constructor
+LowlevelError at address 0x1a229b: r0x7ffff7da229b: Unable to resolve constructor
+LowlevelError at address 0x1a229c: r0x7ffff7da229c: Unable to resolve constructor
+LowlevelError at address 0x1a2366: r0x7ffff7da2366: Unable to resolve constructor
+LowlevelError at address 0x1a23a4: r0x7ffff7da23a4: Unable to resolve constructor
+LowlevelError at address 0x1a23d1: r0x7ffff7da23d1: Unable to resolve constructor
+LowlevelError at address 0x1a23f3: r0x7ffff7da23f3: Unable to resolve constructor
+LowlevelError at address 0x1a2415: r0x7ffff7da2415: Unable to resolve constructor
+LowlevelError at address 0x1a2437: r0x7ffff7da2437: Unable to resolve constructor
+LowlevelError at address 0x1a244c: r0x7ffff7da244c: Unable to resolve constructor
+LowlevelError at address 0x1a244d: r0x7ffff7da244d: Unable to resolve constructor
+LowlevelError at address 0x1a2463: r0x7ffff7da2463: Unable to resolve constructor
+LowlevelError at address 0x1a2475: r0x7ffff7da2475: Unable to resolve constructor
+LowlevelError at address 0x1a2476: r0x7ffff7da2476: Unable to resolve constructor
+LowlevelError at address 0x1a2483: r0x7ffff7da2483: Unable to resolve constructor
+LowlevelError at address 0x1a2489: r0x7ffff7da2489: Unable to resolve constructor
+LowlevelError at address 0x1a248a: r0x7ffff7da248a: Unable to resolve constructor
+LowlevelError at address 0x1a29d8: r0x7ffff7da29d8: Unable to resolve constructor
+LowlevelError at address 0x1a29d9: r0x7ffff7da29d9: Unable to resolve constructor
+LowlevelError at address 0x1a2ad8: r0x7ffff7da2ad8: Unable to resolve constructor
+LowlevelError at address 0x1a2ad9: r0x7ffff7da2ad9: Unable to resolve constructor
+LowlevelError at address 0x1a3a05: r0x7ffff7da3a05: Unable to resolve constructor
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7c00000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+[PCODE GENERATOR] Low pcode generation completed.
+P-Code generation completed successfully for /usr/lib/x86_64-linux-gnu/libc.so.6
+Appended P-code from '~/Documents/zorya/external/pcode-generator/results/libc.so.6_low_pcode.txt' into '~/Documents/zorya/external/pcode-generator/results/myprog-zorya_low_pcode.txt'
+P-Code generation started for: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+Validated ELF file exists: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running `target/debug/pcode_generator /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 --low-pcode --base-addr 0x7ffff7fc5000`
+
+[PCODE GENERATOR] Generating low pcode...
+[PCODE GENERATOR] Output file will be created at: "~/Documents/zorya/external/pcode-generator/results/ld-linux-x86-64.so.2_low_pcode.txt"
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7fc5000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+[PCODE GENERATOR] Low pcode generation completed.
+P-Code generation completed successfully for /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+Appended P-code from '~/Documents/zorya/external/pcode-generator/results/ld-linux-x86-64.so.2_low_pcode.txt' into '~/Documents/zorya/external/pcode-generator/results/myprog-zorya_low_pcode.txt'
+Initializing jump tables...
+
+[ANALYSIS] Selected analyses: data-race
+[ANALYSIS] The panic prepass and the AST panic exploration are disabled (add --analysis panic to enable them)
+[GO] Built with go1.26.5
+[SCHEDULER] Runtime thread filter set with 25 function ranges
+Building the P-Code for the VDSO section (this may take a moment)...
+Merged 1070 VDSO instruction blocks into execution map
+
+Skipping the panic cross-reference prepass.
+**************************************************************************
+Initializing symbolic variables for the program arguments (os.Args)...
+**************************************************************************
+THE CONCOLIC EXECUTION OF THE BINARY HAS STARTED!
+Find the logs in results/execution_log.txt and results/execution_trace.txt
+**************************************************************************
+[SUMMARY] Function summary table loaded (127 entries)
+[PLUGINS] 1 plugin(s) active (--plugin "volos")
+[SCHED] Goroutine model: round_robin schedule, at most 512 switches, 3 loop iterations and 2000000 instructions per goroutine, 2 goroutines per go statement
+Address: 859980, Symbol: main.main
+Address: 7c2e60, Symbol: net/http/httptest.NewServer -> handler=0xa42820 (reg=RAX @0x0), handler=0x700000002000 (reg=RBX @0x18)
+Address: 7c2ee0, Symbol: net/http/httptest.NewUnstartedServer -> handler=0xa42820 (reg=RAX @0x0), handler=0x700000002000 (reg=RBX @0x18)
+Address: 7c26e0, Symbol: net/http/httptest.newLocalListener
+Address: 5d90e0, Symbol: net.Listen
+Address: 53bd40, Symbol: context.Background
+Address: 5d84e0, Symbol: net.(*ListenConfig).Listen
+Address: 5d2ce0, Symbol: net.(*Resolver).resolveAddrList
+Address: 5d1f20, Symbol: net.parseNetwork
+Address: 405380, Symbol: internal/bytealg.LastIndexByteString -> s=0xa07050 (reg=RAX @0x0), s=0x3 (reg=RBX @0x18), c=0x3a (reg=RCX @0x8)
+Address: 5f0d60, Symbol: net.(*Resolver).internetAddrList
+Address: 5efce0, Symbol: net.SplitHostPort
+Address: 405380, Symbol: internal/bytealg.LastIndexByteString -> s=0xa09939 (reg=RAX @0x0), s=0xb (reg=RBX @0x18), c=0x3a (reg=RCX @0x8)
+Address: 60d7a0, Symbol: net.SplitHostPort.func1
+Address: 5d90e0, Symbol: net.Listen
+Address: 53bd40, Symbol: context.Background
+Address: 5d84e0, Symbol: net.(*ListenConfig).Listen
+Address: 5d2ce0, Symbol: net.(*Resolver).resolveAddrList
+Address: 5d1f20, Symbol: net.parseNetwork
+Address: 405380, Symbol: internal/bytealg.LastIndexByteString -> s=0xa07387 (reg=RAX @0x0), s=0x4 (reg=RBX @0x18), c=0x3a (reg=RCX @0x8)
+Address: 5f0d60, Symbol: net.(*Resolver).internetAddrList
+Address: 5efce0, Symbol: net.SplitHostPort
+Address: 405380, Symbol: internal/bytealg.LastIndexByteString -> s=0xa08065 (reg=RAX @0x0), s=0x7 (reg=RBX @0x18), c=0x3a (reg=RCX @0x8)
+Address: 498020, Symbol: runtime.panicBounds
+Address: 498020, Symbol: runtime.panicBounds
+Address: 498020, Symbol: runtime.panicBounds
+Address: 498020, Symbol: runtime.panicBounds
+Address: 496180, Symbol: runtime.morestack_noctxt.abi0
+Address: 4960e0, Symbol: runtime.morestack.abi0
+Address: 49a3c0, Symbol: runtime.newstack.abi0
+Address: 475440, Symbol: runtime.newstack
+Address: 46d080, Symbol: runtime.guintptr.ptr -> gp=0x3b16027c1e0 (reg=RAX @0x0)
+Address: 46d080, Symbol: runtime.guintptr.ptr -> gp=0x3b16027c1e0 (reg=RAX @0x0)
+Address: 4793a0, Symbol: runtime.funcInfo.valid -> f=0x0 (reg=RAX @0x0), f=0x0 (reg=RBX @0x18)
+Address: 45d240, Symbol: runtime.casgstatus -> gp=0x3b16027c1e0 (reg=RAX @0x0), oldval=0x2 (reg=RBX @0x18), newval=0x8 (reg=RCX @0x8)
+Address: 427100, Symbol: runtime.lockWithRankMayAcquire -> l=0x0 (reg=RAX @0x0), rank=0x31 (reg=RBX @0x18)
+Address: 404e00, Symbol: internal/runtime/atomic.(*Uint32).CompareAndSwap -> u=0x3b16027c270 (reg=RAX @0x0), old=0x2 (reg=RBX @0x18), new=0x8 (reg=RCX @0x8)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 475080, Symbol: runtime.copystack -> gp=0x3b16027c1e0 (reg=RAX @0x0), newsize=0x4000 (reg=RBX @0x18)
+Address: 46d120, Symbol: runtime.puintptr.ptr -> pp=0x3b1602e6008 (reg=RAX @0x0)
+Address: 43f3e0, Symbol: runtime.(*gcControllerState).addScannableStack -> c=0xd11e60 (reg=RAX @0x0), pp=0x3b1602e6008 (reg=RBX @0x18), amount=0x2000 (reg=RCX @0x8)
+Address: 404f00, Symbol: internal/runtime/atomic.(*Uint64).Add -> u=0xd11ee8 (reg=RAX @0x0), delta=0x3800 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 474d40, Symbol: runtime.adjustsudogs -> gp=0x3b16027c1e0 (reg=RAX @0x0), adjinfo=0x7fffffffc438 (reg=RBX @0x18)
+Address: 474be0, Symbol: runtime.adjustctxt -> gp=0x3b16027c1e0 (reg=RAX @0x0), adjinfo=0x7fffffffc438 (reg=RBX @0x18)
+Address: 4746a0, Symbol: runtime.adjustpointer -> adjinfo=0x7fffffffc438 (reg=RAX @0x0), vpp=0x3b16027c230 (reg=RBX @0x18)
+Address: 4746a0, Symbol: runtime.adjustpointer -> adjinfo=0x7fffffffc438 (reg=RAX @0x0), vpp=0x3b16027c240 (reg=RBX @0x18)
+Address: 474c40, Symbol: runtime.adjustdefers -> gp=0x3b16027c1e0 (reg=RAX @0x0), adjinfo=0x7fffffffc438 (reg=RBX @0x18)
+Address: 4746a0, Symbol: runtime.adjustpointer -> adjinfo=0x7fffffffc438 (reg=RAX @0x0), vpp=0x3b16027c208 (reg=RBX @0x18)
+Address: 474ce0, Symbol: runtime.adjustpanics -> gp=0x3b16027c1e0 (reg=RAX @0x0), adjinfo=0x7fffffffc438 (reg=RBX @0x18)
+Address: 4746a0, Symbol: runtime.adjustpointer -> adjinfo=0x7fffffffc438 (reg=RAX @0x0), vpp=0x3b16027c200 (reg=RBX @0x18)
+Address: 47e920, Symbol: runtime.(*unwinder).init -> u=0x7fffffffc3d8 (reg=RAX @0x0), gp=0x3b16027c1e0 (reg=RBX @0x18), flags=0x0 (reg=RCX @0x8)
+Address: 47e980, Symbol: runtime.(*unwinder).initAt -> u=0x7fffffffc3d8 (reg=RAX @0x0), pc0=0xffffffffffffffff (reg=RBX @0x18), sp0=0xffffffffffffffff (reg=RCX @0x8), lr0=0xffffffffffffffff (reg=RDI @0x38), gp=0x3b16027c1e0 (reg=RSI @0x30), flags=0x0 (reg=R8 @0x80)
+Address: 4793a0, Symbol: runtime.funcInfo.valid -> f=0x0 (reg=RAX @0x0), f=0x0 (reg=RBX @0x18)
+Address: 45a260, Symbol: runtime.printlock
+Address: 4265e0, Symbol: runtime.lock -> l=0xd10b08 (reg=RAX @0x0)
+Address: 427020, Symbol: runtime.getLockRank -> l=0xd10b08 (reg=RAX @0x0)
+Address: 427040, Symbol: runtime.lockWithRank -> l=0xd10b08 (reg=RAX @0x0), rank=0x0 (reg=RBX @0x18)
+Address: 426620, Symbol: runtime.lock2 -> l=0xd10b08 (reg=RAX @0x0)
+Address: 4264a0, Symbol: runtime.key8 -> p=0xd10b08 (reg=RAX @0x0)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 45a720, Symbol: runtime.printuint -> v=0x1 (reg=RAX @0x0)
+Address: 40d7c0, Symbol: internal/strconv.RuntimeFormatBase10 -> a=0x7fffffffc254 (reg=RAX @0x0), a=0x14 (reg=RBX @0x18), a=0x14 (reg=RCX @0x8), u=0x1 (reg=RDI @0x38)
+Address: 40d820, Symbol: internal/strconv.formatBase10 -> a=0x7fffffffc254 (reg=RAX @0x0), a=0x14 (reg=RBX @0x18), a=0x14 (reg=RCX @0x8), u=0x1 (reg=RDI @0x38)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc267 (reg=RAX @0x0), b=0x1 (reg=RBX @0x18), b=0x1 (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc267 (reg=RAX @0x0), b=0x1 (reg=RBX @0x18), b=0x1 (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 67.197s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc267 (reg=RAX @0x0), b=0x1 (reg=RBX @0x18), b=0x1 (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc267 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc267 (reg=RBX @0x18), n=0x1 (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45ac20, Symbol: runtime.printpointer -> p=0x3b16027c1e0 (reg=RAX @0x0)
+Address: 45a980, Symbol: runtime.printhex -> v=0x3b16027c1e0 (reg=RAX @0x0)
+Address: 45a860, Symbol: runtime.printhexopts -> include0x=0x1 (reg=RAX @0x0), mindigits=0x0 (reg=RBX @0x18), v=0x3b16027c1e0 (reg=RCX @0x8)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc21b (reg=RAX @0x0), b=0xd (reg=RBX @0x18), b=0xd (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc21b (reg=RAX @0x0), b=0xd (reg=RBX @0x18), b=0xd (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 71.107s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc21b (reg=RAX @0x0), b=0xd (reg=RBX @0x18), b=0xd (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc21b (reg=RAX @0x0), n=0xd (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc21b (reg=RBX @0x18), n=0xd (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45a980, Symbol: runtime.printhex -> v=0x5f0a95 (reg=RAX @0x0)
+Address: 45a860, Symbol: runtime.printhexopts -> include0x=0x1 (reg=RAX @0x0), mindigits=0x0 (reg=RBX @0x18), v=0x5f0a95 (reg=RCX @0x8)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc238 (reg=RAX @0x0), b=0x8 (reg=RBX @0x18), b=0x8 (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc238 (reg=RAX @0x0), b=0x8 (reg=RBX @0x18), b=0x8 (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 74.794s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc238 (reg=RAX @0x0), b=0x8 (reg=RBX @0x18), b=0x8 (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc238 (reg=RAX @0x0), n=0x8 (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc238 (reg=RBX @0x18), n=0x8 (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 426a40, Symbol: runtime.unlock -> l=0xd10b08 (reg=RAX @0x0)
+Address: 4270a0, Symbol: runtime.unlockWithRank -> l=0xd10b08 (reg=RAX @0x0)
+Address: 426a80, Symbol: runtime.unlock2 -> l=0xd10b08 (reg=RAX @0x0)
+Address: 426c00, Symbol: runtime.mutexSampleContention
+Address: 4264a0, Symbol: runtime.key8 -> p=0xd10b08 (reg=RAX @0x0)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 450040, Symbol: runtime.(*mLockProfile).store -> prof=0xcf0be8 (reg=RAX @0x0)
+Address: 482460, Symbol: runtime.tracebackHexdump -> stk=0x700000005000 (reg=RAX @0x0), stk=0x0 (reg=RBX @0x18), frame=0x7fffffffc298 (reg=RCX @0x8), bad=0x0 (reg=RDI @0x38)
+Address: 45a260, Symbol: runtime.printlock
+Address: 4265e0, Symbol: runtime.lock -> l=0xd10b08 (reg=RAX @0x0)
+Address: 427020, Symbol: runtime.getLockRank -> l=0xd10b08 (reg=RAX @0x0)
+Address: 427040, Symbol: runtime.lockWithRank -> l=0xd10b08 (reg=RAX @0x0), rank=0x0 (reg=RBX @0x18)
+Address: 426620, Symbol: runtime.lock2 -> l=0xd10b08 (reg=RAX @0x0)
+Address: 4264a0, Symbol: runtime.key8 -> p=0xd10b08 (reg=RAX @0x0)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 45a980, Symbol: runtime.printhex -> v=0xffffffffffffef90 (reg=RAX @0x0)
+Address: 45a860, Symbol: runtime.printhexopts -> include0x=0x1 (reg=RAX @0x0), mindigits=0x0 (reg=RBX @0x18), v=0xffffffffffffef90 (reg=RCX @0x8)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc1be (reg=RAX @0x0), b=0x12 (reg=RBX @0x18), b=0x12 (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc1be (reg=RAX @0x0), b=0x12 (reg=RBX @0x18), b=0x12 (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 83.286s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc1be (reg=RAX @0x0), b=0x12 (reg=RBX @0x18), b=0x12 (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc1be (reg=RAX @0x0), n=0x12 (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc1be (reg=RBX @0x18), n=0x12 (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45a980, Symbol: runtime.printhex -> v=0x0 (reg=RAX @0x0)
+Address: 45a860, Symbol: runtime.printhexopts -> include0x=0x1 (reg=RAX @0x0), mindigits=0x0 (reg=RBX @0x18), v=0x0 (reg=RCX @0x8)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc1cd (reg=RAX @0x0), b=0x3 (reg=RBX @0x18), b=0x3 (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc1cd (reg=RAX @0x0), b=0x3 (reg=RBX @0x18), b=0x3 (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 86.899s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc1cd (reg=RAX @0x0), b=0x3 (reg=RBX @0x18), b=0x3 (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc1cd (reg=RAX @0x0), n=0x3 (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc1cd (reg=RBX @0x18), n=0x3 (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45a980, Symbol: runtime.printhex -> v=0x700000005000 (reg=RAX @0x0)
+Address: 45a860, Symbol: runtime.printhexopts -> include0x=0x1 (reg=RAX @0x0), mindigits=0x0 (reg=RBX @0x18), v=0x700000005000 (reg=RCX @0x8)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc1c2 (reg=RAX @0x0), b=0xe (reg=RBX @0x18), b=0xe (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc1c2 (reg=RAX @0x0), b=0xe (reg=RBX @0x18), b=0xe (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 94.240s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc1c2 (reg=RAX @0x0), b=0xe (reg=RBX @0x18), b=0xe (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc1c2 (reg=RAX @0x0), n=0xe (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc1c2 (reg=RBX @0x18), n=0xe (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45a980, Symbol: runtime.printhex -> v=0x0 (reg=RAX @0x0)
+Address: 45a860, Symbol: runtime.printhexopts -> include0x=0x1 (reg=RAX @0x0), mindigits=0x0 (reg=RBX @0x18), v=0x0 (reg=RCX @0x8)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc1cd (reg=RAX @0x0), b=0x3 (reg=RBX @0x18), b=0x3 (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc1cd (reg=RAX @0x0), b=0x3 (reg=RBX @0x18), b=0x3 (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 98.419s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc1cd (reg=RAX @0x0), b=0x3 (reg=RBX @0x18), b=0x3 (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc1cd (reg=RAX @0x0), n=0x3 (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc1cd (reg=RBX @0x18), n=0x3 (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 426a40, Symbol: runtime.unlock -> l=0xd10b08 (reg=RAX @0x0)
+Address: 4270a0, Symbol: runtime.unlockWithRank -> l=0xd10b08 (reg=RAX @0x0)
+Address: 426a80, Symbol: runtime.unlock2 -> l=0xd10b08 (reg=RAX @0x0)
+Address: 426c00, Symbol: runtime.mutexSampleContention
+Address: 4264a0, Symbol: runtime.key8 -> p=0xd10b08 (reg=RAX @0x0)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 450040, Symbol: runtime.(*mLockProfile).store -> prof=0xcf0be8 (reg=RAX @0x0)
+Address: 423540, Symbol: runtime.hexdumpWords -> p=0xffffffffffffee90 (reg=RAX @0x0), len=0x1170 (reg=RBX @0x18), mark=0x7fffffffc250 (reg=RCX @0x8)
+Address: 45a260, Symbol: runtime.printlock
+Address: 4265e0, Symbol: runtime.lock -> l=0xd10b08 (reg=RAX @0x0)
+Address: 427020, Symbol: runtime.getLockRank -> l=0xd10b08 (reg=RAX @0x0)
+Address: 427040, Symbol: runtime.lockWithRank -> l=0xd10b08 (reg=RAX @0x0), rank=0x0 (reg=RBX @0x18)
+Address: 426620, Symbol: runtime.lock2 -> l=0xd10b08 (reg=RAX @0x0)
+Address: 4264a0, Symbol: runtime.key8 -> p=0xd10b08 (reg=RAX @0x0)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 423760, Symbol: runtime.(*hexdumper).write -> h=0x7fffffffc1a8 (reg=RAX @0x0), data=0xffffffffffffee90 (reg=RBX @0x18), data=0x1170 (reg=RCX @0x8), data=0x1170 (reg=RDI @0x38)
+Address: 423980, Symbol: runtime.(*hexdumper).init -> h=0x7fffffffc1a8 (reg=RAX @0x0)
+Address: 423a80, Symbol: runtime.(*hexdumper).flushLine -> h=0x7fffffffc1a8 (reg=RAX @0x0), data=0xffffffffffffee90 (reg=RBX @0x18), data=0x10 (reg=RCX @0x8), data=0x1170 (reg=RDI @0x38)
+Address: 424080, Symbol: runtime.(*hexdumper).flushLine.func1
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0b7 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x27 (reg=RDI @0x38), v=0x0 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0b5 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x29 (reg=RDI @0x38), v=0x1 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0b3 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x2b (reg=RDI @0x38), v=0x2 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0b1 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x2d (reg=RDI @0x38), v=0x3 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0ae (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x30 (reg=RDI @0x38), v=0x4 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0ac (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x32 (reg=RDI @0x38), v=0x5 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0aa (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x34 (reg=RDI @0x38), v=0x6 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0a8 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x36 (reg=RDI @0x38), v=0x7 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0ca (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x14 (reg=RDI @0x38), v=0x8 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0c8 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x16 (reg=RDI @0x38), v=0x9 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0c6 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x18 (reg=RDI @0x38), v=0xa (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0c4 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x1a (reg=RDI @0x38), v=0xb (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0c1 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x1d (reg=RDI @0x38), v=0xc (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0bf (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x1f (reg=RDI @0x38), v=0xd (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0bd (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x21 (reg=RDI @0x38), v=0xe (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0bb (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x23 (reg=RDI @0x38), v=0xf (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0cd (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x11 (reg=RDI @0x38), v=0x0 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0ce (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x10 (reg=RDI @0x38), v=0x1 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0cf (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0xf (reg=RDI @0x38), v=0x2 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d0 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0xe (reg=RDI @0x38), v=0x3 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d1 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0xd (reg=RDI @0x38), v=0x4 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d2 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0xc (reg=RDI @0x38), v=0x5 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d3 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0xb (reg=RDI @0x38), v=0x6 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d4 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0xa (reg=RDI @0x38), v=0x7 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d5 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x9 (reg=RDI @0x38), v=0x8 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d6 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x8 (reg=RDI @0x38), v=0x9 (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d7 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x7 (reg=RDI @0x38), v=0xa (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d8 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x6 (reg=RDI @0x38), v=0xb (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0d9 (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x5 (reg=RDI @0x38), v=0xc (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0da (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x4 (reg=RDI @0x38), v=0xd (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0db (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x3 (reg=RDI @0x38), v=0xe (reg=RSI @0x30)
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc0dc (reg=RBX @0x18), buf=0x1 (reg=RCX @0x8), buf=0x2 (reg=RDI @0x38), v=0xf (reg=RSI @0x30)
+Address: 45a320, Symbol: runtime.gwrite -> b=0x7fffffffc095 (reg=RAX @0x0), b=0x49 (reg=RBX @0x18), b=0x49 (reg=RCX @0x8)
+Address: 45a100, Symbol: runtime.recordForPanic -> b=0x7fffffffc095 (reg=RAX @0x0), b=0x49 (reg=RBX @0x18), b=0x49 (reg=RCX @0x8)
+
+========================================================================
+BUG / VULNERABILITY: Go runtime.recordForPanic (may not be a real panic)
+  Address: 0x45a100
+  Elapsed: 176.496s
+  Detection method: Exploring the not taken path and Reaching a Panic/Abort/Fatal call site
+  Encountered runtime.recordForPanic — this may be benign.
+========================================================================
+
+Address: 45a260, Symbol: runtime.printlock
+Address: 404dc0, Symbol: internal/runtime/atomic.(*Uint32).Load -> u=0xd10990 (reg=RAX @0x0)
+Address: 45a2c0, Symbol: runtime.printunlock
+Address: 48b8c0, Symbol: runtime.writeErr -> b=0x7fffffffc095 (reg=RAX @0x0), b=0x49 (reg=RBX @0x18), b=0x49 (reg=RCX @0x8)
+Address: 46bee0, Symbol: runtime.writeErrData -> data=0x7fffffffc095 (reg=RAX @0x0), n=0x49 (reg=RBX @0x18)
+Address: 4948c0, Symbol: runtime.write -> fd=0x2 (reg=RAX @0x0), p=0x7fffffffc095 (reg=RBX @0x18), n=0x49 (reg=RCX @0x8)
+Address: 499120, Symbol: runtime.write1.abi0
+----> Calling the CALLOTHER instruction with number 5 being SYSCALL
+----> Calling the syscall with number 1
+Address: 424080, Symbol: runtime.(*hexdumper).flushLine.func1
+Address: 4240a0, Symbol: runtime.(*hexdumper).fmtHex -> h=0x7fffffffc1a8 (reg=RAX @0x0), buf=0x7fffffffc095 (reg=RBX @0x18), buf=0x10 (reg=RCX @0x8), buf=0x49 (reg=RDI @0x38), v=0xffffffffffffee90 (reg=RSI @0x30)
+[VOLOS] No data races found (1587 reads, 1609 writes, 0 map operations, 0 lock ops observed; 0 conflicting pair(s): 0 ordered by happens-before, 0 lock-protected, 0 inside the Go runtime)
+
+[RACE] status: no_concurrency (no goroutine was created on the explored path and no negated branch leads to one)
+[RACE] toolchain: go1.26.5
+[RACE] seed: ["0","100"]
+[RACE] schedule: g1
+[RACE] summary written to results/race_summary.json
+
+[ANALYSIS] data-race: nothing found
+[ANALYSIS] seed: ["0","100"]
+[ANALYSIS] summary written to results/analysis_summary.json

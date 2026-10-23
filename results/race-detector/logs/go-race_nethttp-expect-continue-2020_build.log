@@ -1,0 +1,2 @@
+$ cd ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/nethttp-expect-continue-2020/harness
+$ go build -race -o ~/logic_bombs_go/evaluation/2026-10-20/bin/nethttp-expect-continue-2020-race .

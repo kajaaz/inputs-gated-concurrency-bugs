@@ -1,0 +1,17 @@
+case	trigger	gomaxprocs	runs	raced
+gorest-2fa-secret-2026	1 2	default	20	20
+gorest-2fa-secret-2026	1 2	1	20	20
+olivetin-oauth-state-2026	1 2	default	20	20
+olivetin-oauth-state-2026	1 2	1	20	20
+http2-hpack-tablesize-2026	1	default	20	20
+http2-hpack-tablesize-2026	1	1	20	20
+resty-pool-retry-2023	1 503	default	20	19
+resty-pool-retry-2023	1 503	1	20	20
+mailpit-proxy-assets-2026	1 1	default	20	20
+mailpit-proxy-assets-2026	1 1	1	20	20
+free5gc-bsf-put-2026	0	default	20	20
+free5gc-bsf-put-2026	0	1	20	20
+gotenberg-downloadfrom-2026	1 2	default	20	20
+gotenberg-downloadfrom-2026	1 2	1	20	20
+hoverfly-diff-mode-2026	1 1	default	20	20
+hoverfly-diff-mode-2026	1 1	1	20	20

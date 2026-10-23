@@ -1,0 +1,2 @@
+# command: clang++ -std=c++17 -fsanitize=thread -g -O1 -I~/logic_bombs_go/evaluation/2026-10-20/work/rocksdb-v9.2.1/include ~/logic_bombs_go/evaluation/2026-10-23-symqemu/harness/rocksdb-inplace-update-stdin.cc ~/logic_bombs_go/evaluation/2026-10-20/work/rocksdb-v9.2.1/build-tsan/librocksdb.a -lpthread -ldl -o ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/rocksdb-inplace-update-stdin-tsan
+# exit: 0

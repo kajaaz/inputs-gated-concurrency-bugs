@@ -1,0 +1,26 @@
+==================
+WARNING: DATA RACE
+Write at 0x00c000128c60 by goroutine 7:
+  runtime.mapassign_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:263 +0x0
+  main.main.func1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:61 +0x1fc
+  main.main.gowrap1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:64 +0x38
+
+Previous write at 0x00c000128c60 by goroutine 8:
+  runtime.mapassign_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:263 +0x0
+  main.main.func1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:61 +0x1fc
+  main.main.gowrap1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:64 +0x38
+
+Goroutine 7 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:55 +0x3e6
+
+Goroutine 8 (finished) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/main.go:55 +0x3e6
+==================

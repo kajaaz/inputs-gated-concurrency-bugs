@@ -1,0 +1,7 @@
+case	tool	run	result	exit	log
+xz-mt-decoder-2026	TSan	seed-1	clean	0	logs/tsan_xz-mt-decoder-2026_seed-1.log
+xz-mt-decoder-2026	TSan	trigger	race	66	logs/tsan_xz-mt-decoder-2026_trigger.log
+xz-mt-decoder-2026	TSan	escape-one-thread	clean	0	logs/tsan_xz-mt-decoder-2026_escape-one-thread.log
+rocksdb-inplace-update-2024	TSan	seed-1	race	66	logs/tsan_rocksdb-inplace-update-2024_seed-1.log
+rocksdb-inplace-update-2024	TSan	escape-growing	clean	0	logs/tsan_rocksdb-inplace-update-2024_escape-growing.log
+rocksdb-inplace-update-2024	TSan	escape-disabled	clean	0	logs/tsan_rocksdb-inplace-update-2024_escape-disabled.log

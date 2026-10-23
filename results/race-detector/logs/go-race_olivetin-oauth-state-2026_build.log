@@ -1,0 +1,2 @@
+$ cd ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness
+$ go build -race -o ~/logic_bombs_go/evaluation/2026-10-20/bin/olivetin-oauth-state-2026-race .

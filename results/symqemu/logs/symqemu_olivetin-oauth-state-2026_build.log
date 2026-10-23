@@ -1,0 +1,2 @@
+# command: cd ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026//harness && GOTOOLCHAIN=local ~/Programs/go1.26.5/go/bin/go build -tags symstdin -overlay ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/overlay-olivetin-oauth-state-2026.json -gcflags="all=-N -l" -o ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026//harness/myprog-symqemu .
+# exit: 0

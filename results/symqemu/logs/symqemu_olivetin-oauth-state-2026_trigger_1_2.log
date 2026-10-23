@@ -1,0 +1,57 @@
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=2 time=0.4s new_inputs=9
+#   main.login(0x1, 0x0)
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:28 +0x274
+#   main.main.func1(0x1)
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:74 +0xca
+#   created by main.main in goroutine 1
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:69 +0x432
+#   new: (b'2',) (b'1\xdf2',) (b'1',) (b'1', b'`') (b'\xca', b'2') (b'1', b'<') (b'\xce', b'2') (b'1', b'0') (b'1', b'3')
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=0.3s new_inputs=4
+#   This is SymCC running with the QSYM backend
+#   Usage: ./olivetin-oauth-state <oauth> <requests>
+#   new: (b'\xdf', b'2') (b'\xdf2',) () (b'J',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00002 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 2 depth 1: exit=0 time=0.3s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./olivetin-oauth-state <oauth> <requests>
+#   new: (b'1\xdf',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00003 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 3 depth 1: exit=0 time=0.3s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./olivetin-oauth-state <oauth> <requests>
+#   new: (b'\xa0',) (b'1', b'\xdf')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00004 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 4 depth 1: exit=0 time=0.4s new_inputs=4
+#   This is SymCC running with the QSYM backend
+#   Usage: ./olivetin-oauth-state <oauth> <requests>
+#   new: (b'`',) (b'\xa0', b'`') (b'1\xdf`',) (b'\xce', b'`')
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00005 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 5 depth 1: exit=0 time=0.3s new_inputs=6
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xca\xdf2',) (b'\xca',) (b'\xca', b':') (b'\xca', b'0') (b'\xca', b'1') (b'\xca', b'3')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00006 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 6 depth 1: exit=0 time=0.3s new_inputs=4
+#   This is SymCC running with the QSYM backend
+#   Usage: ./olivetin-oauth-state <oauth> <requests>
+#   new: (b'<',) (b'1\xdf<',) (b'1', b'!') (b'!', b'<')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/olivetin-oauth-state-2026_trigger_1_2/e00007 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/myprog-symqemu < input
+# exec 7 depth 1: exit=0 time=0.3s new_inputs=5
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xce\xdf2',) (b'\xce',) (b'\xce', b':') (b'\xce', b'0') (b'\xce', b'3')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/olivetin-oauth-state-2026-race-stdin < input  # replay exit=0
+# exploration stopped (racy-input-found): 8 executions, 3s in SymQEMU, 3s wall, 28 inputs unexplored
+# result: {"case": "olivetin-oauth-state-2026", "row": "trigger", "seed": "1 2", "stop": "racy-input-found", "max_depth": 1, "executions": 8, "crashes": 1, "timeouts": 0, "symqemu_s": 3, "wall_s": 3, "unique_inputs": 35, "seed_racy": true, "racy_generated": 1, "racy_examples": ["1 3"], "exit_codes": ["0", "2"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_olivetin-oauth-state-2026_trigger_1_2.log"}

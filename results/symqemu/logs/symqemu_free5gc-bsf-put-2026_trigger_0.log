@@ -1,0 +1,80 @@
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=2 time=4.5s new_inputs=3
+#   github.com/gin-gonic/gin.(*Engine).ServeHTTP(0x2069c4a904e0, {0x128d978, 0x2069c4bda880}, 0x2069c4bfd680)
+#   	/tmp/cursor-sandbox-cache/a068e8745d940189a4f51fe304456fad/go-mod/github.com/gin-gonic/gin@v1.10.0/gin.go:589 +0xbc
+#   main.main.func1(0x7)
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/bsf-v1.0.1/cmd/bombharness/main.go:67 +0x1fc
+#   created by main.main in goroutine 1
+#   	~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/bsf-v1.0.1/cmd/bombharness/main.go:62 +0x7c9
+#   new: () (b'!',) (b'1',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=3.8s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'\xdf',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00002 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 2 depth 1: exit=0 time=3.7s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'\x80',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00003 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 3 depth 1: exit=0 time=4.3s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   OK: first status 200, 32 subscriptions
+#   new: (b'@',) (b'\xce',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00004 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 4 depth 2: exit=0 time=3.8s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'Q',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00005 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 5 depth 2: exit=0 time=3.8s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'\xa0',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00006 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 6 depth 2: exit=0 time=3.6s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00007 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 7 depth 2: exit=0 time=3.4s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00008 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 8 depth 3: exit=0 time=4.1s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'3',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00009 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 9 depth 3: exit=0 time=3.7s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'\x8c',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00010 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 10 depth 4: exit=0 time=3.4s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+#   new: (b'(',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/free5gc-bsf-put-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00011 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 11 depth 4: exit=0 time=3.5s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/free5gc-bsf-put-2026_trigger_0/e00012 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/free5gc-bsf-put-2026/harness/myprog-symqemu < input
+# exec 12 depth 5: exit=0 time=3.6s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./free5gc-bsf-put <known>
+# exploration stopped (frontier-empty): 13 executions, 49s in SymQEMU, 49s wall, 0 inputs unexplored
+# result: {"case": "free5gc-bsf-put-2026", "row": "trigger", "seed": "0", "stop": "frontier-empty", "max_depth": 5, "executions": 13, "crashes": 1, "timeouts": 0, "symqemu_s": 49, "wall_s": 49, "unique_inputs": 12, "seed_racy": true, "racy_generated": 0, "racy_examples": [], "exit_codes": ["0", "2"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_free5gc-bsf-put-2026_trigger_0.log"}

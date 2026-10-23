@@ -1,0 +1,2 @@
+$ GORACE=halt_on_error=1 exitcode=66 ~/logic_bombs_go/evaluation/2026-10-20/bin/mailpit-proxy-assets-2026-race 1 0
+OK

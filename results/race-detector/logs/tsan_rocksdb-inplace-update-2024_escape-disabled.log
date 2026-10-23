@@ -1,0 +1,2 @@
+$ TSAN_OPTIONS=halt_on_error=1 exitcode=66 ~/logic_bombs_go/evaluation/2026-10-20/bin/rocksdb-inplace-update-tsan 0 1
+OK

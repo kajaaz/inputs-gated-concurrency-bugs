@@ -1,0 +1,136 @@
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=0 time=0.4s new_inputs=6
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'0',) (b'\xa0', b'0') (b'0\xdf0',) (b'0', b'\x90') (b'1', b'0') (b'0', b'1')
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=0.3s new_inputs=4
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'\xdf', b'0') (b'\xdf0',) () (b'\x80',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00002 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 2 depth 1: exit=0 time=0.4s new_inputs=3
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xa0\xdf0',) (b'\xa0',) (b'\xa0', b'1')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00003 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 3 depth 1: exit=0 time=0.3s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'P\xdf0',) (b'0\xdf',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00004 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 4 depth 1: exit=0 time=0.4s new_inputs=5
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\x90',) (b'0\xdf\x90',) (b'1', b'\x90') (b'P', b'\x90') (b'0', b'\x8a')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00005 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 5 depth 1: exit=0 time=0.4s new_inputs=6
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'1\xdf0',) (b'1',) (b'P', b'0') (b'1', b'1') (b'\xce', b'0') (b'1', b'J')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00006 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 6 depth 1: exit=0 time=0.3s new_inputs=3
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'0\xdf1',) (b'0', b'\x80') (b'0', b'\xce')
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00007 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 7 depth 2: exit=0 time=0.4s new_inputs=4
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xdf\xdf0',) (b'\xdf',) (b'\xdf', b'1') (b'\xdf', b'Q')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00008 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 8 depth 2: exit=0 time=0.3s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00009 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 9 depth 2: exit=0 time=0.4s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00010 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 10 depth 2: exit=0 time=0.4s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'\xdf', b'\x80') (b'\xdf\x80',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00011 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 11 depth 2: exit=0 time=0.4s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'\xa0\xdf',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00012 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 12 depth 2: exit=0 time=0.3s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'\xa0', b'\xdf')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00013 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 13 depth 2: exit=0 time=0.4s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xa0\xdf1',) (b'\x91', b'1')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00014 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 14 depth 2: exit=0 time=0.4s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'PP0',) (b'P\xdf',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00015 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 15 depth 2: exit=0 time=0.3s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'0\xdf\xdf',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00016 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 16 depth 2: exit=0 time=0.3s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'\xdf', b'\x90') (b'\xdf\x90',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00017 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 17 depth 2: exit=0 time=0.4s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'0@\x90',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00018 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 18 depth 2: exit=0 time=0.4s new_inputs=3
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'1\xdf\x90',) (b'\x82', b'\x90') (b'\xce', b'\x90')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00019 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 19 depth 2: exit=0 time=0.4s new_inputs=5
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'P\xdf\x90',) (b'P',) (b'P', b'1') (b'\x91', b'\x90') (b'P', b'\x91')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00020 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 20 depth 2: exit=0 time=0.4s new_inputs=5
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\x8a',) (b'0\xdf\x8a',) (b'1', b'\x8a') (b'Q', b'\x8a') (b'0', b'"')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/mailpit-proxy-assets-2026_benign_0_0/e00021 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/myprog-symqemu < input
+# exec 21 depth 2: exit=0 time=0.4s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./mailpit-proxy-assets <proxy> <css>
+#   new: (b'1\xdf',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/mailpit-proxy-assets-2026-race-stdin < input  # replay exit=0
+# exploration stopped (racy-input-found): 22 executions, 8s in SymQEMU, 9s wall, 38 inputs unexplored
+# result: {"case": "mailpit-proxy-assets-2026", "row": "benign", "seed": "0 0", "stop": "racy-input-found", "max_depth": 2, "executions": 22, "crashes": 0, "timeouts": 0, "symqemu_s": 8, "wall_s": 9, "unique_inputs": 59, "seed_racy": false, "racy_generated": 1, "racy_examples": ["1 1"], "exit_codes": ["0"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_mailpit-proxy-assets-2026_benign_0_0.log"}

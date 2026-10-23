@@ -1,0 +1,4 @@
+case	command_class	result	exit	log
+go-concurrency-cases	go-elf-representative	not-llvm-bitcode	1	logs/klee_gorest-2fa-secret-2026_elf-input.log
+xz-mt-decoder-2026	harness-bc-clang14	bitcode-load-fail	1	logs/klee_xz-mt-decoder_clang14-bc.log
+rocksdb-inplace-update-2024	cpp-upstream-bitcode	not-run-needs-rocksdb-llvm-bitcode	NA	logic_bombs_go/cpp/real-world/rocksdb-inplace-update-2024/README.md

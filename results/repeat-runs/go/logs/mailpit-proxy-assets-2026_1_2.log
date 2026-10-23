@@ -1,0 +1,22 @@
+==================
+WARNING: DATA RACE
+Read at 0x00c00007e1b8 by goroutine 11:
+  main.rewriteCSS()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:44 +0x10e
+  main.main.func1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:77 +0xdb
+
+Previous write at 0x00c00007e1b8 by goroutine 23:
+  main.cacheAsset()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:37 +0x1c6
+  main.main.func2()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:87 +0xe4
+
+Goroutine 11 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:72 +0x31d
+
+Goroutine 23 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:82 +0x59a
+==================

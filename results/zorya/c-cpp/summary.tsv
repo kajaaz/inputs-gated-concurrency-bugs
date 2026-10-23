@@ -1,0 +1,5 @@
+case	inputs	args	limit_s	exit	seconds	status	log
+xz-mt-decoder-2026	trigger	4 inputs/multi-64k-4KiB.xz	900	1	38	other	logs/xz-mt-decoder-2026_trigger.log
+xz-mt-decoder-2026	benign	1 inputs/multi-64k-4KiB.xz	900	1	37	other	logs/xz-mt-decoder-2026_benign.log
+rocksdb-inplace-update-2024	trigger	1 1	900	0	75	no_concurrency	logs/rocksdb-inplace-update-2024_trigger.log
+rocksdb-inplace-update-2024	benign	0 1	900	143	22	other	logs/rocksdb-inplace-update-2024_benign.log

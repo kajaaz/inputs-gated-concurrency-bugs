@@ -1,0 +1,482 @@
+$ cmake -S ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3 -B ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/build-symcc -DCMAKE_C_COMPILER=~/Programs/symcc/build/symcc ...
+-- The C compiler identification is Clang 14.0.6
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: ~/Programs/symcc/build/symcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for __i386__
+-- Looking for __i386__ - not found
+-- Performing Test TUKLIB_LARGE_FILE_SUPPORT_BY_DEFAULT
+-- Performing Test TUKLIB_LARGE_FILE_SUPPORT_BY_DEFAULT - Success
+-- Performing Test HAVE___BUILTIN_BSWAPXX
+-- Performing Test HAVE___BUILTIN_BSWAPXX - Success
+-- Check if unaligned memory access should be used
+-- Check if unaligned memory access should be used - yes
+-- Performing Test HAVE___BUILTIN_ASSUME_ALIGNED
+-- Performing Test HAVE___BUILTIN_ASSUME_ALIGNED - Success
+-- Looking for clock_gettime
+-- Looking for clock_gettime - found
+-- Looking for CLOCK_MONOTONIC
+-- Looking for CLOCK_MONOTONIC - found
+-- Found Intl: built in to C library  
+-- Found Gettext: /usr/bin/msgmerge (found version "0.21") 
+-- Performing Test HAVE_COMPILER_OPTION_-Wall
+-- Performing Test HAVE_COMPILER_OPTION_-Wall - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wvla
+-- Performing Test HAVE_COMPILER_OPTION_-Wvla - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wformat_2
+-- Performing Test HAVE_COMPILER_OPTION_-Wformat_2 - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Winit-self
+-- Performing Test HAVE_COMPILER_OPTION_-Winit-self - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-include-dirs
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-include-dirs - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-overflow_2
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-overflow_2 - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-overflow_3
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-overflow_3 - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Walloc-zero
+-- Performing Test HAVE_COMPILER_OPTION_-Walloc-zero - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicated-cond
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicated-cond - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-equal
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-equal - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wundef
+-- Performing Test HAVE_COMPILER_OPTION_-Wundef - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wshadow
+-- Performing Test HAVE_COMPILER_OPTION_-Wshadow - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wpointer-arith
+-- Performing Test HAVE_COMPILER_OPTION_-Wpointer-arith - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wbad-function-cast
+-- Performing Test HAVE_COMPILER_OPTION_-Wbad-function-cast - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wwrite-strings
+-- Performing Test HAVE_COMPILER_OPTION_-Wwrite-strings - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wdate-time
+-- Performing Test HAVE_COMPILER_OPTION_-Wdate-time - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wsign-conversion
+-- Performing Test HAVE_COMPILER_OPTION_-Wsign-conversion - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-conversion
+-- Performing Test HAVE_COMPILER_OPTION_-Wfloat-conversion - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wlogical-op
+-- Performing Test HAVE_COMPILER_OPTION_-Wlogical-op - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Waggregate-return
+-- Performing Test HAVE_COMPILER_OPTION_-Waggregate-return - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-prototypes
+-- Performing Test HAVE_COMPILER_OPTION_-Wstrict-prototypes - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wold-style-definition
+-- Performing Test HAVE_COMPILER_OPTION_-Wold-style-definition - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-prototypes
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-prototypes - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-declarations
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-declarations - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wredundant-decls
+-- Performing Test HAVE_COMPILER_OPTION_-Wredundant-decls - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough_5
+-- Performing Test HAVE_COMPILER_OPTION_-Wimplicit-fallthrough_5 - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wc99-compat
+-- Performing Test HAVE_COMPILER_OPTION_-Wc99-compat - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wc11-extensions
+-- Performing Test HAVE_COMPILER_OPTION_-Wc11-extensions - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-compat
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-compat - Failed
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-extensions
+-- Performing Test HAVE_COMPILER_OPTION_-Wc2x-extensions - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Warray-bounds-pointer-arithmetic
+-- Performing Test HAVE_COMPILER_OPTION_-Warray-bounds-pointer-arithmetic - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wassign-enum
+-- Performing Test HAVE_COMPILER_OPTION_-Wassign-enum - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wconditional-uninitialized
+-- Performing Test HAVE_COMPILER_OPTION_-Wconditional-uninitialized - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wdocumentation
+-- Performing Test HAVE_COMPILER_OPTION_-Wdocumentation - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicate-enum
+-- Performing Test HAVE_COMPILER_OPTION_-Wduplicate-enum - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wempty-translation-unit
+-- Performing Test HAVE_COMPILER_OPTION_-Wempty-translation-unit - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra-semi-stmt
+-- Performing Test HAVE_COMPILER_OPTION_-Wextra-semi-stmt - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wflexible-array-extensions
+-- Performing Test HAVE_COMPILER_OPTION_-Wflexible-array-extensions - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-variable-declarations
+-- Performing Test HAVE_COMPILER_OPTION_-Wmissing-variable-declarations - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wnewline-eof
+-- Performing Test HAVE_COMPILER_OPTION_-Wnewline-eof - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-sign-overflow
+-- Performing Test HAVE_COMPILER_OPTION_-Wshift-sign-overflow - Success
+-- Performing Test HAVE_COMPILER_OPTION_-Wstring-conversion
+-- Performing Test HAVE_COMPILER_OPTION_-Wstring-conversion - Success
+-- Performing Test IS_LINUX_WITH_GLIBC
+-- Performing Test IS_LINUX_WITH_GLIBC - Success
+-- Performing Test HAVE_LINKER_FLAG_UNDEFINED_VERSION
+-- Performing Test HAVE_LINKER_FLAG_UNDEFINED_VERSION - Success
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Looking for pthread_condattr_setclock
+-- Looking for pthread_condattr_setclock - found
+-- Checking how to detect the number of available CPU cores
+-- Performing Test TUKLIB_CPUCORES_SCHED_GETAFFINITY
+-- Performing Test TUKLIB_CPUCORES_SCHED_GETAFFINITY - Success
+-- Checking how to detect the amount of physical memory
+-- Performing Test TUKLIB_PHYSMEM_SPECIAL
+-- Performing Test TUKLIB_PHYSMEM_SPECIAL - Failed
+-- Performing Test TUKLIB_PHYSMEM_AIX
+-- Performing Test TUKLIB_PHYSMEM_AIX - Failed
+-- Performing Test TUKLIB_PHYSMEM_SYSCONF
+-- Performing Test TUKLIB_PHYSMEM_SYSCONF - Success
+-- Performing Test HAVE_FUNC_ATTRIBUTE_CONSTRUCTOR
+-- Performing Test HAVE_FUNC_ATTRIBUTE_CONSTRUCTOR - Success
+-- Looking for cpuid.h
+-- Looking for cpuid.h - found
+-- Looking for immintrin.h
+-- Looking for immintrin.h - found
+-- Performing Test HAVE__MM_MOVEMASK_EPI8
+-- Performing Test HAVE__MM_MOVEMASK_EPI8 - Failed
+-- Performing Test HAVE_USABLE_CLMUL
+-- Performing Test HAVE_USABLE_CLMUL - Success
+-- Performing Test HAVE_ARM64_CRC32
+-- Performing Test HAVE_ARM64_CRC32 - Failed
+-- Performing Test HAVE_LOONGARCH_CRC32
+-- Performing Test HAVE_LOONGARCH_CRC32 - Failed
+-- Looking for getopt_long
+-- Looking for getopt_long - found
+-- Looking for program_invocation_name
+-- Looking for program_invocation_name - found
+-- Looking for mbrtowc
+-- Looking for mbrtowc - found
+-- Looking for wcwidth
+-- Looking for wcwidth - found
+-- Looking for vasprintf
+-- Looking for vasprintf - found
+-- Looking for optreset
+-- Looking for optreset - not found
+-- Looking for getrlimit
+-- Looking for getrlimit - found
+-- Looking for posix_fadvise
+-- Looking for posix_fadvise - found
+-- Performing Test HAVE_STRUCT_STAT_ST_ATIM_TV_NSEC
+-- Performing Test HAVE_STRUCT_STAT_ST_ATIM_TV_NSEC - Success
+-- Looking for futimens
+-- Looking for futimens - found
+-- Configuring done (127.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/build-symcc
+$ cmake --build ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/build-symcc -j2 --target xz
+[  0%] Built target libgnu
+[  1%] Building C object CMakeFiles/liblzma.dir/src/common/tuklib_physmem.c.o
+[  1%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/check.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_tuklib_physmem
+[  2%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/block_util.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_check_is_supported
+Symbolizing function lzma_check_size
+Symbolizing function lzma_check_init
+Symbolizing function lzma_check_update
+Symbolizing function lzma_check_finish
+[  4%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/common.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_block_compressed_size
+Symbolizing function lzma_block_unpadded_size
+Symbolizing function lzma_block_total_size
+Symbolizing function vli_ceil4
+[  4%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/easy_preset.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_version_number
+Symbolizing function lzma_version_string
+Symbolizing function lzma_alloc
+Symbolizing function lzma_alloc_zero
+Symbolizing function lzma_free
+Symbolizing function lzma_bufcpy
+Symbolizing function lzma_next_filter_init
+Symbolizing function lzma_next_end
+Symbolizing function lzma_next_filter_update
+Symbolizing function lzma_strm_init
+Symbolizing function lzma_code
+Symbolizing function lzma_end
+Symbolizing function lzma_get_progress
+Symbolizing function lzma_get_check
+Symbolizing function lzma_memusage
+Symbolizing function lzma_memlimit_get
+Symbolizing function lzma_memlimit_set
+Symbolizer module instrumentation
+Symbolizing function lzma_easy_preset
+[  5%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/filter_common.c.o
+[  7%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/hardware_physmem.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_filters_copy
+Symbolizer module instrumentation
+Symbolizing function lzma_physmem
+Symbolizing function lzma_filters_free
+Symbolizing function lzma_validate_chain
+Symbolizing function lzma_raw_coder_init
+Symbolizing function lzma_raw_coder_memusage
+[  7%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/index.c.o
+[  8%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/stream_flags_common.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_index_init
+Symbolizing function index_init_plain
+Symbolizing function index_stream_init
+Symbolizing function index_tree_append
+Symbolizing function lzma_index_end
+Symbolizing function index_tree_end
+Symbolizing function index_stream_end
+Symbolizing function lzma_index_prealloc
+Symbolizing function lzma_index_memusage
+Symbolizing function lzma_index_memused
+Symbolizing function lzma_index_block_count
+Symbolizing function lzma_index_stream_count
+Symbolizing function lzma_index_size
+Symbolizing function index_size
+Symbolizing function lzma_index_total_size
+Symbolizing function lzma_index_stream_size
+Symbolizing function lzma_index_file_size
+Symbolizing function index_file_size
+Symbolizing function lzma_index_uncompressed_size
+Symbolizing function lzma_index_checks
+Symbolizing function lzma_index_padding_size
+Symbolizing function index_size_unpadded
+Symbolizing function lzma_index_stream_flags
+Symbolizing function lzma_index_stream_padding
+Symbolizing function lzma_index_append
+Symbolizing function vli_ceil4
+Symbolizing function lzma_index_cat
+Symbolizing function index_cat_helper
+Symbolizing function lzma_index_dup
+Symbolizing function index_dup_stream
+Symbolizing function index_tree_next
+Symbolizing function lzma_index_iter_init
+Symbolizing function lzma_index_iter_rewind
+Symbolizing function lzma_index_iter_next
+Symbolizing function iter_set_info
+Symbolizer module instrumentation
+Symbolizing function lzma_stream_flags_compare
+Symbolizing function lzma_index_iter_locate
+Symbolizing function is_backward_size_valid
+Symbolizing function index_tree_locate
+Symbolizing function index_tree_init
+Symbolizing function bsr32
+Symbolizing function ctz32
+Symbolizing function index_tree_node_end
+[ 10%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/string_conversion.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_str_to_filters
+Symbolizing function str_to_filters
+Symbolizing function lzma_str_from_filters
+Symbolizing function str_init
+Symbolizing function str_free
+Symbolizing function str_append_str
+Symbolizing function strfy_filter
+Symbolizing function str_finish
+Symbolizing function lzma_str_list_filters
+Symbolizing function str_append_u32
+Symbolizing function parse_lzma12_preset
+Symbolizing function parse_filter
+Symbolizing function parse_lzma12
+Symbolizing function parse_bcj
+Symbolizing function parse_delta
+Symbolizing function parse_options
+Symbolizing function set_lzma12_preset
+Symbolizing function str_is_full
+[ 10%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/vli_size.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_vli_size
+[ 11%] Building C object CMakeFiles/liblzma.dir/src/common/tuklib_cpucores.c.o
+[ 13%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/hardware_cputhreads.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_tuklib_cpucores
+[ 13%] Building C object CMakeFiles/liblzma.dir/src/liblzma/common/outqueue.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_cputhreads
+[ 14%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/crc32_fast.c.o
+Symbolizer module instrumentation
+Symbolizing function lzma_outq_memusage
+Symbolizing function lzma_outq_outbuf_memusage
+Symbolizing function lzma_outq_clear_cache
+Symbolizing function free_one_cached_buffer
+Symbolizing function lzma_outq_clear_cache2
+Symbolizing function lzma_outq_init
+Symbolizing function move_head_to_cache
+Symbolizing function lzma_outq_end
+Symbolizing function lzma_outq_prealloc_buf
+Symbolizing function lzma_outq_get_buf
+Symbolizing function lzma_outq_is_readable
+Symbolizing function lzma_outq_read
+Symbolizing function lzma_outq_enable_partial_output
+[ 15%] Building C object CMakeFiles/liblzma.dir/src/liblzma/check/crc64_fast.c.o
+Symbolizer module instrumentation
+Symbolizing function crc32_set_func
+Symbolizing function crc32_resolve
+Symbolizing function lzma_crc32
+Symbolizing function is_arch_extension_supported
+Symbolizing function crc32_arch_optimized
+Warning: unknown instruction   %74 = insertelement <2 x i64> undef, i64 %73, i32 0, !dbg !94; the result will be concretized
+Warning: unknown instruction   %78 = insertelement <2 x i64> %74, i64 %77, i32 1, !dbg !94; the result will be concretized
+Warning: unknown instruction   %89 = insertelement <2 x i64> undef, i64 %88, i32 0, !dbg !96; the result will be concretized
+Warning: unknown instruction   %93 = insertelement <2 x i64> %89, i64 %92, i32 1, !dbg !96; the result will be concretized
+Warning: unknown instruction   %104 = insertelement <2 x i64> undef, i64 %103, i32 0, !dbg !98; the result will be concretized
+Warning: unknown instruction   %108 = insertelement <2 x i64> %104, i64 %107, i32 1, !dbg !98; the result will be concretized
+Warning: unknown instruction   %241 = insertelement <2 x i64> undef, i64 %240, i32 0, !dbg !147; the result will be concretized
+Warning: unknown instruction   %242 = insertelement <2 x i64> %241, i64 0, i32 1, !dbg !147; the result will be concretized
+Warning: unknown instruction   %282 = insertelement <2 x i64> undef, i64 %281, i32 0, !dbg !159; the result will be concretized
+Warning: unknown instruction   %283 = insertelement <2 x i64> %282, i64 0, i32 1, !dbg !159; the result will be concretized
+Warning: unknown instruction   %332 = insertelement <2 x i64> %328, i64 %331, i64 1, !dbg !179; the result will be concretized
+clang: ~/Programs/symcc/compiler/Symbolizer.cpp:679: void Symbolizer::visitBitCastInst(llvm::BitCastInst&): Assertion `I.getSrcTy()->isPointerTy() && I.getDestTy()->isPointerTy() && "Unhandled non-pointer bit cast"' failed.
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /usr/lib/llvm-14/bin/clang -fpass-plugin=~/Programs/symcc/build/libsymcc.so -DHAVE_CHECK_CRC32 -DHAVE_CHECK_CRC64 -DHAVE_CHECK_SHA256 -DHAVE_CLOCK_GETTIME -DHAVE_CLOCK_MONOTONIC -DHAVE_CPUID_H -DHAVE_DECODERS -DHAVE_DECODER_ARM -DHAVE_DECODER_ARM64 -DHAVE_DECODER_ARMTHUMB -DHAVE_DECODER_DELTA -DHAVE_DECODER_IA64 -DHAVE_DECODER_LZMA1 -DHAVE_DECODER_LZMA2 -DHAVE_DECODER_POWERPC -DHAVE_DECODER_RISCV -DHAVE_DECODER_SPARC -DHAVE_DECODER_X86 -DHAVE_ENCODERS -DHAVE_ENCODER_ARM -DHAVE_ENCODER_ARM64 -DHAVE_ENCODER_ARMTHUMB -DHAVE_ENCODER_DELTA -DHAVE_ENCODER_IA64 -DHAVE_ENCODER_LZMA1 -DHAVE_ENCODER_LZMA2 -DHAVE_ENCODER_POWERPC -DHAVE_ENCODER_RISCV -DHAVE_ENCODER_SPARC -DHAVE_ENCODER_X86 -DHAVE_FUNC_ATTRIBUTE_CONSTRUCTOR -DHAVE_IMMINTRIN_H -DHAVE_INTTYPES_H -DHAVE_LZIP_DECODER -DHAVE_MF_BT2 -DHAVE_MF_BT3 -DHAVE_MF_BT4 -DHAVE_MF_HC3 -DHAVE_MF_HC4 -DHAVE_PTHREAD_CONDATTR_SETCLOCK -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_USABLE_CLMUL -DHAVE_VISIBILITY=0 -DHAVE__BOOL -DHAVE___BUILTIN_ASSUME_ALIGNED -DHAVE___BUILTIN_BSWAPXX -DMYTHREAD_POSIX -DPACKAGE_BUGREPORT=\"xz@tukaani.org\" "-DPACKAGE_NAME=\"XZ Utils\"" -DPACKAGE_URL=\"https://tukaani.org/xz/\" -DTUKLIB_CPUCORES_SCHED_GETAFFINITY -DTUKLIB_FAST_UNALIGNED_ACCESS -DTUKLIB_PHYSMEM_SYSCONF -DTUKLIB_SYMBOL_PREFIX=lzma_ -D_ALL_SOURCE -D_DARWIN_C_SOURCE -D_GNU_SOURCE -D_NETBSD_SOURCE -D_OPENBSD_SOURCE -D_POSIX_PTHREAD_SEMANTICS -D_TANDEM_SOURCE -D__EXTENSIONS__ -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/api -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/check -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/lz -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/rangecoder -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/lzma -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/delta -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/simple -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/common -g -std=gnu11 -Wall -Wextra -Wvla -Wformat=2 -Winit-self -Wmissing-include-dirs -Wstrict-overflow=3 -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Wdate-time -Wsign-conversion -Wfloat-conversion -Waggregate-return -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wimplicit-fallthrough -Wc99-compat -Wc11-extensions -Wc2x-extensions -Warray-bounds-pointer-arithmetic -Wassign-enum -Wconditional-uninitialized -Wdocumentation -Wduplicate-enum -Wempty-translation-unit -Wextra-semi-stmt -Wflexible-array-extensions -Wmissing-variable-declarations -Wnewline-eof -Wshift-sign-overflow -Wstring-conversion -MD -MT CMakeFiles/liblzma.dir/src/liblzma/check/crc32_fast.c.o -MF CMakeFiles/liblzma.dir/src/liblzma/check/crc32_fast.c.o.d -o CMakeFiles/liblzma.dir/src/liblzma/check/crc32_fast.c.o -c ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/check/crc32_fast.c -L~/Programs/symcc/build/SymCCRuntime-prefix/src/SymCCRuntime-build -lsymcc-rt -Wl,-rpath,~/Programs/symcc/build/SymCCRuntime-prefix/src/SymCCRuntime-build -Qunused-arguments
+1.	<eof> parser at end of file
+2.	Optimizer
+Symbolizer module instrumentation
+Symbolizing function crc64_set_func
+Symbolizing function crc64_resolve
+Symbolizing function lzma_crc64
+Symbolizing function is_arch_extension_supported
+Symbolizing function crc64_arch_optimized
+Warning: unknown instruction   %76 = insertelement <2 x i64> undef, i64 %75, i32 0, !dbg !88; the result will be concretized
+Warning: unknown instruction   %80 = insertelement <2 x i64> %76, i64 %79, i32 1, !dbg !88; the result will be concretized
+Warning: unknown instruction   %91 = insertelement <2 x i64> undef, i64 %90, i32 0, !dbg !90; the result will be concretized
+Warning: unknown instruction   %95 = insertelement <2 x i64> %91, i64 %94, i32 1, !dbg !90; the result will be concretized
+Warning: unknown instruction   %106 = insertelement <2 x i64> undef, i64 %105, i32 0, !dbg !92; the result will be concretized
+Warning: unknown instruction   %110 = insertelement <2 x i64> %106, i64 %109, i32 1, !dbg !92; the result will be concretized
+Warning: unknown instruction   %241 = insertelement <2 x i64> undef, i64 %240, i32 0, !dbg !141; the result will be concretized
+Warning: unknown instruction   %242 = insertelement <2 x i64> %241, i64 0, i32 1, !dbg !141; the result will be concretized
+Warning: unknown instruction   %280 = insertelement <2 x i64> undef, i64 %279, i32 0, !dbg !153; the result will be concretized
+Warning: unknown instruction   %281 = insertelement <2 x i64> %280, i64 0, i32 1, !dbg !153; the result will be concretized
+Warning: unknown instruction   %330 = insertelement <2 x i64> %326, i64 %329, i64 1, !dbg !173; the result will be concretized
+clang: ~/Programs/symcc/compiler/Symbolizer.cpp:679: void Symbolizer::visitBitCastInst(llvm::BitCastInst&): Assertion `I.getSrcTy()->isPointerTy() && I.getDestTy()->isPointerTy() && "Unhandled non-pointer bit cast"' failed.
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /usr/lib/llvm-14/bin/clang -fpass-plugin=~/Programs/symcc/build/libsymcc.so -DHAVE_CHECK_CRC32 -DHAVE_CHECK_CRC64 -DHAVE_CHECK_SHA256 -DHAVE_CLOCK_GETTIME -DHAVE_CLOCK_MONOTONIC -DHAVE_CPUID_H -DHAVE_DECODERS -DHAVE_DECODER_ARM -DHAVE_DECODER_ARM64 -DHAVE_DECODER_ARMTHUMB -DHAVE_DECODER_DELTA -DHAVE_DECODER_IA64 -DHAVE_DECODER_LZMA1 -DHAVE_DECODER_LZMA2 -DHAVE_DECODER_POWERPC -DHAVE_DECODER_RISCV -DHAVE_DECODER_SPARC -DHAVE_DECODER_X86 -DHAVE_ENCODERS -DHAVE_ENCODER_ARM -DHAVE_ENCODER_ARM64 -DHAVE_ENCODER_ARMTHUMB -DHAVE_ENCODER_DELTA -DHAVE_ENCODER_IA64 -DHAVE_ENCODER_LZMA1 -DHAVE_ENCODER_LZMA2 -DHAVE_ENCODER_POWERPC -DHAVE_ENCODER_RISCV -DHAVE_ENCODER_SPARC -DHAVE_ENCODER_X86 -DHAVE_FUNC_ATTRIBUTE_CONSTRUCTOR -DHAVE_IMMINTRIN_H -DHAVE_INTTYPES_H -DHAVE_LZIP_DECODER -DHAVE_MF_BT2 -DHAVE_MF_BT3 -DHAVE_MF_BT4 -DHAVE_MF_HC3 -DHAVE_MF_HC4 -DHAVE_PTHREAD_CONDATTR_SETCLOCK -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_USABLE_CLMUL -DHAVE_VISIBILITY=0 -DHAVE__BOOL -DHAVE___BUILTIN_ASSUME_ALIGNED -DHAVE___BUILTIN_BSWAPXX -DMYTHREAD_POSIX -DPACKAGE_BUGREPORT=\"xz@tukaani.org\" "-DPACKAGE_NAME=\"XZ Utils\"" -DPACKAGE_URL=\"https://tukaani.org/xz/\" -DTUKLIB_CPUCORES_SCHED_GETAFFINITY -DTUKLIB_FAST_UNALIGNED_ACCESS -DTUKLIB_PHYSMEM_SYSCONF -DTUKLIB_SYMBOL_PREFIX=lzma_ -D_ALL_SOURCE -D_DARWIN_C_SOURCE -D_GNU_SOURCE -D_NETBSD_SOURCE -D_OPENBSD_SOURCE -D_POSIX_PTHREAD_SEMANTICS -D_TANDEM_SOURCE -D__EXTENSIONS__ -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/api -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/check -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/lz -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/rangecoder -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/lzma -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/delta -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/simple -I~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/common -g -std=gnu11 -Wall -Wextra -Wvla -Wformat=2 -Winit-self -Wmissing-include-dirs -Wstrict-overflow=3 -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wbad-function-cast -Wwrite-strings -Wdate-time -Wsign-conversion -Wfloat-conversion -Waggregate-return -Wstrict-prototypes -Wold-style-definition -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wimplicit-fallthrough -Wc99-compat -Wc11-extensions -Wc2x-extensions -Warray-bounds-pointer-arithmetic -Wassign-enum -Wconditional-uninitialized -Wdocumentation -Wduplicate-enum -Wempty-translation-unit -Wextra-semi-stmt -Wflexible-array-extensions -Wmissing-variable-declarations -Wnewline-eof -Wshift-sign-overflow -Wstring-conversion -MD -MT CMakeFiles/liblzma.dir/src/liblzma/check/crc64_fast.c.o -MF CMakeFiles/liblzma.dir/src/liblzma/check/crc64_fast.c.o.d -o CMakeFiles/liblzma.dir/src/liblzma/check/crc64_fast.c.o -c ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/check/crc64_fast.c -L~/Programs/symcc/build/SymCCRuntime-prefix/src/SymCCRuntime-build -lsymcc-rt -Wl,-rpath,~/Programs/symcc/build/SymCCRuntime-prefix/src/SymCCRuntime-build -Qunused-arguments
+1.	<eof> parser at end of file
+2.	Optimizer
+ #0 0x00007b44bc0aa98a llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xeaa98a)
+ #1 0x00007b44bc0a87df llvm::sys::RunSignalHandlers() (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xea87df)
+ #2 0x00007b44bc0a9cfe llvm::sys::CleanupOnSignal(unsigned long) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xea9cfe)
+ #3 0x00007b44bbfcfa48 (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xdcfa48)
+ #4 0x00007b44baa45330 (/lib/x86_64-linux-gnu/libc.so.6+0x45330)
+ #5 0x00007b44baa9ec0c __pthread_kill_implementation ./nptl/./nptl/pthread_kill.c:44:76
+ #6 0x00007b44baa9ec0c __pthread_kill_internal ./nptl/./nptl/pthread_kill.c:78:10
+ #7 0x00007b44baa9ec0c pthread_kill ./nptl/./nptl/pthread_kill.c:89:10
+ #8 0x00007b44baa4527e raise ./signal/../sysdeps/posix/raise.c:27:6
+ #9 0x00007b44baa288ff abort ./stdlib/./stdlib/abort.c:81:7
+#10 0x00007b44baa2881b _nl_load_domain ./intl/./intl/loadmsgcat.c:1177:9
+#11 0x00007b44baa3b517 (/lib/x86_64-linux-gnu/libc.so.6+0x3b517)
+#12 0x00007b44b87a2906 Symbolizer::visitBitCastInst(llvm::BitCastInst&) (~/Programs/symcc/build/libsymcc.so+0x72906)
+#13 0x00007b44b87c4091 llvm::InstVisitor<Symbolizer, void>::visitBitCast(llvm::BitCastInst&) (~/Programs/symcc/build/libsymcc.so+0x94091)
+#14 0x00007b44b87c32a9 llvm::InstVisitor<Symbolizer, void>::visit(llvm::Instruction&) (~/Programs/symcc/build/libsymcc.so+0x932a9)
+#15 0x00007b44b87c2489 llvm::InstVisitor<Symbolizer, void>::visit(llvm::Instruction*) (~/Programs/symcc/build/libsymcc.so+0x92489)
+#16 0x00007b44b87c0328 (anonymous namespace)::instrumentFunction(llvm::Function&) Pass.cpp:0:0
+#17 0x00007b44b87c04b1 SymbolizePass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&) (~/Programs/symcc/build/libsymcc.so+0x904b1)
+#18 0x00007b44b87d2067 llvm::detail::PassModel<llvm::Function, SymbolizePass, llvm::PreservedAnalyses, llvm::AnalysisManager<llvm::Function> >::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&) (~/Programs/symcc/build/libsymcc.so+0xa2067)
+#19 0x00007b44bc224edc llvm::PassManager<llvm::Function, llvm::AnalysisManager<llvm::Function> >::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x1024edc)
+#20 0x00007b44bde98099 (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x2c98099)
+#21 0x00007b44bc228f64 llvm::ModuleToFunctionPassAdaptor::run(llvm::Module&, llvm::AnalysisManager<llvm::Module>&) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x1028f64)
+#22 0x00007b44bde97e79 (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x2c97e79)
+#23 0x00007b44bc223a42 llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module> >::run(llvm::Module&, llvm::AnalysisManager<llvm::Module>&) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x1023a42)
+#24 0x00007b44c34f770e (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x18f770e)
+#25 0x00007b44c34ed010 clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::HeaderSearchOptions const&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::StringRef, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream> >) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x18ed010)
+#26 0x00007b44c380ec7c (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x1c0ec7c)
+#27 0x00007b44c2647f14 clang::ParseAST(clang::Sema&, bool, bool) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0xa47f14)
+#28 0x00007b44c380ae2f clang::CodeGenAction::ExecuteAction() (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x1c0ae2f)
+#29 0x00007b44c41b2d6b clang::FrontendAction::Execute() (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x25b2d6b)
+#30 0x00007b44c410c0f6 clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x250c0f6)
+#31 0x00007b44c422e139 clang::ExecuteCompilerInvocation(clang::CompilerInstance*) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x262e139)
+#32 0x0000000000415adb cc1_main(llvm::ArrayRef<char const*>, char const*, void*) (/usr/lib/llvm-14/bin/clang+0x415adb)
+#33 0x0000000000413c5c (/usr/lib/llvm-14/bin/clang+0x413c5c)
+#34 0x00007b44c3d8285e (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x218285e)
+#35 0x00007b44bbfcf75d llvm::CrashRecoveryContext::RunSafely(llvm::function_ref<void ()>) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xdcf75d)
+#36 0x00007b44c3d82227 clang::driver::CC1Command::Execute(llvm::ArrayRef<llvm::Optional<llvm::StringRef> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, bool*) const (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x2182227)
+#37 0x00007b44c3d4be78 clang::driver::Compilation::ExecuteCommand(clang::driver::Command const&, clang::driver::Command const*&) const (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x214be78)
+#38 0x00007b44c3d4c0f9 clang::driver::Compilation::ExecuteJobs(clang::driver::JobList const&, llvm::SmallVectorImpl<std::pair<int, clang::driver::Command const*> >&) const (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x214c0f9)
+#39 0x00007b44c3d66570 clang::driver::Driver::ExecuteCompilation(clang::driver::Compilation&, llvm::SmallVectorImpl<std::pair<int, clang::driver::Command const*> >&) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x2166570)
+#40 0x00000000004133e5 main (/usr/lib/llvm-14/bin/clang+0x4133e5)
+#41 0x00007b44baa2a1ca __libc_start_call_main ./csu/../sysdeps/nptl/libc_start_call_main.h:74:3
+#42 0x00007b44baa2a28b call_init ./csu/../csu/libc-start.c:128:20
+#43 0x00007b44baa2a28b __libc_start_main ./csu/../csu/libc-start.c:347:5
+#44 0x0000000000410a95 _start (/usr/lib/llvm-14/bin/clang+0x410a95)
+clang: error: clang frontend command failed with exit code 134 (use -v to see invocation)
+Ubuntu clang version 14.0.6
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-14/bin
+clang: note: diagnostic msg: 
+********************
+
+PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:
+Preprocessed source(s) and associated run script(s) are located at:
+clang: note: diagnostic msg: /tmp/crc64_fast-ae37a5.c
+clang: note: diagnostic msg: /tmp/crc64_fast-ae37a5.sh
+clang: note: diagnostic msg: 
+
+********************
+gmake[3]: *** [CMakeFiles/liblzma.dir/build.make:286: CMakeFiles/liblzma.dir/src/liblzma/check/crc64_fast.c.o] Error 134
+gmake[3]: *** Waiting for unfinished jobs....
+ #0 0x00007cfbe24aa98a llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xeaa98a)
+ #1 0x00007cfbe24a87df llvm::sys::RunSignalHandlers() (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xea87df)
+ #2 0x00007cfbe24a9cfe llvm::sys::CleanupOnSignal(unsigned long) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xea9cfe)
+ #3 0x00007cfbe23cfa48 (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xdcfa48)
+ #4 0x00007cfbe0e45330 (/lib/x86_64-linux-gnu/libc.so.6+0x45330)
+ #5 0x00007cfbe0e9ec0c __pthread_kill_implementation ./nptl/./nptl/pthread_kill.c:44:76
+ #6 0x00007cfbe0e9ec0c __pthread_kill_internal ./nptl/./nptl/pthread_kill.c:78:10
+ #7 0x00007cfbe0e9ec0c pthread_kill ./nptl/./nptl/pthread_kill.c:89:10
+ #8 0x00007cfbe0e4527e raise ./signal/../sysdeps/posix/raise.c:27:6
+ #9 0x00007cfbe0e288ff abort ./stdlib/./stdlib/abort.c:81:7
+#10 0x00007cfbe0e2881b _nl_load_domain ./intl/./intl/loadmsgcat.c:1177:9
+#11 0x00007cfbe0e3b517 (/lib/x86_64-linux-gnu/libc.so.6+0x3b517)
+#12 0x00007cfbdeb01906 Symbolizer::visitBitCastInst(llvm::BitCastInst&) (~/Programs/symcc/build/libsymcc.so+0x72906)
+#13 0x00007cfbdeb23091 llvm::InstVisitor<Symbolizer, void>::visitBitCast(llvm::BitCastInst&) (~/Programs/symcc/build/libsymcc.so+0x94091)
+#14 0x00007cfbdeb222a9 llvm::InstVisitor<Symbolizer, void>::visit(llvm::Instruction&) (~/Programs/symcc/build/libsymcc.so+0x932a9)
+#15 0x00007cfbdeb21489 llvm::InstVisitor<Symbolizer, void>::visit(llvm::Instruction*) (~/Programs/symcc/build/libsymcc.so+0x92489)
+#16 0x00007cfbdeb1f328 (anonymous namespace)::instrumentFunction(llvm::Function&) Pass.cpp:0:0
+#17 0x00007cfbdeb1f4b1 SymbolizePass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&) (~/Programs/symcc/build/libsymcc.so+0x904b1)
+#18 0x00007cfbdeb31067 llvm::detail::PassModel<llvm::Function, SymbolizePass, llvm::PreservedAnalyses, llvm::AnalysisManager<llvm::Function> >::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&) (~/Programs/symcc/build/libsymcc.so+0xa2067)
+#19 0x00007cfbe2624edc llvm::PassManager<llvm::Function, llvm::AnalysisManager<llvm::Function> >::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x1024edc)
+#20 0x00007cfbe4298099 (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x2c98099)
+#21 0x00007cfbe2628f64 llvm::ModuleToFunctionPassAdaptor::run(llvm::Module&, llvm::AnalysisManager<llvm::Module>&) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x1028f64)
+#22 0x00007cfbe4297e79 (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x2c97e79)
+#23 0x00007cfbe2623a42 llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module> >::run(llvm::Module&, llvm::AnalysisManager<llvm::Module>&) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0x1023a42)
+#24 0x00007cfbe98f770e (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x18f770e)
+#25 0x00007cfbe98ed010 clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::HeaderSearchOptions const&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::StringRef, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream> >) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x18ed010)
+#26 0x00007cfbe9c0ec7c (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x1c0ec7c)
+#27 0x00007cfbe8a47f14 clang::ParseAST(clang::Sema&, bool, bool) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0xa47f14)
+#28 0x00007cfbe9c0ae2f clang::CodeGenAction::ExecuteAction() (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x1c0ae2f)
+#29 0x00007cfbea5b2d6b clang::FrontendAction::Execute() (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x25b2d6b)
+#30 0x00007cfbea50c0f6 clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x250c0f6)
+#31 0x00007cfbea62e139 clang::ExecuteCompilerInvocation(clang::CompilerInstance*) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x262e139)
+#32 0x0000000000415adb cc1_main(llvm::ArrayRef<char const*>, char const*, void*) (/usr/lib/llvm-14/bin/clang+0x415adb)
+#33 0x0000000000413c5c (/usr/lib/llvm-14/bin/clang+0x413c5c)
+#34 0x00007cfbea18285e (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x218285e)
+#35 0x00007cfbe23cf75d llvm::CrashRecoveryContext::RunSafely(llvm::function_ref<void ()>) (/lib/x86_64-linux-gnu/libLLVM-14.so.1+0xdcf75d)
+#36 0x00007cfbea182227 clang::driver::CC1Command::Execute(llvm::ArrayRef<llvm::Optional<llvm::StringRef> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, bool*) const (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x2182227)
+#37 0x00007cfbea14be78 clang::driver::Compilation::ExecuteCommand(clang::driver::Command const&, clang::driver::Command const*&) const (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x214be78)
+#38 0x00007cfbea14c0f9 clang::driver::Compilation::ExecuteJobs(clang::driver::JobList const&, llvm::SmallVectorImpl<std::pair<int, clang::driver::Command const*> >&) const (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x214c0f9)
+#39 0x00007cfbea166570 clang::driver::Driver::ExecuteCompilation(clang::driver::Compilation&, llvm::SmallVectorImpl<std::pair<int, clang::driver::Command const*> >&) (/lib/x86_64-linux-gnu/libclang-cpp.so.14+0x2166570)
+#40 0x00000000004133e5 main (/usr/lib/llvm-14/bin/clang+0x4133e5)
+#41 0x00007cfbe0e2a1ca __libc_start_call_main ./csu/../sysdeps/nptl/libc_start_call_main.h:74:3
+#42 0x00007cfbe0e2a28b call_init ./csu/../csu/libc-start.c:128:20
+#43 0x00007cfbe0e2a28b __libc_start_main ./csu/../csu/libc-start.c:347:5
+#44 0x0000000000410a95 _start (/usr/lib/llvm-14/bin/clang+0x410a95)
+clang: error: clang frontend command failed with exit code 134 (use -v to see invocation)
+Ubuntu clang version 14.0.6
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-14/bin
+clang: note: diagnostic msg: 
+********************
+
+PLEASE ATTACH THE FOLLOWING FILES TO THE BUG REPORT:
+Preprocessed source(s) and associated run script(s) are located at:
+clang: note: diagnostic msg: /tmp/crc32_fast-2ccf4f.c
+clang: note: diagnostic msg: /tmp/crc32_fast-2ccf4f.sh
+clang: note: diagnostic msg: 
+
+********************
+gmake[3]: *** [CMakeFiles/liblzma.dir/build.make:272: CMakeFiles/liblzma.dir/src/liblzma/check/crc32_fast.c.o] Error 134
+gmake[2]: *** [CMakeFiles/Makefile2:151: CMakeFiles/liblzma.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:292: CMakeFiles/xz.dir/rule] Error 2
+gmake: *** [Makefile:244: xz] Error 2

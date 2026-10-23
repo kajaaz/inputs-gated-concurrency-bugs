@@ -1,0 +1,4 @@
+# SymQEMU seed: '-'  generated input: '1'
+$ GORACE=halt_on_error=1 exitcode=66 2026-10-20/bin/free5gc-bsf-put-2026-race 1
+OK: first status 200, 32 subscriptions
+# exit: 0

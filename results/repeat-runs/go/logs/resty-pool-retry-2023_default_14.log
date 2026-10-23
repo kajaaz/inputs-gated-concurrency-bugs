@@ -1,0 +1,58 @@
+==================
+WARNING: DATA RACE
+Read at 0x00c0002940f0 by goroutine 86:
+  bytes.(*Buffer).Reset()
+      /usr/local/go/src/bytes/buffer.go:125 +0x46
+  github.com/go-resty/resty/v2.releaseBuffer()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/util.go:298 +0x41
+  github.com/go-resty/resty/v2.(*requestBodyReleaser).Close.func1()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/util.go:325 +0x44
+  sync.(*Once).doSlow()
+      /usr/local/go/src/sync/once.go:78 +0xa1
+  net/http.(*readTrackingBody).Close()
+      /usr/local/go/src/net/http/transport.go:776 +0x56
+  net/http.(*transferWriter).writeBody()
+      /usr/local/go/src/net/http/transfer.go:386 +0x8cc
+  net/http.(*Request).write()
+      /usr/local/go/src/net/http/request.go:762 +0x1376
+  net/http.(*persistConn).writeLoop()
+      /usr/local/go/src/net/http/transport.go:2655 +0x35d
+  net/http.(*Transport).dialConn.gowrap3()
+      /usr/local/go/src/net/http/transport.go:1995 +0x2e
+
+Previous write at 0x00c0002940f0 by goroutine 101:
+  bytes.(*Buffer).Reset()
+      /usr/local/go/src/bytes/buffer.go:125 +0x50
+  github.com/go-resty/resty/v2.releaseBuffer()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/util.go:298 +0x41
+  github.com/go-resty/resty/v2.(*requestBodyReleaser).Close.func1()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/go-resty/resty/v2@v2.10.0/util.go:325 +0x44
+  sync.(*Once).doSlow()
+      /usr/local/go/src/sync/once.go:78 +0xa1
+  net/http.(*readTrackingBody).Close()
+      /usr/local/go/src/net/http/transport.go:776 +0x56
+  net/http.(*transferWriter).writeBody()
+      /usr/local/go/src/net/http/transfer.go:386 +0x8cc
+  net/http.(*Request).write()
+      /usr/local/go/src/net/http/request.go:762 +0x1376
+  net/http.(*persistConn).writeLoop()
+      /usr/local/go/src/net/http/transport.go:2655 +0x35d
+  net/http.(*Transport).dialConn.gowrap3()
+      /usr/local/go/src/net/http/transport.go:1995 +0x2e
+
+Goroutine 86 (running) created at:
+  net/http.(*Transport).dialConn()
+      /usr/local/go/src/net/http/transport.go:1995 +0x303c
+  net/http.(*Transport).dialConnFor()
+      /usr/local/go/src/net/http/transport.go:1648 +0x124
+  net/http.(*Transport).startDialConnForLocked.func1()
+      /usr/local/go/src/net/http/transport.go:1629 +0x3c
+
+Goroutine 101 (running) created at:
+  net/http.(*Transport).dialConn()
+      /usr/local/go/src/net/http/transport.go:1995 +0x303c
+  net/http.(*Transport).dialConnFor()
+      /usr/local/go/src/net/http/transport.go:1648 +0x124
+  net/http.(*Transport).startDialConnForLocked.func1()
+      /usr/local/go/src/net/http/transport.go:1629 +0x3c
+==================

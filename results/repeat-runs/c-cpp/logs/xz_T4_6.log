@@ -1,0 +1,43 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=808160)
+  Write of size 8 at 0x726c000002c8 by main thread:
+    #0 stream_decode_mt ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1071:22 (xz+0x10db2f) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #1 lzma_code ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/common.c:293:17 (xz+0xf00b8) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #2 coder_normal ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:1226:9 (xz+0xe4aa7) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #3 coder_run ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:1444:16 (xz+0xe4aa7)
+    #4 main ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/main.c:319:3 (xz+0xe7c1e) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+
+  Previous write of size 8 at 0x726c000002c8 by thread T2 (mutexes: write M0):
+    #0 worker_decoder ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:460:27 (xz+0x110635) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+
+  Location is heap block of size 1768 at 0x726c00000000 allocated by main thread:
+    #0 malloc <null> (xz+0x60e00) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #1 lzma_alloc ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/common.c:50:9 (xz+0xef793) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #2 stream_decoder_mt_init ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1895:11 (xz+0x10cc49) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #3 lzma_stream_decoder_mt ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1998:2 (xz+0x10c880) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #4 coder_init ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:956:10 (xz+0xe45a7) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #5 coder_run ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:1412:40 (xz+0xe45a7)
+    #6 main ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/main.c:319:3 (xz+0xe7c1e) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+
+  Mutex M0 (0x726c00000228) created at:
+    #0 pthread_mutex_init <null> (xz+0x63fd3) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #1 mythread_mutex_init ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/common/mythread.h:208:9 (xz+0x10cc77) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #2 stream_decoder_mt_init ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1901:7 (xz+0x10cc77)
+    #3 lzma_stream_decoder_mt ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1998:2 (xz+0x10c880) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #4 coder_init ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:956:10 (xz+0xe45a7) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #5 coder_run ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:1412:40 (xz+0xe45a7)
+    #6 main ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/main.c:319:3 (xz+0xe7c1e) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+
+  Thread T2 (tid=808163, running) created by main thread at:
+    #0 pthread_create <null> (xz+0x627af) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #1 mythread_create ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/common/mythread.h:190:18 (xz+0x10fe36) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #2 initialize_new_thread ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:585:6 (xz+0x10fe36)
+    #3 get_thread ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:626:3 (xz+0x10fe36)
+    #4 stream_decode_mt ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1436:9 (xz+0x10e57d) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #5 lzma_code ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/common.c:293:17 (xz+0xf00b8) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #6 coder_init ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:1001:18 (xz+0xe45d9) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+    #7 coder_run ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/coder.c:1412:40 (xz+0xe45d9)
+    #8 main ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/xz/main.c:319:3 (xz+0xe7c1e) (BuildId: 781a4bf364cd1796ddebed414dbee225f318b0c3)
+
+SUMMARY: ThreadSanitizer: data race ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/common/stream_decoder_mt.c:1071:22 in stream_decode_mt
+==================

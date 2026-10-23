@@ -1,0 +1,136 @@
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=66
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=0 time=2.4s new_inputs=8
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: () (b'\x1a',) (b'0',) (b'8',) (b'3',) (b'2',) (b'C',) (b'\xce',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=0.9s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'\xdf',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00002 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 2 depth 1: exit=0 time=0.8s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'@',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00003 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 3 depth 1: exit=0 time=0.7s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00004 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 4 depth 1: exit=0 time=0.8s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'\x00',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00005 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 5 depth 1: exit=0 time=2.8s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'4',) (b'5',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00006 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 6 depth 1: exit=0 time=3.8s new_inputs=2
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xcd',) (b'\x83',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00007 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 7 depth 1: exit=0 time=0.8s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'\xa0',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00008 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 8 depth 1: exit=0 time=0.6s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00009 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 9 depth 2: exit=0 time=0.6s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'\x80',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00010 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 10 depth 2: exit=0 time=0.6s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'(',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00011 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 11 depth 2: exit=0 time=0.6s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00012 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 12 depth 2: exit=0 time=2.1s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xcb',)
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00013 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 13 depth 2: exit=0 time=2.3s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   OK
+#   new: (b'\xca',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00014 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 14 depth 2: exit=0 time=0.6s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00015 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 15 depth 2: exit=0 time=0.4s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00016 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 16 depth 2: exit=0 time=0.5s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'\x8c',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00017 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 17 depth 3: exit=0 time=0.5s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00018 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 18 depth 3: exit=0 time=0.6s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'\x0b',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00019 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 19 depth 3: exit=0 time=0.8s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00020 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 20 depth 3: exit=0 time=1.0s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00021 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 21 depth 3: exit=0 time=0.5s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00022 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 22 depth 4: exit=0 time=0.5s new_inputs=1
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+#   new: (b'P',)
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/http2-hpack-tablesize-2026_trigger_1/e00023 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-symqemu < input
+# exec 23 depth 5: exit=0 time=0.5s new_inputs=0
+#   This is SymCC running with the QSYM backend
+#   Usage: ./http2-hpack-tablesize <setting-id>
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/http2-hpack-tablesize-2026-race-stdin < input  # replay exit=0
+# exploration stopped (frontier-empty): 24 executions, 26s in SymQEMU, 26s wall, 0 inputs unexplored
+# result: {"case": "http2-hpack-tablesize-2026", "row": "trigger", "seed": "1", "stop": "frontier-empty", "max_depth": 5, "executions": 24, "crashes": 0, "timeouts": 0, "symqemu_s": 26, "wall_s": 26, "unique_inputs": 23, "seed_racy": true, "racy_generated": 0, "racy_examples": [], "exit_codes": ["0"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_http2-hpack-tablesize-2026_trigger_1.log"}

@@ -1,0 +1,26 @@
+case	run	args	build	result	exit	log
+nethttp-expect-continue-2020	seed-1	1 1	OK	clean	0	logs/go-race_nethttp-expect-continue-2020_seed-1.log
+nethttp-expect-continue-2020	escape-no-expect	0 1	OK	clean	0	logs/go-race_nethttp-expect-continue-2020_escape-no-expect.log
+nethttp-expect-continue-2020	escape-empty-body	1 0	OK	clean	0	logs/go-race_nethttp-expect-continue-2020_escape-empty-body.log
+resty-pool-retry-2023	seed-1	1 111	OK	clean	0	logs/go-race_resty-pool-retry-2023_seed-1.log
+resty-pool-retry-2023	trigger	1 503	OK	race	66	logs/go-race_resty-pool-retry-2023_trigger.log
+resty-pool-retry-2023	escape-no-retry	0 503	OK	clean	0	logs/go-race_resty-pool-retry-2023_escape-no-retry.log
+resty-pool-retry-2023	escape-ok-status	1 200	OK	clean	0	logs/go-race_resty-pool-retry-2023_escape-ok-status.log
+http2-hpack-tablesize-2026	seed-1	1	OK	race	66	logs/go-race_http2-hpack-tablesize-2026_seed-1.log
+http2-hpack-tablesize-2026	escape-setting-2	2	OK	clean	0	logs/go-race_http2-hpack-tablesize-2026_escape-setting-2.log
+hoverfly-diff-mode-2026	seed-1	1 1	OK	race	66	logs/go-race_hoverfly-diff-mode-2026_seed-1.log
+hoverfly-diff-mode-2026	escape-simulate	0 1	OK	clean	0	logs/go-race_hoverfly-diff-mode-2026_escape-simulate.log
+gotenberg-downloadfrom-2026	seed-1	1 1	OK	clean	0	logs/go-race_gotenberg-downloadfrom-2026_seed-1.log
+gotenberg-downloadfrom-2026	trigger	1 2	OK	race	66	logs/go-race_gotenberg-downloadfrom-2026_trigger.log
+gotenberg-downloadfrom-2026	escape-disabled	0 4	OK	clean	0	logs/go-race_gotenberg-downloadfrom-2026_escape-disabled.log
+gorest-2fa-secret-2026	seed-1	1 1	OK	clean	0	logs/go-race_gorest-2fa-secret-2026_seed-1.log
+gorest-2fa-secret-2026	trigger	1 2	OK	race	66	logs/go-race_gorest-2fa-secret-2026_trigger.log
+gorest-2fa-secret-2026	escape-disabled	0 2	OK	clean	0	logs/go-race_gorest-2fa-secret-2026_escape-disabled.log
+mailpit-proxy-assets-2026	seed-1	1 1	OK	race	66	logs/go-race_mailpit-proxy-assets-2026_seed-1.log
+mailpit-proxy-assets-2026	escape-no-proxy	0 1	OK	clean	0	logs/go-race_mailpit-proxy-assets-2026_escape-no-proxy.log
+mailpit-proxy-assets-2026	escape-no-css	1 0	OK	clean	0	logs/go-race_mailpit-proxy-assets-2026_escape-no-css.log
+olivetin-oauth-state-2026	seed-1	1 1	OK	clean	0	logs/go-race_olivetin-oauth-state-2026_seed-1.log
+olivetin-oauth-state-2026	trigger	1 2	OK	race	66	logs/go-race_olivetin-oauth-state-2026_trigger.log
+olivetin-oauth-state-2026	escape-disabled	0 2	OK	clean	0	logs/go-race_olivetin-oauth-state-2026_escape-disabled.log
+free5gc-bsf-put-2026	seed-1	1	OK	clean	0	logs/go-race_free5gc-bsf-put-2026_seed-1.log
+free5gc-bsf-put-2026	trigger	0	OK	race	66	logs/go-race_free5gc-bsf-put-2026_trigger.log

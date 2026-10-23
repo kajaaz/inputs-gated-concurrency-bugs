@@ -1,0 +1,10 @@
+case	seed_args	result	exit	log
+nethttp-expect-continue-2020	0 0	no-concurrency	0	logs/nethttp-expect-continue-2020_zorya-data-race.log
+resty-pool-retry-2023	0 100	no-concurrency	0	logs/resty-pool-retry-2023_zorya-data-race.log
+http2-hpack-tablesize-2026	2	no-concurrency	0	logs/http2-hpack-tablesize-2026_zorya-data-race.log
+hoverfly-diff-mode-2026	0 0	no-concurrency	0	logs/hoverfly-diff-mode-2026_zorya-data-race.log
+gotenberg-downloadfrom-2026	0 0	race-found	0	logs/gotenberg-downloadfrom-2026_zorya-data-race.log
+gorest-2fa-secret-2026	0 0	race-found	0	logs/gorest-2fa-secret-2026_zorya-data-race.log
+mailpit-proxy-assets-2026	0 0	race-found	0	logs/mailpit-proxy-assets-2026_zorya-data-race.log
+olivetin-oauth-state-2026	0 0	race-found	0	logs/olivetin-oauth-state-2026_zorya-data-race.log
+free5gc-bsf-put-2026	0	aborted-too-long	SIGTERM	logs/free5gc-bsf-put-2026_zorya-data-race-3600-aborted.log

@@ -1,0 +1,33 @@
+# SymQEMU seed: '0 0'  generated input: '1 4'
+$ GORACE=halt_on_error=1 exitcode=66 2026-10-20/bin/olivetin-oauth-state-2026-race 1 4
+==================
+WARNING: DATA RACE
+Write at 0x00c0001aca80 by goroutine 7:
+  runtime.mapassign_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:263 +0x0
+  main.login()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:28 +0x1fb
+  main.main.func1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:74 +0xc4
+  main.main.gowrap1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:77 +0x38
+
+Previous write at 0x00c0001aca80 by goroutine 10:
+  runtime.mapassign_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:263 +0x0
+  main.login()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:28 +0x1fb
+  main.main.func1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:74 +0xc4
+  main.main.gowrap1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:77 +0x38
+
+Goroutine 7 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:69 +0x3ed
+
+Goroutine 10 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/olivetin-oauth-state-2026/harness/main.go:69 +0x3ed
+==================
+# exit: 66

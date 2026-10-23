@@ -1,0 +1,266 @@
+# cwd: ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness
+# command: timeout 180s zorya ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/http2-hpack-tablesize-2026/harness/myprog-zorya --analysis data-race --arg 1
+# date: 2026-10-23T21:19:27+02:00
+[ANALYSIS] Detected language: go (compiler gc)
+[ANALYSIS] data-race: plugins volos, thread scheduling all-threads, negated branches explored, panic analysis off, up to 4 input round(s)
+
+[36m[1mZORYA - Next Generation Concolic Analysis[0m
+tee: /dev/tty: No such device or address
+    Finished `release` profile [optimized] target(s) in 0.37s
+     Running `target/release/zorya --write-args 1`
+[THREAD-CONFIG] Enabled multi-thread scheduling (cooperative at function calls)
+[THREAD-CONFIG] Set thread switch depth to 100
+[THREAD-CONFIG] Set time slice to 10000 instructions
+
+************************************************
+Initializing Zorya with the CPU and memory dumps
+************************************************
+Initializing State...
+
+Initializing mock CPU state...
+
+Uploading dumps to CPU registers...
+
+Updated register RAX at offset 0x0 with value 0x7563e0
+Updated register RBX at offset 0x18 with value 0x0
+Updated register RCX at offset 0x8 with value 0x3545452d41e0
+Updated register RDX at offset 0x10 with value 0x900b98
+Updated register RSI at offset 0x30 with value 0xaf45a0
+Updated register RDI at offset 0x38 with value 0xf
+Updated register RBP at offset 0x28 with value 0x35454534bfd0
+Updated register RSP at offset 0x20 with value 0x35454534bf68
+Updated register R8 at offset 0x80 with value 0x896b40
+Updated register R9 at offset 0x88 with value 0x354545405f50
+Updated register R10 at offset 0x90 with value 0x1249248000000
+Updated register R11 at offset 0x98 with value 0xffffffffffffffff
+Updated register R12 at offset 0xa0 with value 0x35454534bc80
+Updated register R13 at offset 0xa8 with value 0x3a3cad14
+Updated register R14 at offset 0xb0 with value 0x3545452d41e0
+Updated register R15 at offset 0xb8 with value 0x67875f0fd78b7
+Updated register RIP at offset 0x288 with value 0x7563e0
+Updated register CS at offset 0x102 with value 0x33
+Updated register SS at offset 0x104 with value 0x2b
+Updated register DS at offset 0x106 with value 0x0
+Updated register ES at offset 0x100 with value 0x0
+Updated register FS at offset 0x108 with value 0x0
+Updated register GS at offset 0x10a with value 0x0
+Updated register MXCSR at offset 0x1094 with value 0x1fa0
+Updated register FS_OFFSET at offset 0x110 with value 0x7ffff7fa2740
+Updated register GS_OFFSET at offset 0x118 with value 0x0
+Updated flag CF at offset 0x200 with value 0
+Updated flag PF at offset 0x202 with value 1
+Updated flag ZF at offset 0x206 with value 1
+Updated flag SF at offset 0x207 with value 0
+Updated flag TF at offset 0x208 with value 0
+Updated flag IF at offset 0x209 with value 1
+Updated flag DF at offset 0x20a with value 0
+Updated flag OF at offset 0x20b with value 0
+Updated flag NT at offset 0x20d with value 0
+Updated flag RF at offset 0x20f with value 0
+Updated flag AC at offset 0x211 with value 0
+Updated flag ID at offset 0x214 with value 0
+Initializing virtual file system...
+
+Initializing memory...
+
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xaf4000-0xb46000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffac021000-0x7fffb0000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff94021000-0x7fff98000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb11a0000-0x7fffb1300000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7db1000-0x7ffff7e00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffab7ff000-0x7fffab800000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb015f000-0x7fffb095f000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa4000000-0x7fffa4021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffd3400000-0x7fffe9e8a000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ef7000-0x7ffff7ef8000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e32000-0x7ffff7e42000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa4021000-0x7fffa8000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc1000-0x7ffff7fc3000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaafff000-0x7fffab7ff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7c00000-0x7ffff7c28000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffffffdc000-0x7ffffffff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb3400000-0x7fffc9e8a000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb0960000-0x7fffb1160000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaa7fe000-0x7fffaaffe000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff6151000-0x7ffff6152000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x354545800000-0x354548000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc9e8a000-0x7fffc9e8b000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e04000-0x7ffff7e06000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fbb000-0x7ffff7fbd000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fbd000-0x7ffff7fc1000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xffffffffff600000-0xffffffffff601000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff9c021000-0x7fffa0000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc9e8b000-0x7fffd3400000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fa9000-0x7ffff7fbb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1400000-0x7fffb3400000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff94000000-0x7fff94021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe9e8b000-0x7ffff6151000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e42000-0x7ffff7ef7000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe9e8a000-0x7fffe9e8b000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xb46000-0x2b89000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x354544000000-0x354545000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ef8000-0x7ffff7f42000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffac000000-0x7fffac021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb011e000-0x7fffb015e000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff79ab000-0x7ffff7c00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb095f000-0x7fffb0960000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff6152000-0x7ffff79aa000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x354545000000-0x354545800000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaaffe000-0x7fffaafff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x2b89000-0x2baa000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc3000-0x7ffff7fc5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fff9c000000-0x7fff9c021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa0000000-0x7fffa0021000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1160000-0x7fffb11a0000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb015e000-0x7fffb015f000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f42000-0x7ffff7f62000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffaa7fd000-0x7fffaa7fe000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f62000-0x7ffff7fa2000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e06000-0x7ffff7e13000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7c28000-0x7ffff7db1000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x853000-0xaf4000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ff1000-0x7ffff7ffb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffb000-0x7ffff7ffd000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffa0021000-0x7fffa4000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffab800000-0x7fffac000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffd000-0x7ffff7fff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1300000-0x7fffb1400000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e22000-0x7ffff7e32000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e00000-0x7ffff7e04000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fa2000-0x7ffff7fa5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x400000-0x853000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc5000-0x7ffff7fc6000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff79aa000-0x7ffff79ab000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7fc6000-0x7ffff7ff1000.bin"
+Initialized CPUID memory variables at address 0x300000
+Initializing the State...
+
+[SCHEDULER] Detected Go GC binary, thread scheduling available
+[SCHEDULER] Enabled round-robin thread scheduling
+[SCHEDULER] Set max switch depth to 100
+[SCHEDULER] Set time slice to 10000 instructions
+[THREAD] Loaded TID=775568 from dump (fs_base=0x7ffff7fa2740, gs_base=0x0)
+[THREAD] Loaded TID=775571 from dump (fs_base=0x7fffb115f6c0, gs_base=0x0)
+[THREAD] Loaded TID=775572 from dump (fs_base=0x7fffabfff6c0, gs_base=0x0)
+[THREAD] Loaded TID=775573 from dump (fs_base=0x7fffb095e6c0, gs_base=0x0)
+[THREAD] Loaded TID=775574 from dump (fs_base=0x7fffab7fe6c0, gs_base=0x0)
+[THREAD] Loaded TID=775575 from dump (fs_base=0x7fffaaffd6c0, gs_base=0x0)
+Successfully loaded multi-thread state
+
+Creating the P-Code for the executable sections of libc.so and ld-linux-x86-64.so if they exist...
+P-Code generation started for: /usr/lib/x86_64-linux-gnu/libc.so.6
+Validated ELF file exists: /usr/lib/x86_64-linux-gnu/libc.so.6
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running `target/debug/pcode_generator /usr/lib/x86_64-linux-gnu/libc.so.6 --low-pcode --base-addr 0x7ffff7c00000`
+
+[PCODE GENERATOR] Generating low pcode...
+[PCODE GENERATOR] Output file will be created at: "~/Documents/zorya/external/pcode-generator/results/libc.so.6_low_pcode.txt"
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7c00000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+LowlevelError at address 0xc7c85: r0x7ffff7cc7c85: Unable to resolve constructor
+LowlevelError at address 0xc7e0c: r0x7ffff7cc7e0c: Unable to resolve constructor
+LowlevelError at address 0xc7e0d: r0x7ffff7cc7e0d: Unable to resolve constructor
+LowlevelError at address 0xc7e98: r0x7ffff7cc7e98: Unable to resolve constructor
+LowlevelError at address 0xc7eac: r0x7ffff7cc7eac: Unable to resolve constructor
+LowlevelError at address 0xc7ec3: r0x7ffff7cc7ec3: Unable to resolve constructor
+LowlevelError at address 0x1988f5: r0x7ffff7d988f5: Unable to resolve constructor
+LowlevelError at address 0x1988f6: r0x7ffff7d988f6: Unable to resolve constructor
+LowlevelError at address 0x198962: r0x7ffff7d98962: Unable to resolve constructor
+LowlevelError at address 0x198966: r0x7ffff7d98966: Unable to resolve constructor
+LowlevelError at address 0x198967: r0x7ffff7d98967: Unable to resolve constructor
+LowlevelError at address 0x1989b0: r0x7ffff7d989b0: Unable to resolve constructor
+LowlevelError at address 0x1989b6: r0x7ffff7d989b6: Unable to resolve constructor
+LowlevelError at address 0x1989b7: r0x7ffff7d989b7: Unable to resolve constructor
+LowlevelError at address 0x1989b8: r0x7ffff7d989b8: Unable to resolve constructor
+LowlevelError at address 0x19b225: r0x7ffff7d9b225: Unable to resolve constructor
+LowlevelError at address 0x19b226: r0x7ffff7d9b226: Unable to resolve constructor
+LowlevelError at address 0x19b229: r0x7ffff7d9b229: Unable to resolve constructor
+LowlevelError at address 0x19b291: r0x7ffff7d9b291: Unable to resolve constructor
+LowlevelError at address 0x19b2a0: r0x7ffff7d9b2a0: Unable to resolve constructor
+LowlevelError at address 0x19b408: r0x7ffff7d9b408: Unable to resolve constructor
+LowlevelError at address 0x19b409: r0x7ffff7d9b409: Unable to resolve constructor
+LowlevelError at address 0x19b40c: r0x7ffff7d9b40c: Unable to resolve constructor
+LowlevelError at address 0x1a14b5: r0x7ffff7da14b5: Unable to resolve constructor
+LowlevelError at address 0x1a20c5: r0x7ffff7da20c5: Unable to resolve constructor
+LowlevelError at address 0x1a2166: r0x7ffff7da2166: Unable to resolve constructor
+LowlevelError at address 0x1a21b1: r0x7ffff7da21b1: Unable to resolve constructor
+LowlevelError at address 0x1a21e3: r0x7ffff7da21e3: Unable to resolve constructor
+LowlevelError at address 0x1a2205: r0x7ffff7da2205: Unable to resolve constructor
+LowlevelError at address 0x1a2227: r0x7ffff7da2227: Unable to resolve constructor
+LowlevelError at address 0x1a2249: r0x7ffff7da2249: Unable to resolve constructor
+LowlevelError at address 0x1a225e: r0x7ffff7da225e: Unable to resolve constructor
+LowlevelError at address 0x1a225f: r0x7ffff7da225f: Unable to resolve constructor
+LowlevelError at address 0x1a2275: r0x7ffff7da2275: Unable to resolve constructor
+LowlevelError at address 0x1a2287: r0x7ffff7da2287: Unable to resolve constructor
+LowlevelError at address 0x1a2288: r0x7ffff7da2288: Unable to resolve constructor
+LowlevelError at address 0x1a2295: r0x7ffff7da2295: Unable to resolve constructor
+LowlevelError at address 0x1a229b: r0x7ffff7da229b: Unable to resolve constructor
+LowlevelError at address 0x1a229c: r0x7ffff7da229c: Unable to resolve constructor
+LowlevelError at address 0x1a2366: r0x7ffff7da2366: Unable to resolve constructor
+LowlevelError at address 0x1a23a4: r0x7ffff7da23a4: Unable to resolve constructor
+LowlevelError at address 0x1a23d1: r0x7ffff7da23d1: Unable to resolve constructor
+LowlevelError at address 0x1a23f3: r0x7ffff7da23f3: Unable to resolve constructor
+LowlevelError at address 0x1a2415: r0x7ffff7da2415: Unable to resolve constructor
+LowlevelError at address 0x1a2437: r0x7ffff7da2437: Unable to resolve constructor
+LowlevelError at address 0x1a244c: r0x7ffff7da244c: Unable to resolve constructor
+LowlevelError at address 0x1a244d: r0x7ffff7da244d: Unable to resolve constructor
+LowlevelError at address 0x1a2463: r0x7ffff7da2463: Unable to resolve constructor
+LowlevelError at address 0x1a2475: r0x7ffff7da2475: Unable to resolve constructor
+LowlevelError at address 0x1a2476: r0x7ffff7da2476: Unable to resolve constructor
+LowlevelError at address 0x1a2483: r0x7ffff7da2483: Unable to resolve constructor
+LowlevelError at address 0x1a2489: r0x7ffff7da2489: Unable to resolve constructor
+LowlevelError at address 0x1a248a: r0x7ffff7da248a: Unable to resolve constructor
+LowlevelError at address 0x1a29d8: r0x7ffff7da29d8: Unable to resolve constructor
+LowlevelError at address 0x1a29d9: r0x7ffff7da29d9: Unable to resolve constructor
+LowlevelError at address 0x1a2ad8: r0x7ffff7da2ad8: Unable to resolve constructor
+LowlevelError at address 0x1a2ad9: r0x7ffff7da2ad9: Unable to resolve constructor
+LowlevelError at address 0x1a3a05: r0x7ffff7da3a05: Unable to resolve constructor
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7c00000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+[PCODE GENERATOR] Low pcode generation completed.
+P-Code generation completed successfully for /usr/lib/x86_64-linux-gnu/libc.so.6
+Appended P-code from '~/Documents/zorya/external/pcode-generator/results/libc.so.6_low_pcode.txt' into '~/Documents/zorya/external/pcode-generator/results/myprog-zorya_low_pcode.txt'
+P-Code generation started for: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+Validated ELF file exists: /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.23s
+     Running `target/debug/pcode_generator /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 --low-pcode --base-addr 0x7ffff7fc5000`
+
+[PCODE GENERATOR] Generating low pcode...
+[PCODE GENERATOR] Output file will be created at: "~/Documents/zorya/external/pcode-generator/results/ld-linux-x86-64.so.2_low_pcode.txt"
+[PCODE GENERATOR] [GHIDRA DECOMPILER] specfile='~/Documents/zorya/external/pcode-generator/ghidra/Ghidra/Processors/x86/data/languages/x86-64.sla' base_addr=0x7ffff7fc5000
+[PCODE GENERATOR] [GHIDRA DECOMPILER] Sleigh initialization SUCCESS
+[PCODE GENERATOR] Low pcode generation completed.
+P-Code generation completed successfully for /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+Appended P-code from '~/Documents/zorya/external/pcode-generator/results/ld-linux-x86-64.so.2_low_pcode.txt' into '~/Documents/zorya/external/pcode-generator/results/myprog-zorya_low_pcode.txt'
+Initializing jump tables...
+
+[ANALYSIS] Selected analyses: data-race
+[ANALYSIS] The panic prepass and the AST panic exploration are disabled (add --analysis panic to enable them)
+[GO] Built with go1.26.5
+[SCHEDULER] Runtime thread filter set with 25 function ranges
+Building the P-Code for the VDSO section (this may take a moment)...
+Merged 1070 VDSO instruction blocks into execution map
+
+Skipping the panic cross-reference prepass.
+**************************************************************************
+Initializing symbolic variables for the program arguments (os.Args)...
+**************************************************************************
+THE CONCOLIC EXECUTION OF THE BINARY HAS STARTED!
+Find the logs in results/execution_log.txt and results/execution_trace.txt
+**************************************************************************
+[SUMMARY] Function summary table loaded (127 entries)
+[PLUGINS] 1 plugin(s) active (--plugin "volos")
+[SCHED] Goroutine model: round_robin schedule, at most 512 switches, 3 loop iterations and 2000000 instructions per goroutine, 2 goroutines per go statement
+
+[SIGNAL] Graceful shutdown.
+[VOLOS] No data races found (0 reads, 0 writes, 0 map operations, 0 lock ops observed; 0 conflicting pair(s): 0 ordered by happens-before, 0 lock-protected, 0 inside the Go runtime)
+
+[RACE] status: no_concurrency (no goroutine was created on the explored path and no negated branch leads to one)
+[RACE] toolchain: go1.26.5
+[RACE] seed: ["1"]
+[RACE] schedule: g1
+[RACE] summary written to results/race_summary.json
+
+[ANALYSIS] data-race: nothing found
+[ANALYSIS] seed: ["1"]
+[ANALYSIS] summary written to results/analysis_summary.json

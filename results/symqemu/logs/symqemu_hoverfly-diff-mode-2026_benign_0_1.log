@@ -1,0 +1,24 @@
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/hoverfly-diff-mode-2026_benign_0_1/e00000 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/hoverfly-diff-mode-2026/harness/myprog-symqemu < input
+# exec 0 depth 0: exit=0 time=5.4s new_inputs=9
+#   This is SymCC running with the QSYM backend
+#   OK: 0 diff reports
+#   new: (b'1',) (b'\x8c', b'1') (b'0\xdf1',) (b'0',) (b'\xcf', b'1') (b'0', b'0') (b'0', b'4') (b'1', b'1') (b'0', b'\xce')
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=66
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ SYMCC_OUTPUT_DIR=~/logic_bombs_go/evaluation/2026-10-23-symqemu/symqemu-output/hoverfly-diff-mode-2026_benign_0_1/e00001 ~/Programs/symqemu/build/qemu-x86_64 ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/hoverfly-diff-mode-2026/harness/myprog-symqemu < input
+# exec 1 depth 1: exit=0 time=3.1s new_inputs=3
+#   This is SymCC running with the QSYM backend
+#   Usage: ./hoverfly-diff-mode <diff> <differs>
+#   new: (b'\xdf', b'1') (b'\xdf1',) ()
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+$ GORACE='halt_on_error=1 exitcode=66' ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/hoverfly-diff-mode-2026-race-stdin < input  # replay exit=0
+# exploration stopped (racy-input-found): 2 executions, 8s in SymQEMU, 9s wall, 11 inputs unexplored
+# result: {"case": "hoverfly-diff-mode-2026", "row": "benign", "seed": "0 1", "stop": "racy-input-found", "max_depth": 1, "executions": 2, "crashes": 0, "timeouts": 0, "symqemu_s": 8, "wall_s": 9, "unique_inputs": 12, "seed_racy": false, "racy_generated": 1, "racy_examples": ["1 1"], "exit_codes": ["0"], "log": "logic_bombs_go/evaluation/2026-10-23-symqemu/logs/symqemu_hoverfly-diff-mode-2026_benign_0_1.log"}

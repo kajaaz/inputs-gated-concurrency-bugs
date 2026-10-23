@@ -1,0 +1,4 @@
+# SymQEMU seed: '-'  generated input: '0 0'
+$ GORACE=halt_on_error=1 exitcode=66 2026-10-20/bin/hoverfly-diff-mode-2026-race 0 0
+OK: 0 diff reports
+# exit: 0

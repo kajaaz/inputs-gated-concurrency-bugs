@@ -1,0 +1,62 @@
+==================
+WARNING: DATA RACE
+Write at 0x00c0001c7c90 by goroutine 86:
+  github.com/SpectoLabs/hoverfly/core/modes.(*DiffMode).Process()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/modes/diff_mode.go:49 +0x95
+  github.com/SpectoLabs/hoverfly/core.(*Hoverfly).processRequest()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/hoverfly.go:203 +0x29b
+  github.com/SpectoLabs/hoverfly/core.NewProxy.func5()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/proxy.go:86 +0x5d
+  github.com/SpectoLabs/goproxy.FuncReqHandler.Handle()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/actions.go:19 +0x3a
+  github.com/SpectoLabs/hoverfly/core.NewProxy.(*ReqProxyConds).DoFunc.(*ReqProxyConds).Do.func9()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/dispatcher.go:216 +0xfa
+  github.com/SpectoLabs/goproxy.FuncReqHandler.Handle()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/actions.go:19 +0x3a
+  github.com/SpectoLabs/goproxy.(*ProxyHttpServer).filterRequest()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/proxy.go:62 +0xc1
+  github.com/SpectoLabs/goproxy.(*ProxyHttpServer).ServeHTTP()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/proxy.go:138 +0x544
+  net/http.serverHandler.ServeHTTP()
+      /usr/local/go/src/net/http/server.go:3311 +0x2a1
+  net/http.(*conn).serve()
+      /usr/local/go/src/net/http/server.go:2073 +0xda4
+  net/http.(*Server).Serve.gowrap3()
+      /usr/local/go/src/net/http/server.go:3464 +0x46
+
+Previous write at 0x00c0001c7c90 by goroutine 82:
+  github.com/SpectoLabs/hoverfly/core/modes.(*DiffMode).Process()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/modes/diff_mode.go:49 +0x95
+  github.com/SpectoLabs/hoverfly/core.(*Hoverfly).processRequest()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/hoverfly.go:203 +0x29b
+  github.com/SpectoLabs/hoverfly/core.NewProxy.func5()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/proxy.go:86 +0x5d
+  github.com/SpectoLabs/goproxy.FuncReqHandler.Handle()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/actions.go:19 +0x3a
+  github.com/SpectoLabs/hoverfly/core.NewProxy.(*ReqProxyConds).DoFunc.(*ReqProxyConds).Do.func9()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/dispatcher.go:216 +0xfa
+  github.com/SpectoLabs/goproxy.FuncReqHandler.Handle()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/actions.go:19 +0x3a
+  github.com/SpectoLabs/goproxy.(*ProxyHttpServer).filterRequest()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/proxy.go:62 +0xc1
+  github.com/SpectoLabs/goproxy.(*ProxyHttpServer).ServeHTTP()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/goproxy@v0.0.0-20240717215706-55e01f38b2c9/proxy.go:138 +0x544
+  net/http.serverHandler.ServeHTTP()
+      /usr/local/go/src/net/http/server.go:3311 +0x2a1
+  net/http.(*conn).serve()
+      /usr/local/go/src/net/http/server.go:2073 +0xda4
+  net/http.(*Server).Serve.gowrap3()
+      /usr/local/go/src/net/http/server.go:3464 +0x46
+
+Goroutine 86 (running) created at:
+  net/http.(*Server).Serve()
+      /usr/local/go/src/net/http/server.go:3464 +0x889
+  github.com/SpectoLabs/hoverfly/core.(*Hoverfly).StartProxy.func1()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/hoverfly.go:175 +0x17e
+
+Goroutine 82 (running) created at:
+  net/http.(*Server).Serve()
+      /usr/local/go/src/net/http/server.go:3464 +0x889
+  github.com/SpectoLabs/hoverfly/core.(*Hoverfly).StartProxy.func1()
+      /tmp/cursor-sandbox-cache/22841d76f6fbdf43e356a8dd05e612b2/go-mod/github.com/!specto!labs/hoverfly@v1.12.7/core/hoverfly.go:175 +0x17e
+==================

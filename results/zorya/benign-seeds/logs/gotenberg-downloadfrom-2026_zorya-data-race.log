@@ -1,0 +1,735 @@
+# cwd: ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness
+# binary: ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-zorya
+# built for zorya with: go build -gcflags="all=-N -l" -o myprog-zorya .
+# command: timeout 180s zorya ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/gotenberg-downloadfrom-2026/harness/myprog-zorya --analysis data-race --arg 0 0
+
+[ANALYSIS] Detected language: go (compiler gc)
+[ANALYSIS] data-race: plugins volos, thread scheduling all-threads, negated branches explored, panic analysis off, up to 4 input round(s)
+
+[36m[1mZORYA - Next Generation Concolic Analysis[0m
+tee: /dev/tty: No such device or address
+    Finished `release` profile [optimized] target(s) in 0.14s
+     Running `target/release/zorya --write-args '0 0'`
+[THREAD-CONFIG] Enabled multi-thread scheduling (cooperative at function calls)
+[THREAD-CONFIG] Set thread switch depth to 100
+[THREAD-CONFIG] Set time slice to 10000 instructions
+
+************************************************
+Initializing Zorya with the CPU and memory dumps
+************************************************
+Initializing State...
+
+Initializing mock CPU state...
+
+Uploading dumps to CPU registers...
+
+Updated register RAX at offset 0x0 with value 0x4bf2e0
+Updated register RBX at offset 0x18 with value 0x0
+Updated register RCX at offset 0x8 with value 0x1ec9c124a1e0
+Updated register RDX at offset 0x10 with value 0x4f2f50
+Updated register RSI at offset 0x30 with value 0x58a480
+Updated register RDI at offset 0x38 with value 0x4
+Updated register RBP at offset 0x28 with value 0x1ec9c12e0fd0
+Updated register RSP at offset 0x20 with value 0x1ec9c12e0f68
+Updated register R8 at offset 0x80 with value 0x4d3500
+Updated register R9 at offset 0x88 with value 0x7fffffffffffffff
+Updated register R10 at offset 0x90 with value 0x0
+Updated register R11 at offset 0x98 with value 0xffffff01
+Updated register R12 at offset 0xa0 with value 0x1ec9c12e0ea8
+Updated register R13 at offset 0xa8 with value 0x1ec9c12b1001
+Updated register R14 at offset 0xb0 with value 0x1ec9c124a1e0
+Updated register R15 at offset 0xb8 with value 0xffffffffffffffff
+Updated register RIP at offset 0x288 with value 0x4bf2e0
+Updated register CS at offset 0x102 with value 0x33
+Updated register SS at offset 0x104 with value 0x2b
+Updated register DS at offset 0x106 with value 0x0
+Updated register ES at offset 0x100 with value 0x0
+Updated register FS at offset 0x108 with value 0x0
+Updated register GS at offset 0x10a with value 0x0
+Updated register MXCSR at offset 0x1094 with value 0x1fa0
+Updated register FS_OFFSET at offset 0x110 with value 0x596468
+Updated register GS_OFFSET at offset 0x118 with value 0x0
+Updated flag CF at offset 0x200 with value 0
+Updated flag PF at offset 0x202 with value 1
+Updated flag ZF at offset 0x206 with value 1
+Updated flag SF at offset 0x207 with value 0
+Updated flag TF at offset 0x208 with value 0
+Updated flag IF at offset 0x209 with value 1
+Updated flag DF at offset 0x20a with value 0
+Updated flag OF at offset 0x20b with value 0
+Updated flag NT at offset 0x20d with value 0
+Updated flag RF at offset 0x20f with value 0
+Updated flag AC at offset 0x211 with value 0
+Updated flag ID at offset 0x214 with value 0
+Initializing virtual file system...
+
+Initializing memory...
+
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff5db2000-0x7ffff5db3000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x58a000-0x595000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff5db3000-0x7ffff7af6000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1360000-0x7fffb1500000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffffffdc000-0x7ffffffff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb3600000-0x7fffc7393000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xffffffffff600000-0xffffffffff601000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e97000-0x7ffff7f35000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x400000-0x4c0000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7af7000-0x7ffff7e00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7af6000-0x7ffff7af7000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f35000-0x7ffff7f36000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc7393000-0x7fffc7394000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x1ec9c0000000-0x1ec9c1000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x4c0000-0x58a000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffb000-0x7ffff7ffd000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x595000-0x5cb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f36000-0x7ffff7f97000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x1ec9c1000000-0x1ec9c1400000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1500000-0x7fffb3600000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe7393000-0x7fffe7394000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffd000-0x7ffff7fff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e25000-0x7ffff7e97000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe7394000-0x7ffff5db2000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc7394000-0x7fffe7393000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ff7000-0x7ffff7ffb000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f97000-0x7ffff7ff7000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x1ec9c1400000-0x1ec9c4000000.bin"
+Initialized CPUID memory variables at address 0x300000
+Initializing the State...
+
+[SCHEDULER] Detected Go GC binary, thread scheduling available
+[SCHEDULER] Enabled round-robin thread scheduling
+[SCHEDULER] Set max switch depth to 100
+[SCHEDULER] Set time slice to 10000 instructions
+[THREAD] Loaded TID=696116 from dump (fs_base=0x596468, gs_base=0x0)
+[THREAD] Loaded TID=696119 from dump (fs_base=0x1ec9c12b0090, gs_base=0x0)
+[THREAD] Loaded TID=696120 from dump (fs_base=0x1ec9c12b0890, gs_base=0x0)
+[THREAD] Loaded TID=696121 from dump (fs_base=0x1ec9c12b1090, gs_base=0x0)
+[THREAD] Loaded TID=696122 from dump (fs_base=0x1ec9c1300090, gs_base=0x0)
+Successfully loaded multi-thread state
+
+Creating the P-Code for the executable sections of libc.so and ld-linux-x86-64.so if they exist...
+libc ELF or its base address not found, skipping...
+ld-linux ELF or its base address not found, skipping...
+
+Initializing jump tables...
+
+[ANALYSIS] Selected analyses: data-race
+[ANALYSIS] The panic prepass and the AST panic exploration are disabled (add --analysis panic to enable them)
+[GO] Built with go1.26.5
+[SCHEDULER] Runtime thread filter set with 25 function ranges
+Building the P-Code for the VDSO section (this may take a moment)...
+Merged 1070 VDSO instruction blocks into execution map
+
+Skipping the panic cross-reference prepass.
+**************************************************************************
+Initializing symbolic variables for the program arguments (os.Args)...
+**************************************************************************
+THE CONCOLIC EXECUTION OF THE BINARY HAS STARTED!
+Find the logs in results/execution_log.txt and results/execution_trace.txt
+**************************************************************************
+[SUMMARY] Function summary table loaded (127 entries)
+[PLUGINS] 1 plugin(s) active (--plugin "volos")
+[SCHED] Goroutine model: round_robin schedule, at most 512 switches, 3 loop iterations and 2000000 instructions per goroutine, 2 goroutines per go statement
+Address: 4bf2e0, Symbol: main.main
+
+[ANALYSIS] main.main returned, analysis complete.
+[VOLOS] No data races found (38 reads, 62 writes, 0 map operations, 0 lock ops observed; 0 conflicting pair(s): 0 ordered by happens-before, 0 lock-protected, 0 inside the Go runtime)
+
+[RACE] status: gate_not_reached (no goroutine was created on the explored path; a negated branch reaches runtime.newproc (see candidate_seeds / next_seed))
+[RACE] toolchain: go1.26.5
+[RACE] seed: ["0","0"]
+[RACE] schedule: g1
+[RACE] next seed to try: ["1","0"]
+[RACE] summary written to results/race_summary.json
+
+[ANALYSIS] data-race: nothing found
+[ANALYSIS] seed: ["0","0"]
+[ANALYSIS] next seed to try: ["1","0"]
+[ANALYSIS] summary written to results/analysis_summary.json
+tee: /dev/tty: No such device or address
+    Finished `release` profile [optimized] target(s) in 0.12s
+     Running `target/release/zorya --write-args '1 0'`
+[THREAD-CONFIG] Enabled multi-thread scheduling (cooperative at function calls)
+[THREAD-CONFIG] Set thread switch depth to 100
+[THREAD-CONFIG] Set time slice to 10000 instructions
+
+************************************************
+Initializing Zorya with the CPU and memory dumps
+************************************************
+Initializing State...
+
+Initializing mock CPU state...
+
+Uploading dumps to CPU registers...
+
+Updated register RAX at offset 0x0 with value 0x4bf2e0
+Updated register RBX at offset 0x18 with value 0x0
+Updated register RCX at offset 0x8 with value 0x34f831abc1e0
+Updated register RDX at offset 0x10 with value 0x4f2f50
+Updated register RSI at offset 0x30 with value 0x58a480
+Updated register RDI at offset 0x38 with value 0x4
+Updated register RBP at offset 0x28 with value 0x34f831b52fd0
+Updated register RSP at offset 0x20 with value 0x34f831b52f68
+Updated register R8 at offset 0x80 with value 0x4d3500
+Updated register R9 at offset 0x88 with value 0x7fffffffffffffff
+Updated register R10 at offset 0x90 with value 0x0
+Updated register R11 at offset 0x98 with value 0xffffff01
+Updated register R12 at offset 0xa0 with value 0x34f831b52ea8
+Updated register R13 at offset 0xa8 with value 0x34f831b23001
+Updated register R14 at offset 0xb0 with value 0x34f831abc1e0
+Updated register R15 at offset 0xb8 with value 0xffffffffffffffff
+Updated register RIP at offset 0x288 with value 0x4bf2e0
+Updated register CS at offset 0x102 with value 0x33
+Updated register SS at offset 0x104 with value 0x2b
+Updated register DS at offset 0x106 with value 0x0
+Updated register ES at offset 0x100 with value 0x0
+Updated register FS at offset 0x108 with value 0x0
+Updated register GS at offset 0x10a with value 0x0
+Updated register MXCSR at offset 0x1094 with value 0x1fa0
+Updated register FS_OFFSET at offset 0x110 with value 0x596468
+Updated register GS_OFFSET at offset 0x118 with value 0x0
+Updated flag CF at offset 0x200 with value 0
+Updated flag PF at offset 0x202 with value 1
+Updated flag ZF at offset 0x206 with value 1
+Updated flag SF at offset 0x207 with value 0
+Updated flag TF at offset 0x208 with value 0
+Updated flag IF at offset 0x209 with value 1
+Updated flag DF at offset 0x20a with value 0
+Updated flag OF at offset 0x20b with value 0
+Updated flag NT at offset 0x20d with value 0
+Updated flag RF at offset 0x20f with value 0
+Updated flag AC at offset 0x211 with value 0
+Updated flag ID at offset 0x214 with value 0
+Initializing virtual file system...
+
+Initializing memory...
+
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x58a000-0x595000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff633f000-0x7ffff7ba7000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1360000-0x7fffb1500000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffffffdc000-0x7ffffffff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe9ff1000-0x7ffff633e000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x34f830000000-0x34f831800000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xffffffffff600000-0xffffffffff601000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x34f831800000-0x34f831c00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x400000-0x4c0000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc9ff1000-0x7fffe9ff0000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff633e000-0x7ffff633f000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f4b000-0x7ffff7f4c000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x4c0000-0x58a000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffb000-0x7ffff7ffd000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x595000-0x5cb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe9ff0000-0x7fffe9ff1000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e97000-0x7ffff7f4b000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1500000-0x7fffb3600000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ba7000-0x7ffff7ba8000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f4c000-0x7ffff7f97000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffd000-0x7ffff7fff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x34f831c00000-0x34f834000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc9ff0000-0x7fffc9ff1000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e25000-0x7ffff7e97000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ba8000-0x7ffff7e00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ff7000-0x7ffff7ffb000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f97000-0x7ffff7ff7000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb3600000-0x7fffc9ff0000.bin"
+Initialized CPUID memory variables at address 0x300000
+Initializing the State...
+
+[SCHEDULER] Detected Go GC binary, thread scheduling available
+[SCHEDULER] Enabled round-robin thread scheduling
+[SCHEDULER] Set max switch depth to 100
+[SCHEDULER] Set time slice to 10000 instructions
+[THREAD] Loaded TID=696411 from dump (fs_base=0x596468, gs_base=0x0)
+[THREAD] Loaded TID=696414 from dump (fs_base=0x34f831b22090, gs_base=0x0)
+[THREAD] Loaded TID=696415 from dump (fs_base=0x34f831b22890, gs_base=0x0)
+[THREAD] Loaded TID=696416 from dump (fs_base=0x34f831b23090, gs_base=0x0)
+[THREAD] Loaded TID=696417 from dump (fs_base=0x34f831b80090, gs_base=0x0)
+Successfully loaded multi-thread state
+
+Creating the P-Code for the executable sections of libc.so and ld-linux-x86-64.so if they exist...
+libc ELF or its base address not found, skipping...
+ld-linux ELF or its base address not found, skipping...
+
+Initializing jump tables...
+
+[ANALYSIS] Selected analyses: data-race
+[ANALYSIS] The panic prepass and the AST panic exploration are disabled (add --analysis panic to enable them)
+[GO] Built with go1.26.5
+[SCHEDULER] Runtime thread filter set with 25 function ranges
+Building the P-Code for the VDSO section (this may take a moment)...
+Merged 1070 VDSO instruction blocks into execution map
+
+Skipping the panic cross-reference prepass.
+**************************************************************************
+Initializing symbolic variables for the program arguments (os.Args)...
+**************************************************************************
+THE CONCOLIC EXECUTION OF THE BINARY HAS STARTED!
+Find the logs in results/execution_log.txt and results/execution_trace.txt
+**************************************************************************
+[SUMMARY] Function summary table loaded (127 entries)
+[PLUGINS] 1 plugin(s) active (--plugin "volos")
+[SCHED] Goroutine model: round_robin schedule, at most 512 switches, 3 loop iterations and 2000000 instructions per goroutine, 2 goroutines per go statement
+Address: 4bf2e0, Symbol: main.main
+
+[ANALYSIS] main.main returned, analysis complete.
+[VOLOS] No data races found (40 reads, 67 writes, 0 map operations, 0 lock ops observed; 0 conflicting pair(s): 0 ordered by happens-before, 0 lock-protected, 0 inside the Go runtime)
+
+[RACE] status: gate_not_reached (no goroutine was created on the explored path; a negated branch reaches runtime.newproc (see candidate_seeds / next_seed))
+[RACE] toolchain: go1.26.5
+[RACE] seed: ["1","0"]
+[RACE] schedule: g1
+[RACE] next seed to try: ["1","2"]
+[RACE] summary written to results/race_summary.json
+
+[ANALYSIS] data-race: nothing found
+[ANALYSIS] seed: ["1","0"]
+[ANALYSIS] next seed to try: ["1","2"]
+[ANALYSIS] summary written to results/analysis_summary.json
+tee: /dev/tty: No such device or address
+    Finished `release` profile [optimized] target(s) in 0.13s
+     Running `target/release/zorya --write-args '1 2'`
+[THREAD-CONFIG] Enabled multi-thread scheduling (cooperative at function calls)
+[THREAD-CONFIG] Set thread switch depth to 100
+[THREAD-CONFIG] Set time slice to 10000 instructions
+
+************************************************
+Initializing Zorya with the CPU and memory dumps
+************************************************
+Initializing State...
+
+Initializing mock CPU state...
+
+Uploading dumps to CPU registers...
+
+Updated register RAX at offset 0x0 with value 0x4bf2e0
+Updated register RBX at offset 0x18 with value 0x0
+Updated register RCX at offset 0x8 with value 0xf10420c61e0
+Updated register RDX at offset 0x10 with value 0x4f2f50
+Updated register RSI at offset 0x30 with value 0x58a480
+Updated register RDI at offset 0x38 with value 0x4
+Updated register RBP at offset 0x28 with value 0xf104215cfd0
+Updated register RSP at offset 0x20 with value 0xf104215cf68
+Updated register R8 at offset 0x80 with value 0x4d3500
+Updated register R9 at offset 0x88 with value 0x7fffffffffffffff
+Updated register R10 at offset 0x90 with value 0x0
+Updated register R11 at offset 0x98 with value 0xffffff01
+Updated register R12 at offset 0xa0 with value 0xf104215cea8
+Updated register R13 at offset 0xa8 with value 0xf104212d008
+Updated register R14 at offset 0xb0 with value 0xf10420c61e0
+Updated register R15 at offset 0xb8 with value 0xffffffffffffffff
+Updated register RIP at offset 0x288 with value 0x4bf2e0
+Updated register CS at offset 0x102 with value 0x33
+Updated register SS at offset 0x104 with value 0x2b
+Updated register DS at offset 0x106 with value 0x0
+Updated register ES at offset 0x100 with value 0x0
+Updated register FS at offset 0x108 with value 0x0
+Updated register GS at offset 0x10a with value 0x0
+Updated register MXCSR at offset 0x1094 with value 0x1fa0
+Updated register FS_OFFSET at offset 0x110 with value 0x596468
+Updated register GS_OFFSET at offset 0x118 with value 0x0
+Updated flag CF at offset 0x200 with value 0
+Updated flag PF at offset 0x202 with value 1
+Updated flag ZF at offset 0x206 with value 1
+Updated flag SF at offset 0x207 with value 0
+Updated flag TF at offset 0x208 with value 0
+Updated flag IF at offset 0x209 with value 1
+Updated flag DF at offset 0x20a with value 0
+Updated flag OF at offset 0x20b with value 0
+Updated flag NT at offset 0x20d with value 0
+Updated flag RF at offset 0x20f with value 0
+Updated flag AC at offset 0x211 with value 0
+Updated flag ID at offset 0x214 with value 0
+Initializing virtual file system...
+
+Initializing memory...
+
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x58a000-0x595000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1360000-0x7fffb1500000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc5420000-0x7fffc5421000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffffffdc000-0x7ffffffff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xffffffffff600000-0xffffffffff601000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f27000-0x7ffff7f97000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe5421000-0x7ffff59c4000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7a79000-0x7ffff7e00000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xf1040000000-0xf1042000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x400000-0x4c0000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xf1042000000-0xf1042400000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb3600000-0x7fffc5420000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff59c5000-0x7ffff7a78000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffe5420000-0x7fffe5421000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e97000-0x7ffff7f26000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x4c0000-0x58a000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f26000-0x7ffff7f27000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffb000-0x7ffff7ffd000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x595000-0x5cb000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffb1500000-0x7fffb3600000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0xf1042400000-0xf1044000000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7a78000-0x7ffff7a79000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7fffc5421000-0x7fffe5420000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff59c4000-0x7ffff59c5000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ffd000-0x7ffff7fff000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7e25000-0x7ffff7e97000.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7ff7000-0x7ffff7ffb000_zero.bin"
+Initializing memory section from file: "~/Documents/zorya/results/initialization_data/dumps/0x7ffff7f97000-0x7ffff7ff7000.bin"
+Initialized CPUID memory variables at address 0x300000
+Initializing the State...
+
+[SCHEDULER] Detected Go GC binary, thread scheduling available
+[SCHEDULER] Enabled round-robin thread scheduling
+[SCHEDULER] Set max switch depth to 100
+[SCHEDULER] Set time slice to 10000 instructions
+[THREAD] Loaded TID=696774 from dump (fs_base=0x596468, gs_base=0x0)
+[THREAD] Loaded TID=696777 from dump (fs_base=0xf104212c090, gs_base=0x0)
+[THREAD] Loaded TID=696778 from dump (fs_base=0xf104212c890, gs_base=0x0)
+[THREAD] Loaded TID=696779 from dump (fs_base=0xf104212d090, gs_base=0x0)
+[THREAD] Loaded TID=696780 from dump (fs_base=0xf1042180090, gs_base=0x0)
+Successfully loaded multi-thread state
+
+Creating the P-Code for the executable sections of libc.so and ld-linux-x86-64.so if they exist...
+libc ELF or its base address not found, skipping...
+ld-linux ELF or its base address not found, skipping...
+
+Initializing jump tables...
+
+[ANALYSIS] Selected analyses: data-race
+[ANALYSIS] The panic prepass and the AST panic exploration are disabled (add --analysis panic to enable them)
+[GO] Built with go1.26.5
+[SCHEDULER] Runtime thread filter set with 25 function ranges
+Building the P-Code for the VDSO section (this may take a moment)...
+Merged 1070 VDSO instruction blocks into execution map
+
+Skipping the panic cross-reference prepass.
+**************************************************************************
+Initializing symbolic variables for the program arguments (os.Args)...
+**************************************************************************
+THE CONCOLIC EXECUTION OF THE BINARY HAS STARTED!
+Find the logs in results/execution_log.txt and results/execution_trace.txt
+**************************************************************************
+[SUMMARY] Function summary table loaded (127 entries)
+[PLUGINS] 1 plugin(s) active (--plugin "volos")
+[SCHED] Goroutine model: round_robin schedule, at most 512 switches, 3 loop iterations and 2000000 instructions per goroutine, 2 goroutines per go statement
+Address: 4bf2e0, Symbol: main.main
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000003000 (reg=RAX @0x0), delta=0x2 (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000003000 (reg=RAX @0x0), delta=0x200000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000004000 (reg=RAX @0x0), delta=0x1 (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000004000 (reg=RAX @0x0), delta=0x100000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+[THREAD] Spawned goroutine TID=2 goid=1001 (entry=0x4bf900, stack=0x1000ff00) from parent TID=696774
+[THREAD] Switching from TID=696774 to TID=2
+Address: 4bf900, Symbol: main.main.gowrap1
+Address: 4bf940, Symbol: main.main.func1 -> i=0x0 (reg=RAX @0x0)
+Address: 495520, Symbol: sync.(*WaitGroup).Done -> wg=0x700000003000 (reg=RAX @0x0)
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000003000 (reg=RAX @0x0), delta=0xffffffffffffffff (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000003000 (reg=RAX @0x0), delta=0xffffffff00000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+[THREAD] Switching from TID=2 to TID=696774
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000004000 (reg=RAX @0x0), delta=0x1 (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000004000 (reg=RAX @0x0), delta=0x100000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+[THREAD] Spawned goroutine TID=3 goid=1002 (entry=0x4bf900, stack=0x1003ff00) from parent TID=696774
+[THREAD] Switching from TID=696774 to TID=3
+Address: 4bf900, Symbol: main.main.gowrap1
+Address: 4bf940, Symbol: main.main.func1 -> i=0x1 (reg=RAX @0x0)
+Address: 495520, Symbol: sync.(*WaitGroup).Done -> wg=0x700000003000 (reg=RAX @0x0)
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000003000 (reg=RAX @0x0), delta=0xffffffffffffffff (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000003000 (reg=RAX @0x0), delta=0xffffffff00000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+----> Calling the CALLOTHER instruction with number 16 being SWI
+----> Calling the CALLOTHER instruction with number 16 being SWI
+----> Calling the CALLOTHER instruction with number 16 being SWI
+----> Calling the CALLOTHER instruction with number 16 being SWI
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+[THREAD] Switching from TID=3 to TID=696774
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+[THREAD] Switching from TID=696774 to TID=2
+Address: 413680, Symbol: runtime.mapassign_faststr -> typ=0x4d2100 (reg=RAX @0x0), m=0x700000000000 (reg=RBX @0x18), key=0x700000007090 (reg=RCX @0x8), key=0xb (reg=RDI @0x38)
+Address: 401200, Symbol: internal/abi.NoEscape -> p=0x1000fd38 (reg=RAX @0x0)
+Address: 48a560, Symbol: runtime.strhash
+Address: 487ec0, Symbol: aeshashbody
+----> Calling the CALLOTHER instruction with number 154 being PSHUFHW
+PSHUFHW: src=0x000000000000000b0000000000000000, imm8=0x00
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000005cb968b47521276c
+AESIMC: result=0x0000000000000000f5affc754c07c9d9
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+Address: 40dd00, Symbol: internal/runtime/maps.(*Map).growToSmall -> m=0x700000000000 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18)
+Address: 40d0c0, Symbol: internal/runtime/maps.newGroups -> typ=0x4d2100 (reg=RAX @0x0), length=0x1 (reg=RBX @0x18)
+Address: 4838e0, Symbol: internal/runtime/maps.newarray -> typ=0x4d4400 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 483840, Symbol: runtime.newarray -> typ=0x4d4400 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc78 (reg=RAX @0x0)
+Address: 40cf40, Symbol: internal/runtime/maps.(*ctrlGroup).setEmpty -> g=0x700000009120 (reg=RAX @0x0)
+Address: 40eb20, Symbol: internal/runtime/maps.(*Map).putSlotSmallFastStr -> m=0x700000000000 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), hash=0x7fffffffcc7a (reg=RCX @0x8), key=0x700000007090 (reg=RDI @0x38), key=0xb (reg=RSI @0x30)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x7fffffffcc7a (reg=RAX @0x0)
+Address: 40cf60, Symbol: internal/runtime/maps.ctrlGroup.matchH2 -> g=0x8080808080808080 (reg=RAX @0x0), h=0x7a (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 155 being PSHUFLW
+PSHUFLW: src=0x00000000000000000000000000007a7a, imm8=0x00
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0x1 (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40ce20, Symbol: internal/runtime/maps.bitset.removeFirst -> b=0x1 (reg=RAX @0x0)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40cfc0, Symbol: internal/runtime/maps.ctrlGroup.matchEmptyOrDeleted -> g=0x8080808080808080 (reg=RAX @0x0)
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0xffff (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40d0a0, Symbol: internal/runtime/maps.(*groupReference).elem -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x7fffffffcc7a (reg=RAX @0x0)
+Address: 40cf20, Symbol: internal/runtime/maps.(*ctrlGroup).set -> g=0x700000009120 (reg=RAX @0x0), i=0x0 (reg=RBX @0x18), c=0x7a (reg=RCX @0x8)
+Address: 413680, Symbol: runtime.mapassign_faststr -> typ=0x4d2100 (reg=RAX @0x0), m=0x700000001000 (reg=RBX @0x18), key=0x7000000070b0 (reg=RCX @0x8), key=0x11 (reg=RDI @0x38)
+Address: 401200, Symbol: internal/abi.NoEscape -> p=0x1000fd38 (reg=RAX @0x0)
+Address: 48a560, Symbol: runtime.strhash
+Address: 487ec0, Symbol: aeshashbody
+----> Calling the CALLOTHER instruction with number 154 being PSHUFHW
+PSHUFHW: src=0x00000000000000110000000000000000, imm8=0x00
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000005cb968b47521276c
+AESIMC: result=0x0000000000000000f5affc754c07c9d9
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420d4010
+AESIMC: result=0x000000000000000021e2085f88861a80
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420dc480
+AESIMC: result=0x000000000000000001e2085f98141b89
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420d4010
+AESIMC: result=0x000000000000000021e2085f88861a80
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420dc480
+AESIMC: result=0x000000000000000001e2085f98141b89
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420d4010
+AESIMC: result=0x000000000000000021e2085f88861a80
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420dc480
+AESIMC: result=0x000000000000000001e2085f98141b89
+Address: 40dd00, Symbol: internal/runtime/maps.(*Map).growToSmall -> m=0x700000001000 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18)
+Address: 40d0c0, Symbol: internal/runtime/maps.newGroups -> typ=0x4d2100 (reg=RAX @0x0), length=0x1 (reg=RBX @0x18)
+Address: 4838e0, Symbol: internal/runtime/maps.newarray -> typ=0x4d4400 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 483840, Symbol: runtime.newarray -> typ=0x4d4400 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc78 (reg=RAX @0x0)
+Address: 40cf40, Symbol: internal/runtime/maps.(*ctrlGroup).setEmpty -> g=0x700000009230 (reg=RAX @0x0)
+Address: 40eb20, Symbol: internal/runtime/maps.(*Map).putSlotSmallFastStr -> m=0x700000001000 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), hash=0xf10420d4010 (reg=RCX @0x8), key=0x7000000070b0 (reg=RDI @0x38), key=0x11 (reg=RSI @0x30)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0xf10420d4010 (reg=RAX @0x0)
+Address: 40cf60, Symbol: internal/runtime/maps.ctrlGroup.matchH2 -> g=0x8080808080808080 (reg=RAX @0x0), h=0x10 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 155 being PSHUFLW
+PSHUFLW: src=0x00000000000000000000000000001010, imm8=0x00
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40cfc0, Symbol: internal/runtime/maps.ctrlGroup.matchEmptyOrDeleted -> g=0x8080808080808080 (reg=RAX @0x0)
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0xffff (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40d0a0, Symbol: internal/runtime/maps.(*groupReference).elem -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0xf10420d4010 (reg=RAX @0x0)
+Address: 40cf20, Symbol: internal/runtime/maps.(*ctrlGroup).set -> g=0x700000009230 (reg=RAX @0x0), i=0x0 (reg=RBX @0x18), c=0x10 (reg=RCX @0x8)
+Address: 413680, Symbol: runtime.mapassign_faststr -> typ=0x4d2080 (reg=RAX @0x0), m=0x700000002000 (reg=RBX @0x18), key=0x4e98e9 (reg=RCX @0x8), key=0xc (reg=RDI @0x38)
+Address: 401200, Symbol: internal/abi.NoEscape -> p=0x1000fd38 (reg=RAX @0x0)
+Address: 48a560, Symbol: runtime.strhash
+Address: 487ec0, Symbol: aeshashbody
+----> Calling the CALLOTHER instruction with number 154 being PSHUFHW
+PSHUFHW: src=0x000000000000000c0000000000000000, imm8=0x00
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000005cb968b47521276c
+AESIMC: result=0x0000000000000000f5affc754c07c9d9
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000000000000000008490
+AESIMC: result=0x00000000000000002000000010920109
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000000000000000008490
+AESIMC: result=0x00000000000000002000000010920109
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000000000000000008490
+AESIMC: result=0x00000000000000002000000010920109
+Address: 40dd00, Symbol: internal/runtime/maps.(*Map).growToSmall -> m=0x700000002000 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18)
+Address: 40d0c0, Symbol: internal/runtime/maps.newGroups -> typ=0x4d2080 (reg=RAX @0x0), length=0x1 (reg=RBX @0x18)
+Address: 4838e0, Symbol: internal/runtime/maps.newarray -> typ=0x4d4300 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 483840, Symbol: runtime.newarray -> typ=0x4d4300 (reg=RAX @0x0), n=0x1 (reg=RBX @0x18)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc78 (reg=RAX @0x0)
+Address: 40cf40, Symbol: internal/runtime/maps.(*ctrlGroup).setEmpty -> g=0x700000009340 (reg=RAX @0x0)
+Address: 40eb20, Symbol: internal/runtime/maps.(*Map).putSlotSmallFastStr -> m=0x700000002000 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18), hash=0x8490 (reg=RCX @0x8), key=0x4e98e9 (reg=RDI @0x38), key=0xc (reg=RSI @0x30)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x8490 (reg=RAX @0x0)
+Address: 40cf60, Symbol: internal/runtime/maps.ctrlGroup.matchH2 -> g=0x8080808080808080 (reg=RAX @0x0), h=0x10 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 155 being PSHUFLW
+PSHUFLW: src=0x00000000000000000000000000001010, imm8=0x00
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40cfc0, Symbol: internal/runtime/maps.ctrlGroup.matchEmptyOrDeleted -> g=0x8080808080808080 (reg=RAX @0x0)
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0xffff (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40d0a0, Symbol: internal/runtime/maps.(*groupReference).elem -> g=0x1000fc70 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1000fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x8490 (reg=RAX @0x0)
+Address: 40cf20, Symbol: internal/runtime/maps.(*ctrlGroup).set -> g=0x700000009340 (reg=RAX @0x0), i=0x0 (reg=RBX @0x18), c=0x10 (reg=RCX @0x8)
+Address: 4bfd80, Symbol: main.main.func1.deferwrap1
+Address: 495520, Symbol: sync.(*WaitGroup).Done -> wg=0x700000004000 (reg=RAX @0x0)
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000004000 (reg=RAX @0x0), delta=0xffffffffffffffff (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000004000 (reg=RAX @0x0), delta=0xffffffff00000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+[THREAD] Thread TID=2 exited with code 0
+[THREAD] Switching from TID=2 to TID=3
+Address: 413680, Symbol: runtime.mapassign_faststr -> typ=0x4d2100 (reg=RAX @0x0), m=0x700000000000 (reg=RBX @0x18), key=0x7000000090e0 (reg=RCX @0x8), key=0xb (reg=RDI @0x38)
+Address: 401200, Symbol: internal/abi.NoEscape -> p=0x1003fd38 (reg=RAX @0x0)
+Address: 48a560, Symbol: runtime.strhash
+Address: 487ec0, Symbol: aeshashbody
+----> Calling the CALLOTHER instruction with number 154 being PSHUFHW
+PSHUFHW: src=0x000000000000000b0000000000000000, imm8=0x00
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000005cb968b47521276c
+AESIMC: result=0x0000000000000000f5affc754c07c9d9
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+Address: 40eb20, Symbol: internal/runtime/maps.(*Map).putSlotSmallFastStr -> m=0x700000000000 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), hash=0x7fffffffcc7a (reg=RCX @0x8), key=0x7000000090e0 (reg=RDI @0x38), key=0xb (reg=RSI @0x30)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x7fffffffcc7a (reg=RAX @0x0)
+Address: 40cf60, Symbol: internal/runtime/maps.ctrlGroup.matchH2 -> g=0x808080808080807a (reg=RAX @0x0), h=0x7a (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 155 being PSHUFLW
+PSHUFLW: src=0x00000000000000000000000000007a7a, imm8=0x00
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0x1 (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1003fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 404760, Symbol: runtime.memequal
+Address: 404600, Symbol: memeqbody
+Address: 40d0a0, Symbol: internal/runtime/maps.(*groupReference).elem -> g=0x1003fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x0 (reg=RCX @0x8)
+Address: 413680, Symbol: runtime.mapassign_faststr -> typ=0x4d2100 (reg=RAX @0x0), m=0x700000001000 (reg=RBX @0x18), key=0x700000009100 (reg=RCX @0x8), key=0x11 (reg=RDI @0x38)
+Address: 401200, Symbol: internal/abi.NoEscape -> p=0x1003fd38 (reg=RAX @0x0)
+Address: 48a560, Symbol: runtime.strhash
+Address: 487ec0, Symbol: aeshashbody
+----> Calling the CALLOTHER instruction with number 154 being PSHUFHW
+PSHUFHW: src=0x00000000000000110000000000000000, imm8=0x00
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000005cb968b47521276c
+AESIMC: result=0x0000000000000000f5affc754c07c9d9
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000007fffffffcc7a
+AESIMC: result=0x0000000000000000fbffff000670bf98
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420d4010
+AESIMC: result=0x000000000000000021e2085f88861a80
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420dc480
+AESIMC: result=0x000000000000000001e2085f98141b89
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420d4010
+AESIMC: result=0x000000000000000021e2085f88861a80
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420dc480
+AESIMC: result=0x000000000000000001e2085f98141b89
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420d4010
+AESIMC: result=0x000000000000000021e2085f88861a80
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x000000000000000000000f10420dc480
+AESIMC: result=0x000000000000000001e2085f98141b89
+Address: 40eb20, Symbol: internal/runtime/maps.(*Map).putSlotSmallFastStr -> m=0x700000001000 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), hash=0xf10420d4010 (reg=RCX @0x8), key=0x700000009100 (reg=RDI @0x38), key=0x11 (reg=RSI @0x30)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0xf10420d4010 (reg=RAX @0x0)
+Address: 40cf60, Symbol: internal/runtime/maps.ctrlGroup.matchH2 -> g=0x8080808080808010 (reg=RAX @0x0), h=0x10 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 155 being PSHUFLW
+PSHUFLW: src=0x00000000000000000000000000001010, imm8=0x00
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40cfc0, Symbol: internal/runtime/maps.ctrlGroup.matchEmptyOrDeleted -> g=0x8080808080808010 (reg=RAX @0x0)
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0xfefe (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1003fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x1 (reg=RCX @0x8)
+Address: 40d0a0, Symbol: internal/runtime/maps.(*groupReference).elem -> g=0x1003fc70 (reg=RAX @0x0), typ=0x4d2100 (reg=RBX @0x18), i=0x1 (reg=RCX @0x8)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0xf10420d4010 (reg=RAX @0x0)
+Address: 40cf20, Symbol: internal/runtime/maps.(*ctrlGroup).set -> g=0x700000009230 (reg=RAX @0x0), i=0x1 (reg=RBX @0x18), c=0x10 (reg=RCX @0x8)
+Address: 413680, Symbol: runtime.mapassign_faststr -> typ=0x4d2080 (reg=RAX @0x0), m=0x700000002000 (reg=RBX @0x18), key=0x4e98e9 (reg=RCX @0x8), key=0xc (reg=RDI @0x38)
+Address: 401200, Symbol: internal/abi.NoEscape -> p=0x1003fd38 (reg=RAX @0x0)
+Address: 48a560, Symbol: runtime.strhash
+Address: 487ec0, Symbol: aeshashbody
+----> Calling the CALLOTHER instruction with number 154 being PSHUFHW
+PSHUFHW: src=0x000000000000000c0000000000000000, imm8=0x00
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000005cb968b47521276c
+AESIMC: result=0x0000000000000000f5affc754c07c9d9
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000000000000000008490
+AESIMC: result=0x00000000000000002000000010920109
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000000000000000008490
+AESIMC: result=0x00000000000000002000000010920109
+----> Calling the CALLOTHER instruction with number 222 being AESIMC (AES Inverse Mix Columns)
+AESIMC: input state=0x00000000000000000000000000008490
+AESIMC: result=0x00000000000000002000000010920109
+Address: 40eb20, Symbol: internal/runtime/maps.(*Map).putSlotSmallFastStr -> m=0x700000002000 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18), hash=0x8490 (reg=RCX @0x8), key=0x4e98e9 (reg=RDI @0x38), key=0xc (reg=RSI @0x30)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x8490 (reg=RAX @0x0)
+Address: 40cf60, Symbol: internal/runtime/maps.ctrlGroup.matchH2 -> g=0x8080808080808010 (reg=RAX @0x0), h=0x10 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 155 being PSHUFLW
+PSHUFLW: src=0x00000000000000000000000000001010, imm8=0x00
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40cfc0, Symbol: internal/runtime/maps.ctrlGroup.matchEmptyOrDeleted -> g=0x8080808080808010 (reg=RAX @0x0)
+Address: 40ce00, Symbol: internal/runtime/maps.bitset.first -> b=0xfefe (reg=RAX @0x0)
+Address: 40d080, Symbol: internal/runtime/maps.(*groupReference).key -> g=0x1003fc70 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18), i=0x1 (reg=RCX @0x8)
+Address: 40d0a0, Symbol: internal/runtime/maps.(*groupReference).elem -> g=0x1003fc70 (reg=RAX @0x0), typ=0x4d2080 (reg=RBX @0x18), i=0x1 (reg=RCX @0x8)
+Address: 40d060, Symbol: internal/runtime/maps.(*groupReference).ctrls -> g=0x1003fc70 (reg=RAX @0x0)
+Address: 40d160, Symbol: internal/runtime/maps.h2 -> h=0x8490 (reg=RAX @0x0)
+Address: 40cf20, Symbol: internal/runtime/maps.(*ctrlGroup).set -> g=0x700000009340 (reg=RAX @0x0), i=0x1 (reg=RBX @0x18), c=0x10 (reg=RCX @0x8)
+Address: 4bfd80, Symbol: main.main.func1.deferwrap1
+Address: 495520, Symbol: sync.(*WaitGroup).Done -> wg=0x700000004000 (reg=RAX @0x0)
+Address: 495220, Symbol: sync.(*WaitGroup).Add -> wg=0x700000004000 (reg=RAX @0x0), delta=0xffffffffffffffff (reg=RBX @0x18)
+Address: 4929e0, Symbol: sync/atomic.(*Uint64).Add -> x=0x700000004000 (reg=RAX @0x0), delta=0xffffffff00000000 (reg=RBX @0x18)
+----> Calling the CALLOTHER instruction with number 17 being LOCK
+----> Calling the CALLOTHER instruction with number 18 being UNLOCK
+[THREAD] Thread TID=3 exited with code 0
+[THREAD] Switching from TID=3 to TID=696774
+
+[ANALYSIS] main.main returned, analysis complete.
+[VOLOS] *** BUG / VULNERABILITY DETECTED: 7 data race(s) found (731 reads, 798 writes, 6 map operations observed) ***
+
+[RACE] status: race_found (6 distinct race(s) reported)
+[RACE] toolchain: go1.26.5
+[RACE] seed: ["1","2"]
+[RACE] gate: argv[1][0] == '1' && argv[2][0] in '2'..'9'
+[RACE] trigger: ["1","8"]
+[RACE] escape: ["@","|"]
+[RACE]   write by goroutine 1001: main.main.func1(): ctx.files[filename] = path
+[RACE]   write by goroutine 1002: main.main.func1(): ctx.files[filename] = path
+[RACE] schedule: g1 -> g1001 -> g1 -> g1002 -> g1 -> g1001 -> g1002 -> g1
+[RACE] summary written to results/race_summary.json
+
+[ANALYSIS] data-race: found, 6 distinct race(s)
+[ANALYSIS] seed: ["1","2"]
+[ANALYSIS] summary written to results/analysis_summary.json
+
+[ANALYSIS] 3 round(s), seeds: ["0","0"] -> ["1","0"] -> ["1","2"]
+[ANALYSIS] data-race: found in round 2 with seed ["1","2"] (results/*.round2.*)
+[ANALYSIS] all rounds: results/analysis_rounds.json

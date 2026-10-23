@@ -1,0 +1,1 @@
+$ clang-14 -emit-llvm -c -g -O0 -I ~/logic_bombs_go/evaluation/2026-10-20/work/xz-v5.8.3/src/liblzma/api ~/logic_bombs_go/c/real-world/xz-mt-decoder-2026/harness/main.c -o ~/logic_bombs_go/evaluation/2026-10-20/bin/xz-mt-decoder-clang14.bc

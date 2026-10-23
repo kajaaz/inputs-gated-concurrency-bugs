@@ -1,0 +1,26 @@
+==================
+WARNING: DATA RACE
+Write at 0x00c00001aab0 by goroutine 23:
+  runtime.mapassign_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:263 +0x0
+  main.cacheAsset()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:37 +0x1b2
+  main.main.func2()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:87 +0xe4
+
+Previous read at 0x00c00001aab0 by goroutine 18:
+  runtime.mapaccess1_faststr()
+      /usr/local/go/src/internal/runtime/maps/runtime_faststr.go:101 +0x0
+  main.rewriteCSS()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:44 +0x104
+  main.main.func1()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:77 +0xdb
+
+Goroutine 23 (running) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:82 +0x59a
+
+Goroutine 18 (finished) created at:
+  main.main()
+      ~/logic_bombs_go/go-compiler/real-world/concurrency-bugs/mailpit-proxy-assets-2026/harness/main.go:72 +0x31d
+==================

@@ -1,0 +1,343 @@
+$ klee --version
+KLEE 3.2 (https://klee-se.org/)
+  Build mode: RelWithDebInfo (Asserts: ON)
+  Build revision: 92ee8201a050184aacaaeef645ade491f5c93c41
+
+Ubuntu LLVM version 13.0.1
+  
+  Optimized build.
+  Default target: x86_64-pc-linux-gnu
+  Host CPU: tigerlake
+$ klee --help
+OVERVIEW:  klee
+
+USAGE: klee [options] <input bytecode> <program arguments>...
+
+OPTIONS:
+
+Checks options:
+These options control some of the checks being done by KLEE.
+
+  --check-div-zero                                        - Inject checks for division-by-zero (default=true)
+  --check-overshift                                       - Inject checks for overshift (default=true)
+
+Color Options:
+
+  --color                                                 - Use colors in output (default=autodetect)
+
+Constraint solving options:
+These options impact constraint solving.
+
+  --array-value-ratio=<Unique Values / Array Size>        - Maximum ratio of unique values to array size for which the value-based transformations are applied.
+  --array-value-symb-ratio=<Symbolic Values / Array Size> - Maximum ratio of symbolic values to array size for which the mixed value-based transformations are applied.
+  --cex-cache-superset                                    - Try substituting SAT superset counterexample before asking the SMT solver (default=false)
+  --cex-cache-try-all                                     - Try substituting all counterexamples before asking the SMT solver (default=false)
+  --compress-query-log                                    - Compress query log files (default=false)
+  --debug-assignment-validating-solver                    - Debug the correctness of generated assignments (default=false)
+  --debug-cex-cache-check-binding                         - Debug the correctness of the counterexample cache assignments (default=false)
+  --debug-crosscheck-core-solver=<value>                  - Specifiy a solver to use for crosschecking the results of the core solver
+    =stp                                                  -   STP
+    =metasmt                                              -   metaSMT
+    =dummy                                                -   Dummy solver
+    =z3                                                   -   Z3
+    =none                                                 -   Do not crosscheck (default)
+  --debug-dump-stp-queries                                - Dump every STP query to stderr (default=false)
+  --debug-validate-solver                                 - Crosscheck the results of the solver chain above the core solver with the results of the core solver (default=false)
+  --debug-z3-dump-queries=<string>                        - Dump Z3's representation of the query to the specified path
+  --debug-z3-log-api-interaction=<string>                 - Log API interaction with Z3 to the specified path
+  --debug-z3-validate-models                              - When generating Z3 models validate these against the query
+  --debug-z3-verbosity=<uint>                             - Z3 verbosity level (default=0)
+  --equality-substitution                                 - Simplify equality expressions before querying the solver (default=true)
+  --ignore-stp-failures                                   - Ignore any STP solver failures (default=false)
+  --log-partial-queries-early                             - Log queries before calling the solver (default=false)
+  --log-timed-out-queries                                 - Log queries that timed out. (default=true).
+  --max-solver-time=<string>                              - Maximum amount of time for a single SMT query (default=0s (off)). Enables --use-forked-solver
+  --max-sym-array-size=<uint>                             - If a symbolic array exceeds this size (in bytes), symbolic addresses into this array are concretized.  Set to 0 to disable (default=0)
+  --min-query-time-to-log=<string>                        - Set time threshold for queries logged in files. Only queries longer than threshold will be logged. (default=0s)
+  --optimize-array=<value>                                - Optimize accesses to either concrete or concrete/symbolic arrays. (default=false)
+    =all                                                  -   Combining index and value transformations
+    =index                                                -   Index-based transformation
+    =value                                                -   Value-based transformation at branch (both concrete and concrete/symbolic)
+  --rewrite-equalities                                    - Rewrite existing constraints when an equality with a constant is added (default=true)
+  --simplify-sym-indices                                  - Simplify symbolic accesses using equalities from other constraints (default=false)
+  --solver-backend=<value>                                - Specifiy the core solver backend to use
+    =stp                                                  -   STP (default)
+    =metasmt                                              -   metaSMT
+    =dummy                                                -   Dummy solver
+    =z3                                                   -   Z3
+  --solver-optimize-divides                               - Optimize constant divides into add/shift/multiplies before passing them to the core SMT solver (default=false)
+  --stp-sat-solver=<value>                                - Set the underlying SAT solver for STP (default=cryptominisat)
+    =minisat                                              -   MiniSat
+    =simpleminisat                                        -   simplifying MiniSat
+    =cryptominisat                                        -   CryptoMiniSat
+    =riss                                                 -   RISS
+  --use-branch-cache                                      - Use the branch cache (default=true)
+  --use-cex-cache                                         - Use the counterexample cache (default=true)
+  --use-constant-arrays                                   - Use constant arrays instead of updates when possible (default=true)
+  --use-fast-cex-solver                                   - Enable an experimental range-based solver (default=false)
+  --use-forked-solver                                     - Run the core SMT solver in a forked process (default=true)
+  --use-independent-solver                                - Use constraint independence (default=true)
+  --use-query-log=<value>                                 - Log queries to a file. Multiple options can be specified separated by a comma. By default nothing is logged.
+    =all:kquery                                           -   All queries in .kquery (KQuery) format
+    =all:smt2                                             -   All queries in .smt2 (SMT-LIBv2) format
+    =solver:kquery                                        -   All queries reaching the solver in .kquery (KQuery) format
+    =solver:smt2                                          -   All queries reaching the solver in .smt2 (SMT-LIBv2) format
+
+Debugging options:
+These are debugging options.
+
+  --debug-check-for-implied-values                        - Debug the implied value optimization
+  --debug-compress-instructions                           - Compress the logged instructions in gzip format (default=false).
+  --debug-print-instructions=<value>                      - Log instructions during execution.
+    =all:stderr                                           -   Log all instructions to stderr in format [src, inst_id, llvm_inst]
+    =src:stderr                                           -   Log all instructions to stderr in format [src, inst_id]
+    =compact:stderr                                       -   Log all instructions to stderr in format [inst_id]
+    =all:file                                             -   Log all instructions to file instructions.txt in format [src, inst_id, llvm_inst]
+    =src:file                                             -   Log all instructions to file instructions.txt in format [src, inst_id]
+    =compact:file                                         -   Log all instructions to file instructions.txt in format [inst_id]
+  --make-concrete-symbolic=<uint>                         - Probabilistic rate at which to make concrete reads symbolic, i.e. approximately 1 in n concrete reads will be made symbolic (0=off, 1=all).  Used for testing (default=0)
+
+Execution tree related options:
+These options affect the execution tree handling.
+
+  --compress-exec-tree                                    - Remove intermediate nodes in the execution tree whenever possible (default=false)
+  --exec-tree-batch-size=<uint>                           - Number of execution tree nodes to batch for writing, see --write-exec-tree (default=100)
+  --write-exec-tree                                       - Write execution tree into exec_tree.db (default=false)
+
+Expression building and printing options:
+These options impact the way expressions are build and printed.
+
+  --const-array-opt                                       - Enable an optimization involving all-constant arrays (default=false)
+  --pc-all-const-widths                                   - Always print the width of constant expressions (default=false)
+  --pc-all-widths                                         - Print the width of all operations, including booleans (default=false)
+  --pc-multibyte-reads                                    - Print ReadLSB and ReadMSB expressions when possible (default=true)
+  --pc-prefix-width                                       - Print width with 'w' prefix (default=true)
+  --pc-width-as-arg                                       - Print the width as a separate argument, as opposed to a prefix to the operation (default=true)
+  --smtlib-abbreviation-mode=<value>                      - Choose abbreviation mode to use in SMT-LIBv2 files (default=let)
+    =none                                                 -   Do not abbreviate
+    =let                                                  -   Abbreviate with let
+    =named                                                -   Abbreviate with :named annotations
+  --smtlib-display-constants=<value>                      - Sets how bitvector constants are written in generated SMT-LIBv2 files (default=dec)
+    =bin                                                  -   Use binary form (e.g. #b00101101)
+    =hex                                                  -   Use Hexadecimal form (e.g. #x2D)
+    =dec                                                  -   Use decimal form (e.g. (_ bv45 8) )
+  --smtlib-human-readable                                 - Enables generated SMT-LIBv2 files to be human readable (default=false)
+  --use-construct-hash-stp                                - Use hash-consing during STP query construction (default=true)
+  --use-construct-hash-z3                                 - Use hash-consing during Z3 query construction (default=true)
+  --use-visitor-hash                                      - Use hash-consing during expression visitation (default=true)
+
+External call policy options:
+These options impact external calls.
+
+  --external-call-warnings=<value>                        - Specify when to warn about external calls
+    =none                                                 -   Never warn
+    =once-per-function                                    -   Warn once per external function (default)
+    =all                                                  -   Always warn
+  --external-calls=<value>                                - Specify the external call policy
+    =none                                                 -   No external function calls are allowed.  Note that KLEE always allows some external calls with concrete arguments to go through (in particular printf and puts), regardless of this option.
+    =concrete                                             -   Only external function calls with concrete arguments are allowed (default)
+    =all                                                  -   All external function calls are allowed.  This concretizes any symbolic arguments in calls to external functions.
+    =over-approx                                          -   All external function calls are allowed.  This concretizes any symbolic arguments in calls to external functions butthe concretization is ignored after the call (see docs).
+  --kdalloc-external-page-threshold=<ulong>               - Threshold for garbage collecting pages used by external calls. If there is a significant number of infrequently used pages resident in memory, these will only be cleaned up if the total number of pages used for external calls is above the given threshold (default=1024).
+
+Generic Options:
+
+  --help                                                  - Display available options (--help-hidden for more)
+  --help-list                                             - Display list of available options (--help-list-hidden for more)
+  --version                                               - Display the version of this program
+
+Linking options:
+These options control the libraries being linked.
+
+  --libc=<value>                                          - Choose libc version (none by default).
+    =none                                                 -   Don't link in a libc (only provide freestanding environment)
+    =klee                                                 -   Link in KLEE's libc
+    =uclibc                                               -   Link in uclibc (adapted for KLEE)
+  --libcxx                                                - Link the llvm libc++ library into the bitcode (default=false)
+  --link-llvm-lib=<bitcode library file>                  - Link the given bitcode library before execution, e.g. .bca, .bc, .a. Can be used multiple times.
+  --posix-runtime                                         - Link with POSIX runtime. Options that can be passed as arguments to the programs are: --sym-arg <max-len>  --sym-args <min-argvs> <max-argvs> <max-len> + file model options (default=false).
+  --runtime-build=<string>                                - Link with versions of the runtime library that were built with the provided configuration (default=Release+Debug).
+  --ubsan-runtime                                         - Link with UBSan runtime.
+
+Memory management options:
+These options control memory management.
+
+  --kdalloc                                               - Allocate memory deterministically (default=true)
+  --kdalloc-constants-size=<uint>                         - Reserved memory for constant globals in GiB (default=10)
+  --kdalloc-constants-start-address=<ulong>               - Start address for constant globals segment (has to be page aligned)
+  --kdalloc-globals-size=<uint>                           - Reserved memory for globals in GiB (default=10)
+  --kdalloc-globals-start-address=<ulong>                 - Start address for globals segment (has to be page aligned)
+  --kdalloc-heap-size=<uint>                              - Reserved memory for heap in GiB (default=1024)
+  --kdalloc-heap-start-address=<ulong>                    - Start address for heap segment (has to be page aligned)
+  --kdalloc-mark-as-unneeded                              - Mark allocations as unneeded after external function calls (default=true)
+  --kdalloc-quarantine=<size>                             - Size of quarantine queues in allocator (default=8, disabled=0, unlimited=-1)
+  --kdalloc-stack-size=<uint>                             - Reserved memory for stack in GiB (default=100)
+  --kdalloc-stack-start-address=<ulong>                   - Start address for stack segment (has to be page aligned)
+  --return-null-on-zero-malloc                            - Returns NULL if malloc(0) is called (default=false)
+
+Miscellaneous options:
+
+  --rng-initial-seed=<ulong>                              - seed value for random number generator (default=5489)
+  --single-object-resolution                              - Try to resolve memory reads/writes to single objects when offsets are symbolic (default=false)
+  --warnings-only-to-file                                 - All warnings will be written to warnings.txt only.  If disabled, they are also written on screen.
+
+Module-related options:
+These options affect the compile-time processing of the code.
+
+  --debug-print-escaping-functions                        - Print functions whose address is taken (default=false)
+  --disable-inlining                                      - Do not run the inliner pass (default=false)
+  --disable-internalize                                   - Do not mark all symbols as internal (default=false)
+  --disable-verify                                        - Do not verify the module integrity (default=false)
+  --function-alias=<name|pattern>:<replacement>           - Replace functions that match name or regular expression pattern with an alias to the function whose name is given by replacement
+  --klee-call-optimisation                                - Allow optimization of functions that contain KLEE calls (default=true)
+  --output-module                                         - Write the bitcode for the final transformed module (default=false)
+  --output-source                                         - Write the assembly for the final transformed source (default=true)
+  --strip-all                                             - Strip all symbol information from executable (default=false)
+  --strip-debug                                           - Strip debugger symbol info from executable (default=false)
+  --switch-type=<value>                                   - Select the implementation of switch (default=internal)
+    =simple                                               -   lower to ordered branches
+    =llvm                                                 -   lower using LLVM
+    =internal                                             -   execute switch internally
+  --verify-each                                           - Verify intermediate results of all optimization passes (default=false)
+
+Path merging options:
+These options control path merging.
+
+  --debug-log-incomplete-merge                            - Debug information for incomplete path merging (default=false)
+  --debug-log-merge                                       - Debug information for path merging (default=false)
+  --debug-log-state-merge                                 - Debug information for underlying state merging (default=false)
+  --use-incomplete-merge                                  - Heuristic-based path merging (default=false)
+  --use-merge                                             - Enable support for path merging via klee_open_merge and klee_close_merge (default=false)
+
+Replaying options:
+These options impact replaying of test cases.
+
+  --replay-ktest-dir=<output directory>                   - Specify a directory to replay .ktest files from
+  --replay-ktest-file=<.ktest file>                       - Specify a .ktest file to use for replay
+  --replay-path=<path file>                               - Specify a path file to replay
+
+Search options:
+These options control the search heuristic.
+
+  --batch-instructions=<uint>                             - Number of instructions to batch when using --use-batching-search.  Set to 0 to disable (default=10000)
+  --batch-time=<string>                                   - Amount of time to batch when using --use-batching-search.  Set to 0s to disable (default=5s)
+  --search=<value>                                        - Specify the search heuristic (default=random-path interleaved with nurs:covnew)
+    =dfs                                                  -   use Depth First Search (DFS)
+    =bfs                                                  -   use Breadth First Search (BFS), where scheduling decisions are taken at the level of (2-way) forks
+    =random-state                                         -   randomly select a state to explore
+    =random-path                                          -   use Random Path Selection (see OSDI'08 paper)
+    =nurs:covnew                                          -   use Non Uniform Random Search (NURS) with Coverage-New
+    =nurs:md2u                                            -   use NURS with Min-Dist-to-Uncovered
+    =nurs:depth                                           -   use NURS with depth
+    =nurs:rp                                              -   use NURS with 1/2^depth
+    =nurs:icnt                                            -   use NURS with Instr-Count
+    =nurs:cpicnt                                          -   use NURS with CallPath-Instr-Count
+    =nurs:qc                                              -   use NURS with Query-Cost
+  --use-batching-search                                   - Use batching searcher (keep running selected state for N instructions/time, see --batch-instructions and --batch-time) (default=false)
+  --use-iterative-deepening-time-search                   - Use iterative deepening time search (experimental) (default=false)
+
+Seeding options:
+These options are related to the use of seeds to start exploration.
+
+  --allow-seed-extension                                  - Allow extra values to become symbolic during seeding; the seed is extended with zeros (default=false).
+  --allow-seed-truncation                                 - Allow smaller buffers than in seeds (default=false).
+  --always-output-seeds                                   - Dump test cases even if they are driven by seeds only (default=true)
+  --named-seed-matching                                   - Use names to match symbolic objects to inputs (default=false).
+  --only-replay-seeds                                     - Discard states that do not have a seed (default=false).
+  --only-seed                                             - Stop execution after seeding is done without doing regular search (default=false).
+  --seed-dir=<string>                                     - Directory with .ktest files to be used as seeds
+  --seed-file=<string>                                    - .ktest file to be used as seed
+  --seed-time=<string>                                    - Amount of time to dedicate to seeds, before normal search (default=0s (off))
+
+Startup options:
+These options affect how execution is started.
+
+  --entry-point=<string>                                  - Function in which to start execution (default=main)
+  --env-file=<string>                                     - Parse environment from the given file (in "env" format)
+  --optimize                                              - Optimize the code before execution (default=false).
+  --output-dir=<string>                                   - Directory in which to write results (default=klee-out-<N>)
+  --run-in-dir=<string>                                   - Change to the given directory before starting execution (default=location of tested file).
+  --warn-all-external-symbols                             - Issue a warning on startup for all external symbols (default=false).
+
+State and overall termination options:
+These options control termination of the overall KLEE execution and of individual states.
+
+  --exit-on-error                                         - Exit KLEE if an error in the tested application has been found (default=false)
+  --exit-on-error-type=<value>                            - Stop execution after reaching a specified condition (default=false)
+    =Abort                                                -   The program reached abort or klee_abort
+    =Assert                                               -   An assertion was hit
+    =BadVectorAccess                                      -   Vector accessed out of bounds
+    =Execution                                            -   Trying to execute an unexpected instruction
+    =External                                             -   External objects referenced
+    =Free                                                 -   Freeing invalid memory
+    =Model                                                -   Memory model limit hit
+    =Overflow                                             -   An overflow occurred
+    =Ptr                                                  -   Pointer error
+    =ReadOnly                                             -   Write to read-only memory
+    =ReportError                                          -   klee_report_error called
+    =InvalidBuiltin                                       -   Passing invalid value to compiler builtin
+    =ImplicitTruncation                                   -   Implicit conversion from integer of larger bit width to smaller bit width that results in data loss
+    =ImplicitConversion                                   -   Implicit conversion between integer types that changes the sign of the value
+    =UnreachableCall                                      -   Control flow reached an unreachable program point
+    =MissingReturn                                        -   Reaching the end of a value-returning function without returning a value
+    =InvalidLoad                                          -   Load of a value which is not in the range of representable values for that type
+    =NullableAttribute                                    -   Violation of nullable attribute detected
+    =User                                                 -   Wrong klee_* function invocation
+  --max-depth=<uint>                                      - Only allow this many symbolic branches.  Set to 0 to disable (default=0)
+  --max-forks=<uint>                                      - Only fork this many times.  Set to -1 to disable (default=-1)
+  --max-instructions=<ulong>                              - Stop execution after this many instructions.  Set to 0 to disable (default=0)
+  --max-memory=<uint>                                     - Refuse to fork when above this amount of memory (in MB) (see -max-memory-inhibit) and terminate states when additional 100MB allocated (default=2000)
+  --max-memory-inhibit                                    - Inhibit forking when above memory cap (see -max-memory) (default=true)
+  --max-stack-frames=<uint>                               - Terminate a state after this many stack frames.  Set to 0 to disable (default=8192)
+  --max-static-cpfork-pct=<number>                        - Maximum percentage spent by an instruction of a call path forking out of the forking of all instructions in the call path (default=1.0 (always))
+  --max-static-cpsolve-pct=<number>                       - Maximum percentage of solving time that can be spent by a single instruction of a call path over total solving time for all instructions (default=1.0 (always))
+  --max-static-fork-pct=<number>                          - Maximum percentage spent by an instruction forking out of the forking of all instructions (default=1.0 (always))
+  --max-static-pct-check-delay=<uint>                     - Number of forks after which the --max-static-*-pct checks are enforced (default=1000)
+  --max-static-solve-pct=<number>                         - Maximum percentage of solving time that can be spent by a single instruction over total solving time for all instructions (default=1.0 (always))
+  --max-tests=<uint>                                      - Stop execution after generating the given number of tests. Extra tests corresponding to partially explored paths will also be dumped.  Set to 0 to disable (default=0)
+  --max-time=<string>                                     - Halt execution after the specified duration.  Set to 0s to disable (default=0s)
+  --silent-klee-assume                                    - Silently terminate paths with an infeasible condition given to klee_assume rather than emitting an error (default=false)
+  --timer-interval=<string>                               - Minimum interval to check timers. Affects -max-time, -istats-write-interval, -stats-write-interval, and -uncovered-update-interval (default=1s)
+  --watchdog                                              - Use a watchdog process to enforce --max-time (default=false)
+
+Statistics options:
+These options control the statistics generated by KLEE.
+
+  --istats-write-after-instructions=<uint>                - Write istats after each n instructions, 0 to disable (default=0)
+  --istats-write-interval=<string>                        - Approximate number of seconds between istats writes (default=10s)
+  --output-istats                                         - Write instruction level statistics in callgrind format (default=true)
+  --output-stats                                          - Write running stats trace file (default=true)
+  --stats-commit-after=<uint>                             - Commit the statistics every N writes. By default commit every write with -stats-write-interval or every 1000 writes with -stats-write-after-instructions. (default=0)
+  --stats-write-after-instructions=<uint>                 - Write statistics after each n instructions, 0 to disable (default=0)
+  --stats-write-interval=<string>                         - Approximate time between stats writes (default=1s)
+  --track-instruction-time                                - Enable tracking of time for individual instructions (default=false)
+  --uncovered-update-interval=<string>                    - Update interval for uncovered instructions (default=30s)
+  --use-call-paths                                        - Enable calltree tracking for instruction level statistics (default=true)
+
+Test case options:
+These options select the files to generate for each test case.
+
+  --write-cov                                             - Write coverage information for each test case (default=false)
+  --write-cvcs                                            - Write .cvc files for each test case (default=false)
+  --write-kqueries                                        - Write .kquery files for each test case (default=false)
+  --write-ktests                                          - Write .ktest files for each test case (default=true)
+  --write-no-tests                                        - Do not generate any test files (default=false)
+  --write-paths                                           - Write .path files for each test case (default=false)
+  --write-smt2s                                           - Write .smt2 (SMT-LIBv2) files for each test case (default=false)
+  --write-sym-paths                                       - Write .sym.path files for each test case (default=false)
+  --write-test-info                                       - Write additional test case information (default=false)
+
+Test generation options:
+These options impact test generation.
+
+  --dump-states-on-halt                                   - Dump test cases for all active states on exit (default=true)
+  --emit-all-errors                                       - Generate tests cases for all errors (default=false, i.e. one per (error,instruction) pair)
+  --only-output-states-covering-new                       - Only output test cases covering new code (default=false)
+  --readable-posix-inputs                                 - Prefer creation of POSIX inputs (command-line arguments, files, etc.) with human readable bytes. Note: option is expensive when creating lots of tests (default=false)
+
+Time format used by KLEE's options
+
+  Time spans can be specified in two ways:
+    1. As positive real numbers representing seconds, e.g. '10', '3.5' but not 'INF', 'NaN', '1e3', '-4.5s'
+    2. As a sequence of natural numbers with specified units, e.g. '1h10min' (= '70min'), '5min10s' but not '3.5min', '8S'
+       The following units are supported: h, min, s, ms, us, ns.

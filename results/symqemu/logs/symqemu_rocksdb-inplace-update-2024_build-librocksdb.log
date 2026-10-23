@@ -1,0 +1,389 @@
+# command: cmake -S ~/logic_bombs_go/evaluation/2026-10-20/work/rocksdb-v9.2.1 -B ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/rocksdb-v9.2.1-build-plain -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_FLAGS_RELEASE='-g -O1 -DNDEBUG' -DCMAKE_CXX_FLAGS_RELEASE='-g -O1 -DNDEBUG' -DWITH_TESTS=OFF -DWITH_TOOLS=OFF -DWITH_BENCHMARK_TOOLS=OFF -DWITH_CORE_TOOLS=OFF -DWITH_TRACE_TOOLS=OFF -DWITH_GFLAGS=OFF -DWITH_SNAPPY=OFF -DWITH_LZ4=OFF -DWITH_ZLIB=OFF -DWITH_ZSTD=OFF -DWITH_BZ2=OFF -DFAIL_ON_WARNINGS=OFF -DROCKSDB_BUILD_SHARED=OFF -DPORTABLE=1 -DUSE_RTTI=1 && cmake --build ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/rocksdb-v9.2.1-build-plain -j6 --target rocksdb
+# then: clang++ -std=c++17 -g -O1 -I~/logic_bombs_go/evaluation/2026-10-20/work/rocksdb-v9.2.1/include ~/logic_bombs_go/evaluation/2026-10-23-symqemu/harness/rocksdb-inplace-update-stdin.cc ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/rocksdb-v9.2.1-build-plain/librocksdb.a -lpthread -ldl -o ~/logic_bombs_go/evaluation/2026-10-23-symqemu/bin/rocksdb-inplace-update-stdin-plain
+# start: 2026-10-23T15:23:46+02:00
+-- The CXX compiler identification is Clang 18.1.3
+-- The C compiler identification is Clang 18.1.3
+-- The ASM compiler identification is Clang with GNU-like command-line
+-- Found assembler: /usr/bin/clang
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAVE_OMIT_LEAF_FRAME_POINTER
+-- Performing Test HAVE_OMIT_LEAF_FRAME_POINTER - Success
+-- Performing Test BUILTIN_ATOMIC
+-- Performing Test BUILTIN_ATOMIC - Failed
+-- Could NOT find uring (missing: uring_LIBRARIES uring_INCLUDE_DIR) 
+-- Enabling RTTI in all builds
+-- Performing Test HAVE_FALLOCATE
+-- Performing Test HAVE_FALLOCATE - Success
+-- Performing Test HAVE_SYNC_FILE_RANGE_WRITE
+-- Performing Test HAVE_SYNC_FILE_RANGE_WRITE - Success
+-- Performing Test HAVE_PTHREAD_MUTEX_ADAPTIVE_NP
+-- Performing Test HAVE_PTHREAD_MUTEX_ADAPTIVE_NP - Success
+-- Looking for malloc_usable_size
+-- Looking for malloc_usable_size - found
+-- Looking for sched_getcpu
+-- Looking for sched_getcpu - found
+-- Looking for getauxval
+-- Looking for getauxval - found
+-- Looking for F_FULLFSYNC
+-- Looking for F_FULLFSYNC - not found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- ROCKSDB_PLUGINS: 
+-- ROCKSDB PLUGINS TO BUILD 
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+-- JNI library is disabled
+-- Configuring done (1.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: ~/logic_bombs_go/evaluation/2026-10-23-symqemu/work/rocksdb-v9.2.1-build-plain
+[1/341] Building CXX object CMakeFiles/rocksdb.dir/cache/cache_entry_roles.cc.o
+[2/341] Building CXX object CMakeFiles/rocksdb.dir/cache/cache_helpers.cc.o
+[3/341] Building CXX object CMakeFiles/rocksdb.dir/cache/charged_cache.cc.o
+[4/341] Building CXX object CMakeFiles/rocksdb.dir/cache/cache_key.cc.o
+[5/341] Building CXX object CMakeFiles/rocksdb.dir/cache/cache_reservation_manager.cc.o
+[6/341] Building CXX object CMakeFiles/rocksdb.dir/cache/secondary_cache.cc.o
+[7/341] Building CXX object CMakeFiles/rocksdb.dir/cache/cache.cc.o
+[8/341] Building CXX object CMakeFiles/rocksdb.dir/cache/lru_cache.cc.o
+[9/341] Building CXX object CMakeFiles/rocksdb.dir/cache/compressed_secondary_cache.cc.o
+[10/341] Building CXX object CMakeFiles/rocksdb.dir/cache/sharded_cache.cc.o
+[11/341] Building CXX object CMakeFiles/rocksdb.dir/cache/tiered_secondary_cache.cc.o
+[12/341] Building CXX object CMakeFiles/rocksdb.dir/cache/secondary_cache_adapter.cc.o
+[13/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_contents.cc.o
+[14/341] Building CXX object CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o
+[15/341] Building CXX object CMakeFiles/rocksdb.dir/db/attribute_group_iterator_impl.cc.o
+[16/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_file_addition.cc.o
+[17/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_file_garbage.cc.o
+[18/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_file_cache.cc.o
+[19/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_file_meta.cc.o
+[20/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_garbage_meter.cc.o
+[21/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_fetcher.cc.o
+[22/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_log_format.cc.o
+[23/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_file_builder.cc.o
+[24/341] Building CXX object CMakeFiles/rocksdb.dir/db/arena_wrapped_db_iter.cc.o
+[25/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_file_reader.cc.o
+[26/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_log_sequential_reader.cc.o
+[27/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/prefetch_buffer_collection.cc.o
+[28/341] Building CXX object CMakeFiles/rocksdb.dir/db/coalescing_iterator.cc.o
+[29/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_log_writer.cc.o
+[30/341] Building CXX object CMakeFiles/rocksdb.dir/db/blob/blob_source.cc.o
+[31/341] Building CXX object CMakeFiles/rocksdb.dir/db/builder.cc.o
+[32/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_iterator.cc.o
+[33/341] Building CXX object CMakeFiles/rocksdb.dir/db/c.cc.o
+[34/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction.cc.o
+[35/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_picker.cc.o
+[36/341] Building CXX object CMakeFiles/rocksdb.dir/db/column_family.cc.o
+[37/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_picker_fifo.cc.o
+[38/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_picker_level.cc.o
+[39/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_picker_universal.cc.o
+[40/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_state.cc.o
+[41/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/sst_partitioner.cc.o
+[42/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_job.cc.o
+[43/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_outputs.cc.o
+[44/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/compaction_service_job.cc.o
+[45/341] Building CXX object CMakeFiles/rocksdb.dir/db/compaction/subcompaction_state.cc.o
+[46/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_filesnapshot.cc.o
+[47/341] Building CXX object CMakeFiles/rocksdb.dir/db/convenience.cc.o
+[48/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/compacted_db_impl.cc.o
+[49/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_debug.cc.o
+[50/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_write.cc.o
+[51/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_experimental.cc.o
+[52/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_files.cc.o
+[53/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_compaction_flush.cc.o
+[54/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_info_dumper.cc.o
+[55/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_readonly.cc.o
+[56/341] Building CXX object CMakeFiles/rocksdb.dir/db/dbformat.cc.o
+[57/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_open.cc.o
+[58/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_iter.cc.o
+[59/341] Building CXX object CMakeFiles/rocksdb.dir/db/event_helpers.cc.o
+[60/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_secondary.cc.o
+[61/341] Building CXX object CMakeFiles/rocksdb.dir/db/error_handler.cc.o
+[62/341] Building CXX object CMakeFiles/rocksdb.dir/db/file_indexer.cc.o
+[63/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl.cc.o
+[64/341] Building CXX object CMakeFiles/rocksdb.dir/db/experimental.cc.o
+[65/341] Building CXX object CMakeFiles/rocksdb.dir/db/flush_scheduler.cc.o
+[66/341] Building CXX object CMakeFiles/rocksdb.dir/db/logs_with_prep_tracker.cc.o
+[67/341] Building CXX object CMakeFiles/rocksdb.dir/db/external_sst_file_ingestion_job.cc.o
+[68/341] Building CXX object CMakeFiles/rocksdb.dir/db/forward_iterator.cc.o
+[69/341] Building CXX object CMakeFiles/rocksdb.dir/db/malloc_stats.cc.o
+[70/341] Building CXX object CMakeFiles/rocksdb.dir/db/flush_job.cc.o
+[71/341] Building CXX object CMakeFiles/rocksdb.dir/db/log_reader.cc.o
+[72/341] Building CXX object CMakeFiles/rocksdb.dir/db/import_column_family_job.cc.o
+[73/341] Building CXX object CMakeFiles/rocksdb.dir/db/merge_operator.cc.o
+[74/341] Building CXX object CMakeFiles/rocksdb.dir/db/log_writer.cc.o
+[75/341] Building CXX object CMakeFiles/rocksdb.dir/db/output_validator.cc.o
+[76/341] Building CXX object CMakeFiles/rocksdb.dir/db/periodic_task_scheduler.cc.o
+[77/341] Building CXX object CMakeFiles/rocksdb.dir/db/memtable.cc.o
+[78/341] Building CXX object CMakeFiles/rocksdb.dir/db/merge_helper.cc.o
+[79/341] Building CXX object CMakeFiles/rocksdb.dir/db/internal_stats.cc.o
+[80/341] Building CXX object CMakeFiles/rocksdb.dir/db/memtable_list.cc.o
+[81/341] Building CXX object CMakeFiles/rocksdb.dir/db/snapshot_impl.cc.o
+[82/341] Building CXX object CMakeFiles/rocksdb.dir/db/range_del_aggregator.cc.o
+[83/341] Building CXX object CMakeFiles/rocksdb.dir/db/range_tombstone_fragmenter.cc.o
+[84/341] Building CXX object CMakeFiles/rocksdb.dir/db/table_properties_collector.cc.o
+[85/341] Building CXX object CMakeFiles/rocksdb.dir/db/seqno_to_time_mapping.cc.o
+[86/341] Building CXX object CMakeFiles/rocksdb.dir/db/table_cache.cc.o
+[87/341] Building CXX object CMakeFiles/rocksdb.dir/db/trim_history_scheduler.cc.o
+[88/341] Building CXX object CMakeFiles/rocksdb.dir/db/transaction_log_impl.cc.o
+[89/341] Building CXX object CMakeFiles/rocksdb.dir/db/repair.cc.o
+[90/341] Building CXX object CMakeFiles/rocksdb.dir/db/wal_edit.cc.o
+[91/341] Building CXX object CMakeFiles/rocksdb.dir/db/version_edit.cc.o
+[92/341] Building CXX object CMakeFiles/rocksdb.dir/db/wide/wide_column_serialization.cc.o
+[93/341] Building CXX object CMakeFiles/rocksdb.dir/db/version_builder.cc.o
+[94/341] Building CXX object CMakeFiles/rocksdb.dir/db/wide/wide_columns.cc.o
+[95/341] Building CXX object CMakeFiles/rocksdb.dir/db/wide/wide_columns_helper.cc.o
+[96/341] Building CXX object CMakeFiles/rocksdb.dir/db/write_batch_base.cc.o
+[97/341] Building CXX object CMakeFiles/rocksdb.dir/db/write_controller.cc.o
+[98/341] Building CXX object CMakeFiles/rocksdb.dir/db/wal_manager.cc.o
+[99/341] Building CXX object CMakeFiles/rocksdb.dir/db/version_edit_handler.cc.o
+[100/341] Building CXX object CMakeFiles/rocksdb.dir/db/write_stall_stats.cc.o
+[101/341] Building CXX object CMakeFiles/rocksdb.dir/db/write_thread.cc.o
+[102/341] Building CXX object CMakeFiles/rocksdb.dir/env/env_chroot.cc.o
+[103/341] Building CXX object CMakeFiles/rocksdb.dir/env/composite_env.cc.o
+[104/341] Building CXX object CMakeFiles/rocksdb.dir/db/write_batch.cc.o
+[105/341] Building CXX object CMakeFiles/rocksdb.dir/env/env_encryption.cc.o
+[106/341] Building CXX object CMakeFiles/rocksdb.dir/env/fs_remap.cc.o
+[107/341] Building CXX object CMakeFiles/rocksdb.dir/env/unique_id_gen.cc.o
+[108/341] Building CXX object CMakeFiles/rocksdb.dir/env/file_system_tracer.cc.o
+[109/341] Building CXX object CMakeFiles/rocksdb.dir/env/env.cc.o
+[110/341] Building CXX object CMakeFiles/rocksdb.dir/env/file_system.cc.o
+[111/341] Building CXX object CMakeFiles/rocksdb.dir/file/file_prefetch_buffer.cc.o
+[112/341] Building CXX object CMakeFiles/rocksdb.dir/env/mock_env.cc.o
+[113/341] Building CXX object CMakeFiles/rocksdb.dir/db/version_set.cc.o
+[114/341] Building CXX object CMakeFiles/rocksdb.dir/file/filename.cc.o
+[115/341] Building CXX object CMakeFiles/rocksdb.dir/file/delete_scheduler.cc.o
+[116/341] Building CXX object CMakeFiles/rocksdb.dir/file/line_file_reader.cc.o
+[117/341] Building CXX object CMakeFiles/rocksdb.dir/file/file_util.cc.o
+[118/341] Building CXX object CMakeFiles/rocksdb.dir/file/read_write_util.cc.o
+[119/341] Building CXX object CMakeFiles/rocksdb.dir/file/random_access_file_reader.cc.o
+[120/341] Building CXX object CMakeFiles/rocksdb.dir/file/readahead_raf.cc.o
+[121/341] Building CXX object CMakeFiles/rocksdb.dir/file/sequence_file_reader.cc.o
+[122/341] Building CXX object CMakeFiles/rocksdb.dir/logging/event_logger.cc.o
+[123/341] Building CXX object CMakeFiles/rocksdb.dir/logging/log_buffer.cc.o
+[124/341] Building CXX object CMakeFiles/rocksdb.dir/logging/auto_roll_logger.cc.o
+[125/341] Building CXX object CMakeFiles/rocksdb.dir/memory/concurrent_arena.cc.o
+[126/341] Building CXX object CMakeFiles/rocksdb.dir/memory/arena.cc.o
+[127/341] Building CXX object CMakeFiles/rocksdb.dir/memory/memkind_kmem_allocator.cc.o
+[128/341] Building CXX object CMakeFiles/rocksdb.dir/file/writable_file_writer.cc.o
+[129/341] Building CXX object CMakeFiles/rocksdb.dir/memtable/alloc_tracker.cc.o
+[130/341] Building CXX object CMakeFiles/rocksdb.dir/memory/jemalloc_nodump_allocator.cc.o
+[131/341] Building CXX object CMakeFiles/rocksdb.dir/file/sst_file_manager_impl.cc.o
+[132/341] Building CXX object CMakeFiles/rocksdb.dir/memory/memory_allocator.cc.o
+[133/341] Building CXX object CMakeFiles/rocksdb.dir/memtable/hash_skiplist_rep.cc.o
+[134/341] Building CXX object CMakeFiles/rocksdb.dir/memtable/hash_linklist_rep.cc.o
+[135/341] Building CXX object CMakeFiles/rocksdb.dir/memtable/vectorrep.cc.o
+[136/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o
+[137/341] Building CXX object CMakeFiles/rocksdb.dir/memtable/skiplistrep.cc.o
+[138/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/histogram_windowing.cc.o
+[139/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/perf_level.cc.o
+[140/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/iostats_context.cc.o
+[141/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/perf_context.cc.o
+[142/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/instrumented_mutex.cc.o
+[143/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_impl.cc.o
+[144/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_updater.cc.o
+[145/341] Building CXX object CMakeFiles/rocksdb.dir/memtable/write_buffer_manager.cc.o
+[146/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_util.cc.o
+[147/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/in_memory_stats_history.cc.o
+[148/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_util_debug.cc.o
+[149/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/statistics.cc.o
+[150/341] Building CXX object CMakeFiles/rocksdb.dir/monitoring/persistent_stats_history.cc.o
+[151/341] Building CXX object CMakeFiles/rocksdb.dir/options/customizable.cc.o
+[152/341] Building CXX object CMakeFiles/rocksdb.dir/options/configurable.cc.o
+[153/341] Building CXX object CMakeFiles/rocksdb.dir/options/offpeak_time_info.cc.o
+[154/341] Building CXX object CMakeFiles/rocksdb.dir/port/mmap.cc.o
+[155/341] Building CXX object CMakeFiles/rocksdb.dir/port/stack_trace.cc.o
+[156/341] Building CXX object CMakeFiles/rocksdb.dir/options/options.cc.o
+[157/341] Building CXX object CMakeFiles/rocksdb.dir/table/adaptive/adaptive_table_factory.cc.o
+[158/341] Building CXX object CMakeFiles/rocksdb.dir/options/db_options.cc.o
+[159/341] Building CXX object CMakeFiles/rocksdb.dir/options/cf_options.cc.o
+[160/341] Building CXX object CMakeFiles/rocksdb.dir/options/options_parser.cc.o
+[161/341] Building CXX object CMakeFiles/rocksdb.dir/options/options_helper.cc.o
+[162/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/binary_search_index_reader.cc.o
+[163/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block.cc.o
+[164/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_builder.cc.o
+[165/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_based_table_iterator.cc.o
+[166/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_cache.cc.o
+[167/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/data_block_hash_index.cc.o
+[168/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_prefetcher.cc.o
+[169/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_prefix_index.cc.o
+[170/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/data_block_footer.cc.o
+[171/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_based_table_builder.cc.o
+[172/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_based_table_factory.cc.o
+[173/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/filter_block_reader_common.cc.o
+[174/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/full_filter_block.cc.o
+[175/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/flush_block_policy.cc.o
+[176/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/hash_index_reader.cc.o
+[177/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/index_builder.cc.o
+[178/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/index_reader_common.cc.o
+[179/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/block_based_table_reader.cc.o
+[180/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/parsed_full_filter_block.cc.o
+[181/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/filter_policy.cc.o
+[182/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/reader_common.cc.o
+[183/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/partitioned_index_iterator.cc.o
+[184/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/uncompression_dict_reader.cc.o
+[185/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/partitioned_filter_block.cc.o
+[186/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_based/partitioned_index_reader.cc.o
+[187/341] Building CXX object CMakeFiles/rocksdb.dir/table/block_fetcher.cc.o
+[188/341] Building CXX object CMakeFiles/rocksdb.dir/table/cuckoo/cuckoo_table_factory.cc.o
+[189/341] Building CXX object CMakeFiles/rocksdb.dir/table/iterator.cc.o
+[190/341] Building CXX object CMakeFiles/rocksdb.dir/table/cuckoo/cuckoo_table_builder.cc.o
+[191/341] Building CXX object CMakeFiles/rocksdb.dir/table/format.cc.o
+[192/341] Building CXX object CMakeFiles/rocksdb.dir/table/get_context.cc.o
+[193/341] Building CXX object CMakeFiles/rocksdb.dir/table/cuckoo/cuckoo_table_reader.cc.o
+[194/341] Building CXX object CMakeFiles/rocksdb.dir/table/plain/plain_table_bloom.cc.o
+[195/341] Building CXX object CMakeFiles/rocksdb.dir/table/persistent_cache_helper.cc.o
+[196/341] Building CXX object CMakeFiles/rocksdb.dir/table/compaction_merging_iterator.cc.o
+[197/341] Building CXX object CMakeFiles/rocksdb.dir/table/plain/plain_table_index.cc.o
+[198/341] Building CXX object CMakeFiles/rocksdb.dir/table/merging_iterator.cc.o
+[199/341] Building CXX object CMakeFiles/rocksdb.dir/table/meta_blocks.cc.o
+[200/341] Building CXX object CMakeFiles/rocksdb.dir/table/plain/plain_table_builder.cc.o
+[201/341] Building CXX object CMakeFiles/rocksdb.dir/table/plain/plain_table_key_coding.cc.o
+[202/341] Building CXX object CMakeFiles/rocksdb.dir/table/plain/plain_table_factory.cc.o
+[203/341] Building CXX object CMakeFiles/rocksdb.dir/table/table_properties.cc.o
+[204/341] Building CXX object CMakeFiles/rocksdb.dir/table/table_factory.cc.o
+[205/341] Building CXX object CMakeFiles/rocksdb.dir/table/unique_id.cc.o
+[206/341] Building CXX object CMakeFiles/rocksdb.dir/table/plain/plain_table_reader.cc.o
+[207/341] Building CXX object CMakeFiles/rocksdb.dir/table/two_level_iterator.cc.o
+[208/341] Building CXX object CMakeFiles/rocksdb.dir/table/sst_file_reader.cc.o
+[209/341] Building CXX object CMakeFiles/rocksdb.dir/table/sst_file_dumper.cc.o
+[210/341] Building CXX object CMakeFiles/rocksdb.dir/tools/block_cache_analyzer/block_cache_trace_analyzer.cc.o
+[211/341] Building CXX object CMakeFiles/rocksdb.dir/test_util/sync_point.cc.o
+[212/341] Building CXX object CMakeFiles/rocksdb.dir/tools/io_tracer_parser_tool.cc.o
+[213/341] Building CXX object CMakeFiles/rocksdb.dir/table/sst_file_writer.cc.o
+[214/341] Building CXX object CMakeFiles/rocksdb.dir/test_util/sync_point_impl.cc.o
+[215/341] Building CXX object CMakeFiles/rocksdb.dir/test_util/transaction_test_util.cc.o
+[216/341] Building CXX object CMakeFiles/rocksdb.dir/tools/trace_analyzer_tool.cc.o
+[217/341] Building CXX object CMakeFiles/rocksdb.dir/tools/dump/db_dump_tool.cc.o
+[218/341] Building CXX object CMakeFiles/rocksdb.dir/tools/ldb_tool.cc.o
+[219/341] Building CXX object CMakeFiles/rocksdb.dir/tools/sst_dump_tool.cc.o
+[220/341] Building CXX object CMakeFiles/rocksdb.dir/trace_replay/trace_record_result.cc.o
+[221/341] Building CXX object CMakeFiles/rocksdb.dir/trace_replay/trace_record_handler.cc.o
+[222/341] Building CXX object CMakeFiles/rocksdb.dir/test_util/testutil.cc.o
+[223/341] Building CXX object CMakeFiles/rocksdb.dir/util/async_file_reader.cc.o
+[224/341] Building CXX object CMakeFiles/rocksdb.dir/util/cleanable.cc.o
+[225/341] Building CXX object CMakeFiles/rocksdb.dir/util/coding.cc.o
+[226/341] Building CXX object CMakeFiles/rocksdb.dir/util/compaction_job_stats_impl.cc.o
+[227/341] Building CXX object CMakeFiles/rocksdb.dir/trace_replay/trace_record.cc.o
+[228/341] Building CXX object CMakeFiles/rocksdb.dir/trace_replay/io_tracer.cc.o
+[229/341] Building CXX object CMakeFiles/rocksdb.dir/util/compression.cc.o
+[230/341] Building CXX object CMakeFiles/rocksdb.dir/trace_replay/block_cache_tracer.cc.o
+[231/341] Building CXX object CMakeFiles/rocksdb.dir/util/crc32c.cc.o
+[232/341] Building CXX object CMakeFiles/rocksdb.dir/util/concurrent_task_limiter_impl.cc.o
+[233/341] Building CXX object CMakeFiles/rocksdb.dir/util/compression_context_cache.cc.o
+[234/341] Building CXX object CMakeFiles/rocksdb.dir/util/data_structure.cc.o
+[235/341] Building CXX object CMakeFiles/rocksdb.dir/util/comparator.cc.o
+[236/341] Building CXX object CMakeFiles/rocksdb.dir/util/murmurhash.cc.o
+[237/341] Building CXX object CMakeFiles/rocksdb.dir/util/hash.cc.o
+[238/341] Building CXX object CMakeFiles/rocksdb.dir/util/random.cc.o
+[239/341] Building CXX object CMakeFiles/rocksdb.dir/util/ribbon_config.cc.o
+[240/341] Building CXX object CMakeFiles/rocksdb.dir/util/dynamic_bloom.cc.o
+[241/341] Building CXX object CMakeFiles/rocksdb.dir/util/rate_limiter.cc.o
+[242/341] Building CXX object CMakeFiles/rocksdb.dir/util/status.cc.o
+[243/341] Building CXX object CMakeFiles/rocksdb.dir/trace_replay/trace_replay.cc.o
+[244/341] Building CXX object CMakeFiles/rocksdb.dir/util/stderr_logger.cc.o
+[245/341] Building CXX object CMakeFiles/rocksdb.dir/util/string_util.cc.o
+[246/341] Building CXX object CMakeFiles/rocksdb.dir/util/thread_local.cc.o
+[247/341] Building CXX object CMakeFiles/rocksdb.dir/util/slice.cc.o
+[248/341] Building CXX object CMakeFiles/rocksdb.dir/util/write_batch_util.cc.o
+[249/341] Building CXX object CMakeFiles/rocksdb.dir/util/xxhash.cc.o
+[250/341] Building CXX object CMakeFiles/rocksdb.dir/util/threadpool_imp.cc.o
+[251/341] Building CXX object CMakeFiles/rocksdb.dir/util/udt_util.cc.o
+[252/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/agg_merge/agg_merge.cc.o
+[253/341] Building CXX object CMakeFiles/rocksdb.dir/util/file_checksum_helper.cc.o
+[254/341] Building CXX object CMakeFiles/rocksdb.dir/tools/ldb_cmd.cc.o
+[255/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_compaction_filter.cc.o
+[256/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_db_impl_filesnapshot.cc.o
+[257/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_dump_tool.cc.o
+[258/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_db.cc.o
+[259/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/cassandra/cassandra_compaction_filter.cc.o
+[260/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/cache_dump_load.cc.o
+[261/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/cache_dump_load_impl.cc.o
+[262/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/cassandra/format.cc.o
+[263/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_file.cc.o
+[264/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/backup/backup_engine.cc.o
+[265/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/cassandra/merge_operator.cc.o
+[266/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_db_impl.cc.o
+[267/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/compaction_filters/remove_emptyvalue_compactionfilter.cc.o
+[268/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/counted_fs.cc.o
+[269/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/env_mirror.cc.o
+[270/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/compaction_filters.cc.o
+[271/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/env_timed.cc.o
+[272/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/checkpoint/checkpoint_impl.cc.o
+[273/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/fault_injection_secondary_cache.cc.o
+[274/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/leveldb_options/leveldb_options.cc.o
+[275/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/fault_injection_env.cc.o
+[276/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/bytesxor.cc.o
+[277/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/fault_injection_fs.cc.o
+[278/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/debug.cc.o
+[279/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/max.cc.o
+[280/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators.cc.o
+[281/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/put.cc.o
+[282/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/sortlist.cc.o
+[283/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/uint64add.cc.o
+[284/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/string_append/stringappend.cc.o
+[285/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/memory/memory_util.cc.o
+[286/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/object_registry.cc.o
+[287/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/string_append/stringappend2.cc.o
+[288/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/option_change_migration/option_change_migration.cc.o
+[289/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/options/options_util.cc.o
+[290/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/persistent_cache_tier.cc.o
+[291/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/block_cache_tier_file.cc.o
+[292/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/block_cache_tier_metadata.cc.o
+[293/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/volatile_tier_impl.cc.o
+[294/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/block_cache_tier.cc.o
+[295/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/simulator_cache/cache_simulator.cc.o
+[296/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/trace/replayer_impl.cc.o
+[297/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/simulator_cache/sim_cache.cc.o
+[298/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/lock_manager.cc.o
+[299/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/trace/file_trace_reader_writer.cc.o
+[300/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/point/point_lock_tracker.cc.o
+[301/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/table_properties_collectors/compact_on_deletion_collector.cc.o
+[302/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/range_tree_lock_tracker.cc.o
+[303/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/optimistic_transaction_db_impl.cc.o
+[304/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/optimistic_transaction.cc.o
+[305/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/point/point_lock_manager.cc.o
+[306/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/range_tree_lock_manager.cc.o
+[307/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_db_mutex_impl.cc.o
+[308/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/pessimistic_transaction.cc.o
+[309/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/pessimistic_transaction_db.cc.o
+[310/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/snapshot_checker.cc.o
+[311/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_util.cc.o
+[312/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_base.cc.o
+[313/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/types_util.cc.o
+[314/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/write_prepared_txn.cc.o
+[315/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/wal_filter.cc.o
+[316/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/write_prepared_txn_db.cc.o
+[317/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/write_unprepared_txn.cc.o
+[318/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/keyrange.cc.o
+[319/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/concurrent_tree.cc.o
+[320/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/write_unprepared_txn_db.cc.o
+[321/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/write_batch_with_index/write_batch_with_index.cc.o
+[322/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/range_buffer.cc.o
+[323/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/treenode.cc.o
+[324/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/locktree.cc.o
+[325/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/lock_request.cc.o
+[326/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/standalone_port.cc.o
+[327/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/txnid_set.cc.o
+[328/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/util/dbt.cc.o
+[329/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/util/memarena.cc.o
+[330/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/wfg.cc.o
+[331/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/lock/range/range_tree/lib/locktree/manager.cc.o
+[332/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/write_batch_with_index/write_batch_with_index_internal.cc.o
+[333/341] Building CXX object CMakeFiles/rocksdb.dir/port/port_posix.cc.o
+[334/341] Building CXX object CMakeFiles/rocksdb.dir/utilities/ttl/db_ttl_impl.cc.o
+[335/341] Building CXX object CMakeFiles/rocksdb.dir/build_version.cc.o
+[336/341] Building CXX object CMakeFiles/rocksdb.dir/env/fs_on_demand.cc.o
+[337/341] Building CXX object CMakeFiles/rocksdb.dir/env/env_posix.cc.o
+[338/341] Building CXX object CMakeFiles/rocksdb.dir/env/fs_posix.cc.o
+[339/341] Building CXX object CMakeFiles/rocksdb.dir/env/io_posix.cc.o
+[340/341] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl/db_impl_follower.cc.o
+[341/341] Linking CXX static library librocksdb.a
+# exit: 0  end: 2026-10-23T15:28:15+02:00

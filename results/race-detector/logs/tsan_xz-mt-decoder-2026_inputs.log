@@ -1,0 +1,2 @@
+$ cd ~/logic_bombs_go/c/real-world/xz-mt-decoder-2026
+$ sh ./make-inputs.sh ~/logic_bombs_go/evaluation/2026-10-20/work/xz-inputs

@@ -1,0 +1,2 @@
+$ klee ~/logic_bombs_go/evaluation/2026-10-20/bin/xz-mt-decoder-clang14.bc 1 1
+KLEE: ERROR: Loading file ~/logic_bombs_go/evaluation/2026-10-20/bin/xz-mt-decoder-clang14.bc failed: Invalid record

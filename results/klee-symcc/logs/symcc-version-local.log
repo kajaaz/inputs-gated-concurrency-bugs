@@ -1,0 +1,7 @@
+$ ~/Programs/symcc/build/symcc --version
+Ubuntu clang version 14.0.6
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-14/bin
+$ ~/Programs/symcc/build/sym++ --version
+Please set SYMCC_LIBCXX_PATH to the directory containing libc++ or confirm usage of the system library by setting SYMCC_REGULAR_LIBCXX!
